@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Hub2Stream Logo](https://img.shields.io/badge/Hub2Stream-v1.0.0-brightgreen)
+![Hub2Stream Logo](https://img.shields.io/badge/Hub2Stream-v1.0.2-brightgreen)
 ![Android](https://img.shields.io/badge/Android-5.0%2B-blue)
 ![Kotlin](https://img.shields.io/badge/Kotlin-1.9+-purple)
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-UI-ff69b4)
@@ -10,7 +10,7 @@
 
 **All-in-One Streaming App for Movies, TV Series, Live TV & Sports**
 
-[📥 Download APK](#download) • [⭐ Star](#) • [🐛 Report Issue](#)
+[📥 Download APK](https://github.com/mpshimul/hub2stream/releases/latest/download/app-release.apk) • [⭐ Star](#) • [🐛 Report Issue](https://github.com/mpshimul/hub2stream/issues)
 
 </div>
 
@@ -82,7 +82,7 @@ Hub2Stream is a modern, feature-rich Android streaming application built with Je
 
 | File | Size | Downloads | Updated |
 |------|------|-----------|---------|
-| [Hub2Stream-v1.0.0.apk](releases/v1.0.0/Hub2Stream-v1.0.0.apk) | ~25 MB | ![Downloads](https://img.shields.io/github/downloads/shimulfp/Hub2Stream/latest/total) | 2024 |
+| [Hub2Stream-v1.0.0.apk](releases/latest/download/app-release.apk) | ~15 MB | ![Downloads](https://img.shields.io/github/downloads/mpshimul/Hub2Stream/latest/total) | 2026 |
 
 ### Installation
 
@@ -333,15 +333,15 @@ This application is for educational and personal use only. The developers do not
 ## 📞 Support
 
 ### Need Help?
-- 📧 Email: support@hub2stream.com
-- 💬 Telegram: [Hub2Stream Community](https://t.me/hub2stream)
-- 🐛 [Report a Bug](https://github.com/shimulfp/Hub2Stream/issues)
-- 💡 [Feature Request](https://github.com/shimulfp/Hub2Stream/issues)
+- 📧 Email: support@
+- 💬 Telegram: [Hub2Stream Community](https://t.me/)
+- 🐛 [Report a Bug](https://github.com/mpshimul/Hub2Stream/issues)
+- 💡 [Feature Request](https://github.com/mpshimul/Hub2Stream/issues)
 
 ### Social Media
-- [Twitter/X](https://twitter.com/hub2stream)
-- [Facebook](https://facebook.com/hub2stream)
-- [Instagram](https://instagram.com/hub2stream)
+- [Twitter/X](https://twitter.com/)
+- [Facebook](https://facebook.com/)
+- [Instagram](https://instagram.com/)
 
 ---
 
@@ -366,7 +366,7 @@ This application is for educational and personal use only. The developers do not
 
 <div align="center">
 
-**Made with ❤️ by Shimul FP**
+**Made with ❤️ by MPSHIMUL**
 
 [⬆ Back to Top](#hub2stream-)
 
