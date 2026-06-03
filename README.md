@@ -356,11 +356,11 @@ This application is for educational and personal use only. The developers do not
 
 ## 📊 Stats
 
-![GitHub stars](https://img.shields.io/github/stars/mpshimul/Hub2Stream?style=social)
-![GitHub forks](https://img.shields.io/github/forks/mpshimul/Hub2Stream?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/mpshimul/Hub2Stream?style=social)
-![GitHub issues](https://img.shields.io/github/issues/mpshimul/Hub2Stream)
-![GitHub license](https://img.shields.io/github/license/mpshimul/Hub2Stream)
+![GitHub stars](https://img.shields.io/github/stars/mpshimul/hub2stream?style=social)
+![GitHub forks](https://img.shields.io/github/forks/mpshimul/hub2stream?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/mpshimul/hub2stream?style=social)
+![GitHub issues](https://img.shields.io/github/issues/mpshimul/hub2stream)
+![GitHub license](https://img.shields.io/github/license/mpshimul/hub2stream)
 
 ---
 
