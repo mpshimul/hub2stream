@@ -68,11 +68,11 @@ Hub2Stream is a modern, feature-rich Android streaming application built with Je
 
 | Home Screen | Live TV | Player |
 |-------------|---------|--------|
-| ![Home](https://via.placeholder.com/300x500/1a1a2e/fff?text=Home+Screen) | ![Live TV](https://via.placeholder.com/300x500/1a1a2e/fff?text=Live+TV) | ![Player](https://via.placeholder.com/300x500/1a1a2e/fff?text=Video+Player) |
+| ![Home](https://github.com/mpshimul/hub2stream/blob/main/Screenshots/Screenshot_20260603-125701.png) | ![Live TV](https://github.com/mpshimul/hub2stream/blob/main/Screenshots/Screenshot_20260603-131117.png) | ![Player](https://github.com/mpshimul/hub2stream/blob/main/Screenshots/Screenshot_20260603-125837.png) |
 
-| Settings | Picture-in-Picture | Search |
-|----------|-------------------|--------|
-| ![Settings](https://via.placeholder.com/300x500/1a1a2e/fff?text=Settings) | ![PIP](https://via.placeholder.com/300x500/1a1a2e/fff?text=PiP+Mode) | ![Search](https://via.placeholder.com/300x500/1a1a2e/fff?text=Search) |
+| Picture-in-Picture | Search |
+|-------------------|--------|
+| ![PIP](https://github.com/mpshimul/hub2stream/blob/main/Screenshots/Screenshot_20260603-130137.png) | ![Search](https://github.com/mpshimul/hub2stream/blob/main/Screenshots/Screenshot_20260603-130204.png) |
 
 ---
 
