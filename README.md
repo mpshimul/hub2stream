@@ -82,8 +82,7 @@ Hub2Stream is a modern, feature-rich Android streaming application built with Je
 
 | File | Size | Downloads | Updated |
 |------|------|-----------|---------|
-| [Hub2Stream-v1.0.2.apk](releases/latest/download/app-release.apk) | ~15 MB | 
-![Downloads](https://img.shields.io/github/downloads/mpshimul/hub2stream/total) | 2026 |
+| [Hub2Stream-v1.0.2.apk](releases/latest/download/app-release.apk) | ~15 MB | ![Downloads](https://img.shields.io/github/downloads/mpshimul/hub2stream/total) | 2026 |
 
 ### Installation
 
