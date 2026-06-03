@@ -2,11 +2,11 @@
 
 <div align="center">
 
-![Hub2Stream Logo](https://img.shields.io/badge/Hub2Stream-v1.0.2-brightgreen)
-![Android](https://img.shields.io/badge/Android-5.0%2B-blue)
-![Kotlin](https://img.shields.io/badge/Kotlin-1.9+-purple)
-![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-UI-ff69b4)
-![License](https://img.shields.io/badge/License-MIT-green)
+[![Version](https://img.shields.io/github/v/tag/mpshimul/hub2stream?label=Latest%20Tag&logo=git)](https://github.com/mpshimul/hub2stream/tags)
+[![Download](https://img.shields.io/github/downloads/mpshimul/hub2stream/total?label=Downloads&logo=github)](https://github.com/mpshimul/hub2stream/releases/latest)
+[![Android](https://img.shields.io/badge/Android-5.0%2B-blue?logo=android)](https://developer.android.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 
 **All-in-One Streaming App for Movies, TV Series, Live TV & Sports**
 
@@ -78,7 +78,7 @@ Hub2Stream is a modern, feature-rich Android streaming application built with Je
 
 ## 📥 Download
 
-### Latest Version: 1.0.0
+### Latest Version: ![Latest Release](https://img.shields.io/github/v/release/mpshimul/hub2stream)
 
 | File | Size | Downloads | Updated |
 |------|------|-----------|---------|
@@ -356,11 +356,11 @@ This application is for educational and personal use only. The developers do not
 
 ## 📊 Stats
 
-![GitHub stars](https://img.shields.io/github/stars/shimulfp/Hub2Stream?style=social)
-![GitHub forks](https://img.shields.io/github/forks/shimulfp/Hub2Stream?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/shimulfp/Hub2Stream?style=social)
-![GitHub issues](https://img.shields.io/github/issues/shimulfp/Hub2Stream)
-![GitHub license](https://img.shields.io/github/license/shimulfp/Hub2Stream)
+![GitHub stars](https://img.shields.io/github/stars/mpshimul/Hub2Stream?style=social)
+![GitHub forks](https://img.shields.io/github/forks/mpshimul/Hub2Stream?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/mpshimul/Hub2Stream?style=social)
+![GitHub issues](https://img.shields.io/github/issues/mpshimul/Hub2Stream)
+![GitHub license](https://img.shields.io/github/license/mpshimul/Hub2Stream)
 
 ---
 
