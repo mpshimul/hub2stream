@@ -88,8 +88,8 @@ Hub2Stream is a modern, feature-rich Android streaming application built with Je
 
 1. Download the APK from the link above
 2. Enable "Unknown Sources" in your device settings:
-   - Go to **Settings > Security > Unknown Sources** (Android 7 and below)
-   - Or allow your browser to install apps (Android 8+)
+    - Go to **Settings > Security > Unknown Sources** (Android 7 and below)
+    - Or allow your browser to install apps (Android 8+)
 3. Tap the downloaded APK file to install
 4. Enjoy streaming!
 
@@ -371,3 +371,4 @@ This application is for educational and personal use only. The developers do not
 [⬆ Back to Top](#hub2stream-)
 
 </div>
+
