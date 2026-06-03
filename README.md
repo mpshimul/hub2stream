@@ -2,11 +2,11 @@
 
 <div align="center">
 
-![Hub2Stream Logo](https://img.shields.io/badge/Hub2Stream-v1.0.2-brightgreen)
-![Android](https://img.shields.io/badge/Android-5.0%2B-blue)
-![Kotlin](https://img.shields.io/badge/Kotlin-1.9+-purple)
-![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-UI-ff69b4)
-![License](https://img.shields.io/badge/License-MIT-green)
+[![Version](https://img.shields.io/github/v/tag/mpshimul/hub2stream?label=Latest%20Tag&logo=git)](https://github.com/mpshimul/hub2stream/tags)
+[![Download](https://img.shields.io/github/downloads/mpshimul/hub2stream/total?label=Downloads&logo=github)](https://github.com/mpshimul/hub2stream/releases/latest)
+[![Android](https://img.shields.io/badge/Android-5.0%2B-blue?logo=android)](https://developer.android.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 
 **All-in-One Streaming App for Movies, TV Series, Live TV & Sports**
 
@@ -68,28 +68,28 @@ Hub2Stream is a modern, feature-rich Android streaming application built with Je
 
 | Home Screen | Live TV | Player |
 |-------------|---------|--------|
-| ![Home](https://via.placeholder.com/300x500/1a1a2e/fff?text=Home+Screen) | ![Live TV](https://via.placeholder.com/300x500/1a1a2e/fff?text=Live+TV) | ![Player](https://via.placeholder.com/300x500/1a1a2e/fff?text=Video+Player) |
+| ![Home](https://github.com/mpshimul/hub2stream/blob/main/Screenshots/Screenshot_20260603-125701.png) | ![Live TV](https://github.com/mpshimul/hub2stream/blob/main/Screenshots/Screenshot_20260603-131117.png) | ![Player](https://github.com/mpshimul/hub2stream/blob/main/Screenshots/Screenshot_20260603-125837.png) |
 
-| Settings | Picture-in-Picture | Search |
-|----------|-------------------|--------|
-| ![Settings](https://via.placeholder.com/300x500/1a1a2e/fff?text=Settings) | ![PIP](https://via.placeholder.com/300x500/1a1a2e/fff?text=PiP+Mode) | ![Search](https://via.placeholder.com/300x500/1a1a2e/fff?text=Search) |
+| Picture-in-Picture | Search |
+|-------------------|--------|
+| ![PIP](https://github.com/mpshimul/hub2stream/blob/main/Screenshots/Screenshot_20260603-130137.png) | ![Search](https://github.com/mpshimul/hub2stream/blob/main/Screenshots/Screenshot_20260603-130204.png) |
 
 ---
 
 ## 📥 Download
 
-### Latest Version: 1.0.0
+### Latest Version: ![Latest Release](https://img.shields.io/github/v/release/mpshimul/hub2stream)
 
 | File | Size | Downloads | Updated |
 |------|------|-----------|---------|
-| [Hub2Stream-v1.0.2.apk](releases/latest/download/app-release.apk) | ~15 MB | ![Downloads](https://img.shields.io/github/downloads/mpshimul/Hub2Stream/latest/total) | 2026 |
+| [Hub2Stream-v1.0.2.apk](releases/latest/download/app-release.apk) | ~15 MB | ![Downloads](https://img.shields.io/github/downloads/mpshimul/hub2stream/total) | 2026 |
 
 ### Installation
 
 1. Download the APK from the link above
 2. Enable "Unknown Sources" in your device settings:
-   - Go to **Settings > Security > Unknown Sources** (Android 7 and below)
-   - Or allow your browser to install apps (Android 8+)
+    - Go to **Settings > Security > Unknown Sources** (Android 7 and below)
+    - Or allow your browser to install apps (Android 8+)
 3. Tap the downloaded APK file to install
 4. Enjoy streaming!
 
@@ -356,11 +356,11 @@ This application is for educational and personal use only. The developers do not
 
 ## 📊 Stats
 
-![GitHub stars](https://img.shields.io/github/stars/shimulfp/Hub2Stream?style=social)
-![GitHub forks](https://img.shields.io/github/forks/shimulfp/Hub2Stream?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/shimulfp/Hub2Stream?style=social)
-![GitHub issues](https://img.shields.io/github/issues/shimulfp/Hub2Stream)
-![GitHub license](https://img.shields.io/github/license/shimulfp/Hub2Stream)
+![GitHub stars](https://img.shields.io/github/stars/mpshimul/hub2stream?style=social)
+![GitHub forks](https://img.shields.io/github/forks/mpshimul/hub2stream?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/mpshimul/hub2stream?style=social)
+![GitHub issues](https://img.shields.io/github/issues/mpshimul/hub2stream)
+![GitHub license](https://img.shields.io/github/license/mpshimul/hub2stream)
 
 ---
 
