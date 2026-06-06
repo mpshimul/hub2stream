@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Version](https://img.shields.io/github/v/tag/mpshimul/hub2stream?label=Latest%20Tag&logo=git)](https://github.com/mpshimul/hub2stream/tags)
+[![Version](https://img.shields.io/github/v/tag/mpshimul/hub2stream?label=Latest%20Release&logo=git)](https://github.com/mpshimul/hub2stream/tags)
 [![Download](https://img.shields.io/github/downloads/mpshimul/hub2stream/total?label=Downloads&logo=github)](https://github.com/mpshimul/hub2stream/releases/latest)
 [![Android](https://img.shields.io/badge/Android-5.0%2B-blue?logo=android)](https://developer.android.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
