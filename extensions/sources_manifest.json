@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-06-06T10:10:00Z",
+  "sources": [
+    {
+      "id": "livetv",
+      "name": "LiveTV",
+      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/livetv/build/libs/livetv.jar",
+      "version": "1.0.0",
+      "type": "live-tv",
+      "baseUrl": "http://redforce.live/",
+      "enabled": true
+    },
+    {
+      "id": "roarzone",
+      "name": "RoarZone",
+      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/roarzone/build/libs/roarzone.jar",
+      "version": "1.0.0",
+      "type": "live-tv",
+      "baseUrl": "https://tv.roarzone.net/",
+      "enabled": true
+    },
+    {
+      "id": "sports",
+      "name": "Sports (Fancode)",
+      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/sports/build/libs/sports.jar",
+      "version": "1.0.0",
+      "type": "sports",
+      "baseUrl": "https://fancode.com/",
+      "enabled": true
+    },
+    {
+      "id": "aoneroom-sports",
+      "name": "Aoneroom Sports",
+      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/aoneroom/build/libs/aoneroom.jar",
+      "version": "1.0.0",
+      "type": "sports",
+      "baseUrl": "https://h5.aoneroom.com/",
+      "enabled": true
+    },
+    {
+      "id": "moviebox",
+      "name": "MovieBox",
+      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/moviebox/build/libs/moviebox.jar",
+      "version": "1.0.0",
+      "type": "mixed",
+      "baseUrl": "https://themoviebox.org/",
+      "enabled": true
+    }
+  ]
+}
