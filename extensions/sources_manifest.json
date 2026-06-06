@@ -5,7 +5,7 @@
     {
       "id": "livetv",
       "name": "LiveTV",
-      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/livetv/build/libs/livetv.jar",
+      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/livetv/build/libs/livetv-dex.jar",
       "version": "1.0.0",
       "type": "live-tv",
       "baseUrl": "http://redforce.live/",
@@ -14,7 +14,7 @@
     {
       "id": "roarzone",
       "name": "RoarZone",
-      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/roarzone/build/libs/roarzone.jar",
+      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/roarzone/build/libs/roarzone-dex.jar",
       "version": "1.0.0",
       "type": "live-tv",
       "baseUrl": "https://tv.roarzone.net/",
@@ -23,7 +23,7 @@
     {
       "id": "sports",
       "name": "Sports (Fancode)",
-      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/sports/build/libs/sports.jar",
+      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/sports/build/libs/sports-dex.jar",
       "version": "1.0.0",
       "type": "sports",
       "baseUrl": "https://fancode.com/",
@@ -32,7 +32,7 @@
     {
       "id": "aoneroom-sports",
       "name": "Aoneroom Sports",
-      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/aoneroom/build/libs/aoneroom.jar",
+      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/aoneroom/build/libs/aoneroom-dex.jar",
       "version": "1.0.0",
       "type": "sports",
       "baseUrl": "https://h5.aoneroom.com/",
@@ -41,7 +41,7 @@
     {
       "id": "moviebox",
       "name": "MovieBox",
-      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/moviebox/build/libs/moviebox.jar",
+      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/moviebox/build/libs/moviebox-dex.jar",
       "version": "1.0.0",
       "type": "mixed",
       "baseUrl": "https://themoviebox.org/",
