@@ -51,7 +51,7 @@
       "id": "aoneroom-movies",
       "name": "Aoneroom Movies",
       "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/aoneroom-movies/build/libs/aoneroom-movies-dex.jar",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "mixed",
       "baseUrl": "https://h5.aoneroom.com/",
       "enabled": true
