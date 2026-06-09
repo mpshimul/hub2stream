@@ -24,7 +24,7 @@
       "id": "sports",
       "name": "Sports",
       "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/sports/build/libs/sports-dex.jar",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "type": "sports",
       "baseUrl": "https://fancode.com/",
       "enabled": true
