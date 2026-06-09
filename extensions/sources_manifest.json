@@ -13,7 +13,7 @@
     },
     {
       "id": "roarzone",
-      "name": "RoarZone",
+      "name": "LiveTV-2",
       "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/roarzone/build/libs/roarzone-dex.jar",
       "version": "1.0.0",
       "type": "live-tv",
@@ -22,7 +22,7 @@
     },
     {
       "id": "sports",
-      "name": "Sports (Fancode)",
+      "name": "Sports",
       "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/sports/build/libs/sports-dex.jar",
       "version": "1.2.0",
       "type": "sports",
@@ -31,7 +31,7 @@
     },
     {
       "id": "aoneroom-sports",
-      "name": "Aoneroom Sports",
+      "name": "Sports-2",
       "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/aoneroom/build/libs/aoneroom-dex.jar",
       "version": "1.0.0",
       "type": "sports",
@@ -39,17 +39,8 @@
       "enabled": true
     },
     {
-      "id": "moviebox",
-      "name": "MovieBox",
-      "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/moviebox/build/libs/moviebox-dex.jar",
-      "version": "1.0.0",
-      "type": "mixed",
-      "baseUrl": "https://themoviebox.org/",
-      "enabled": true
-    },
-    {
       "id": "aoneroom-movies",
-      "name": "Aoneroom Movies",
+      "name": "Movies",
       "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/aoneroom-movies/build/libs/aoneroom-movies-dex.jar",
       "version": "1.1.0",
       "type": "mixed",
