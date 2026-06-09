@@ -33,7 +33,7 @@
       "id": "aoneroom-sports",
       "name": "Sports-2",
       "jarUrl": "https://raw.githubusercontent.com/mpshimul/hub2stream/main/extensions/aoneroom/build/libs/aoneroom-dex.jar",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "sports",
       "baseUrl": "https://h5.aoneroom.com/",
       "enabled": true
