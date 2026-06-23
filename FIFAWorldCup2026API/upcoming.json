@@ -1,0 +1,3969 @@
+{
+  "code": 0,
+  "message": "ok",
+  "data": {
+    "hasMore": false,
+    "list": [
+      {
+        "id": "9175906719568908424",
+        "team1": {
+          "id": "7624909222706663480",
+          "name": "Portugal",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/cfb639eae8f20b5bbf4b1df185843b2a.png",
+          "voteCount": "15734",
+          "type": "football",
+          "abbreviation": "POR",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "7608654049244076728",
+          "name": "Uzbekistan",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/a08cc25a53713e8b67e555a92e8af68e.png",
+          "voteCount": "3460",
+          "type": "football",
+          "abbreviation": "UZB",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782234000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group K Round 2",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782234000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "6978150101412106376",
+        "team1": {
+          "id": "5437149420104073424",
+          "name": "England",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/98a8c2b9e4a5af94fe2e1e35e6aa0b5a.png",
+          "voteCount": "2085",
+          "type": "football",
+          "abbreviation": "ENG",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "3022657069880167472",
+          "name": "Ghana",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/23bbfbc65fbff411f55e7e8fa7f597a4.png",
+          "voteCount": "1950",
+          "type": "football",
+          "abbreviation": "GHA",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782244800000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group L Round 2",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782244800000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "637081826074448008",
+        "team1": {
+          "id": "6239559762523445944",
+          "name": "Panama",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/0ac4546cd47a1bdf14aa387761dfa9ef.png",
+          "voteCount": "208",
+          "type": "football",
+          "abbreviation": "PAN",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "3206033563326074760",
+          "name": "Croatia",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/2624d210af1ebaef18c0cd41f9c19d62.png",
+          "voteCount": "634",
+          "type": "football",
+          "abbreviation": "CRO",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782255600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group L Round 2",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782255600000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "6401689349108682888",
+        "team1": {
+          "id": "8473345177699211960",
+          "name": "Colombia",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/7cf3980fb30323bb5a1959d3a51118a1.png",
+          "voteCount": "377",
+          "type": "football",
+          "abbreviation": "COL",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "8713518149016109264",
+          "name": "DR Congo",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/317c9c24a6151c53bb5fc4179c75295d.png",
+          "voteCount": "1189",
+          "type": "football",
+          "abbreviation": "COD",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782266400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group K Round 2",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782266400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "2654694459136430216",
+        "team1": {
+          "id": "371725739219108048",
+          "name": "Switzerland",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/7f0e7d62971dd996e47ee43923b2d094.png",
+          "voteCount": "530",
+          "type": "football",
+          "abbreviation": "SUI",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "6388178550226672312",
+          "name": "Canada",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/b76571bc16872d1ffb8dd56611a2ffdb.png",
+          "voteCount": "336",
+          "type": "football",
+          "abbreviation": "CAN",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782327600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group B Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782327600000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "8419301982170665096",
+        "team1": {
+          "id": "7373322723692792152",
+          "name": "Bosnia Herzegovina",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/4a07eec5eedea98a326da5d4209cf284.png",
+          "voteCount": "164",
+          "type": "football",
+          "abbreviation": "BIH",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "5793703399413766840",
+          "name": "Qatar",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/0c0e748b6926dced14018b9f42b7b993.png",
+          "voteCount": "470",
+          "type": "football",
+          "abbreviation": "QAT",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782327600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group B Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782327600000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "2078233706833006728",
+        "team1": {
+          "id": "1398546454260206640",
+          "name": "Scotland",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/970b5209f106d437130c821c05cb3722.png",
+          "voteCount": "512",
+          "type": "football",
+          "abbreviation": "SCO",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "3199630014048361144",
+          "name": "Brazil",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/fe46f4ada520e988b5729eecb0af8b34.png",
+          "voteCount": "3725",
+          "type": "football",
+          "abbreviation": "BRA",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782338400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group C Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782338400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "2510579271060574344",
+        "team1": {
+          "id": "3112302396081426312",
+          "name": "Morocco",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/c1f4bd1e2e66174f4ba2da176d1c7aba.png",
+          "voteCount": "2475",
+          "type": "football",
+          "abbreviation": "MAR",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "2406996479631153848",
+          "name": "Haiti",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/9c44520d5861674627c91fd0117d42f1.png",
+          "voteCount": "663",
+          "type": "football",
+          "abbreviation": "HAI",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782338400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group C Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782338400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "1934118518757150856",
+        "team1": {
+          "id": "8071192252162392272",
+          "name": "South Africa",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/06652c290dc3db1ac2f5d4ab61e21d80.png",
+          "voteCount": "3202",
+          "type": "football",
+          "abbreviation": "RSA",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "8585935168383474360",
+          "name": "South Korea",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/5836638e2b9f555169abc8b5079dee31.png",
+          "voteCount": "2088",
+          "type": "football",
+          "abbreviation": "KOR",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782349200000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group A Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782349200000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "8275186794094809224",
+        "team1": {
+          "id": "399873236890274864",
+          "name": "Czechia",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/6f006d716f95f0b3c96fc2a6b5ff6026.png",
+          "voteCount": "93",
+          "type": "football",
+          "abbreviation": "CZE",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "6712437723397348024",
+          "name": "Mexico",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/9fb9638691b9d68fc12e77e401f4f88a.png",
+          "voteCount": "334",
+          "type": "football",
+          "abbreviation": "MEX",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782349200000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group A Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782349200000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "492966637998592136",
+        "team1": {
+          "id": "1218046178005342904",
+          "name": "Ecuador",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/1f64edc307315ea1fe67a5da7f1c2555.png",
+          "voteCount": "105",
+          "type": "football",
+          "abbreviation": "ECU",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "4708828463984267320",
+          "name": "Germany",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/e3a10e1774fe33c9130a1564a17c1715.png",
+          "voteCount": "540",
+          "type": "football",
+          "abbreviation": "GER",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782417600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group E Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782417600000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "6257574161032827016",
+        "team1": {
+          "id": "3848148360389712568",
+          "name": "Curacao",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/32af4ed371c5b4b39b04e3480941c297.png",
+          "voteCount": "129",
+          "type": "football",
+          "abbreviation": "CUW",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "905965245015933136",
+          "name": "Ivory Coast",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/7d6cdf070fe6fa5d93f926e3c23c243a.png",
+          "voteCount": "303",
+          "type": "football",
+          "abbreviation": "CIV",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782417600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group E Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782417600000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "3375270399515709576",
+        "team1": {
+          "id": "9075494969066012880",
+          "name": "Tunisia",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/80e79c7616f6aac4040b6d4a6f6a0eae.png",
+          "voteCount": "266",
+          "type": "football",
+          "abbreviation": "TUN",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "6094811249307537288",
+          "name": "Netherlands",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/83a63afd201d203c012b8e2066cc57cb.png",
+          "voteCount": "267",
+          "type": "football",
+          "abbreviation": "NED",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782428400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group F Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782428400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "9139877922549944456",
+        "team1": {
+          "id": "8892179943044668088",
+          "name": "Japan",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/6d5c39ec0f29a0ad8338d3a778909425.png",
+          "voteCount": "464",
+          "type": "football",
+          "abbreviation": "JPN",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "2614518353649615056",
+          "name": "Sweden",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/8d38ecdd7f7788b8232158a33688105d.png",
+          "voteCount": "137",
+          "type": "football",
+          "abbreviation": "SWE",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782428400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group F Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782428400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "7050207695450034312",
+        "team1": {
+          "id": "4384433007206219984",
+          "name": "Turkiye",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/a1305be783b5bef7d8f1966bf671a41f.png",
+          "voteCount": "228",
+          "type": "football",
+          "abbreviation": "TUR",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "2208838096026852024",
+          "name": "USA",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/b5fe0e35464e88d2123aed6816a11ec6.png",
+          "voteCount": "138",
+          "type": "football",
+          "abbreviation": "USA",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782439200000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group D Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782439200000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "709139420112375944",
+        "team1": {
+          "id": "7901388025023158968",
+          "name": "Paraguay",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/3abd5d979bfc05439d574b4c12f2eb22.png",
+          "voteCount": "96",
+          "type": "football",
+          "abbreviation": "PAR",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "551513433154509496",
+          "name": "Australia",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/712263143856674ed1906f1e677d9084.png",
+          "voteCount": "205",
+          "type": "football",
+          "abbreviation": "AUS",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782439200000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group D Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782439200000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "7194322883525890184",
+        "team1": {
+          "id": "8260906386465374416",
+          "name": "Norway",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/e996c6bfcd154bc6ea318208932121e7.png",
+          "voteCount": "432",
+          "type": "football",
+          "abbreviation": "NOR",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "2053112058719227784",
+          "name": "France",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/a23426aba153d39afca6d98f5285956e.png",
+          "voteCount": "499",
+          "type": "football",
+          "abbreviation": "FRA",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782500400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group I Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782500400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "8347244388132737160",
+        "team1": {
+          "id": "341326441734458416",
+          "name": "Senegal",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/fe934cda6a23730ab05d4b1af04a0136.png",
+          "voteCount": "183",
+          "type": "football",
+          "abbreviation": "SEN",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "2875370840877584520",
+          "name": "Iraq",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/a60f543a12c814c15ba0fccc82ca55d6.png",
+          "voteCount": "440",
+          "type": "football",
+          "abbreviation": "IRQ",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782500400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group I Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782500400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "2006176112795078792",
+        "team1": {
+          "id": "9072323928139387016",
+          "name": "Uruguay",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/465dbe87ee0ccb281bd316aae42942ce.png",
+          "voteCount": "100",
+          "type": "football",
+          "abbreviation": "URU",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "8400654258521231240",
+          "name": "Spain",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/5d866b6178489325752c1d5eab23074a.png",
+          "voteCount": "364",
+          "type": "football",
+          "abbreviation": "ESP",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782518400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group H Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782518400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "5176710250463907976",
+        "team1": {
+          "id": "5421386821408276688",
+          "name": "Cape Verde",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/7ef6b32413a3483695040d7532d8f977.png",
+          "voteCount": "96",
+          "type": "football",
+          "abbreviation": "CPV",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "4172407533560287368",
+          "name": "Saudi Arabia",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/23e6f9f2bd69da7e6bd39286bccece50.png",
+          "voteCount": "381",
+          "type": "football",
+          "abbreviation": "KSA",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782518400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group H Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782518400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "4023788745857061000",
+        "team1": {
+          "id": "1808017729190776968",
+          "name": "New Zealand",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/57ff511e0423874ba6278de5d977299c.png",
+          "voteCount": "39",
+          "type": "football",
+          "abbreviation": "NZL",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "4408076905250439376",
+          "name": "Belgium",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/c0f25845c8c78531dd9860d5590bd9bb.png",
+          "voteCount": "166",
+          "type": "football",
+          "abbreviation": "BEL",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782529200000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group G Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782529200000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "8059014011981025416",
+        "team1": {
+          "id": "7650668636956672208",
+          "name": "Egypt",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/df08ca3b44e0abc798186de79591171a.png",
+          "voteCount": "789",
+          "type": "football",
+          "abbreviation": "EGY",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "7212337282035372168",
+          "name": "Iran",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/ce604364c8e6e65bbd9f4f6b9b9a45f2.png",
+          "voteCount": "438",
+          "type": "football",
+          "abbreviation": "IRN",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782529200000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group G Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782529200000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "15585077497319560",
+        "team1": {
+          "id": "6239559762523445944",
+          "name": "Panama",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/0ac4546cd47a1bdf14aa387761dfa9ef.png",
+          "voteCount": "52",
+          "type": "football",
+          "abbreviation": "PAN",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "5437149420104073424",
+          "name": "England",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/98a8c2b9e4a5af94fe2e1e35e6aa0b5a.png",
+          "voteCount": "908",
+          "type": "football",
+          "abbreviation": "ENG",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782594000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group L Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782594000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "5780192600531554440",
+        "team1": {
+          "id": "3206033563326074760",
+          "name": "Croatia",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/2624d210af1ebaef18c0cd41f9c19d62.png",
+          "voteCount": "94",
+          "type": "football",
+          "abbreviation": "CRO",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "3022657069880167472",
+          "name": "Ghana",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/23bbfbc65fbff411f55e7e8fa7f597a4.png",
+          "voteCount": "223",
+          "type": "football",
+          "abbreviation": "GHA",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782594000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group L Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782594000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "2897888839014437000",
+        "team1": {
+          "id": "8473345177699211960",
+          "name": "Colombia",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/7cf3980fb30323bb5a1959d3a51118a1.png",
+          "voteCount": "158",
+          "type": "football",
+          "abbreviation": "COL",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "7624909222706663480",
+          "name": "Portugal",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/cfb639eae8f20b5bbf4b1df185843b2a.png",
+          "voteCount": "1883",
+          "type": "football",
+          "abbreviation": "POR",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782603000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group K Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782603000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "8662496362048671880",
+        "team1": {
+          "id": "8713518149016109264",
+          "name": "DR Congo",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/317c9c24a6151c53bb5fc4179c75295d.png",
+          "voteCount": "292",
+          "type": "football",
+          "abbreviation": "COD",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "7608654049244076728",
+          "name": "Uzbekistan",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/a08cc25a53713e8b67e555a92e8af68e.png",
+          "voteCount": "197",
+          "type": "football",
+          "abbreviation": "UZB",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782603000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group K Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782603000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "1456736958255878280",
+        "team1": {
+          "id": "8581431568756103864",
+          "name": "Jordan",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/18df861aa760a704fa67d1f0cbf9868d.png",
+          "voteCount": "577",
+          "type": "football",
+          "abbreviation": "JOR",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "4834436678783851192",
+          "name": "Argentina",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/e8a24806fbe59bd12b17d6bded78c323.png",
+          "voteCount": "1616",
+          "type": "football",
+          "abbreviation": "ARG",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782612000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group J Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782612000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "5491962224379842696",
+        "team1": {
+          "id": "5805881639595134000",
+          "name": "Algeria",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/63eef819a12953aefa900672a98a076b.png",
+          "voteCount": "467",
+          "type": "football",
+          "abbreviation": "ALG",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "2039183501253034192",
+          "name": "Austria",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/ea4644dce8e33412aa7d97328385aab4.png",
+          "voteCount": "157",
+          "type": "football",
+          "abbreviation": "AUT",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782612000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup Group J Round 3",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782612000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "4339040719772995720",
+        "team1": {
+          "id": "649636852999372896",
+          "name": "A2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/7fd757861d0d8ad85a15b1089bfe0462.png",
+          "voteCount": "121",
+          "type": "football",
+          "abbreviation": "A2",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "8521929001642999904",
+          "name": "B2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/7ca032f754d2da506b28cfc269f4284f.png",
+          "voteCount": "161",
+          "type": "football",
+          "abbreviation": "B2",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782673200000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782673200000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "2357456883729977480",
+        "team1": {
+          "id": "2249370492673085576",
+          "name": "C1",
+          "score": "0",
+          "avatar": "https://pacdn.aoneroom.com/image/2025/10/14/019ef475e956471f94a89dac1d007600.png",
+          "voteCount": "65",
+          "type": "football",
+          "abbreviation": "C01",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "7008719526846416720",
+          "name": "F2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/b6b24df0445fae926edb98faa79f4314.png",
+          "voteCount": "92",
+          "type": "football",
+          "abbreviation": "F2",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782752400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782752400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "3798608764488536200",
+        "team1": {
+          "id": "4708828463984267320",
+          "name": "Germany",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/e3a10e1774fe33c9130a1564a17c1715.png",
+          "voteCount": "41",
+          "type": "football",
+          "abbreviation": "GER",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "4951530269095383176",
+          "name": "A3/B3/C3/D3/F3",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/9706a365be37d66d5c3105e13e92b3cb.png",
+          "voteCount": "265",
+          "type": "football",
+          "abbreviation": "3RD",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782765000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "Round of 32",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782765000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "7833834030612500616",
+        "team1": {
+          "id": "3973293377998798944",
+          "name": "F1",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/85b69d509e6c14ac5af6a2466136ec39.png",
+          "voteCount": "31",
+          "type": "football",
+          "abbreviation": "F1",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "5801754826711220320",
+          "name": "C2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/bd01d45373b744c99c36867775fdd1e0.png",
+          "voteCount": "46",
+          "type": "football",
+          "abbreviation": "C2",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782781200000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782781200000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "4212939930206722744",
+        "team1": {
+          "id": "1199076007538491400",
+          "name": "E2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/83d9a3fcee47c162419a6a43399e20bf.png",
+          "voteCount": "31",
+          "type": "football",
+          "abbreviation": "E2",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "754175416386181816",
+          "name": "I2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/40b312ea598f416151a56d7df0ae82be.png",
+          "voteCount": "24",
+          "type": "football",
+          "abbreviation": "I02",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782838800000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782838800000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "1546808950803288200",
+        "team1": {
+          "id": "2195327297144639624",
+          "name": "I1",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/34191cc6dd0003ebdcc44ce7df37130f.png",
+          "voteCount": "21",
+          "type": "football",
+          "abbreviation": "I01",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "8752568354596081800",
+          "name": "C3/D3/F3/G3/H3",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/16397e18ef8de531b7d99580c92f9c7d.png",
+          "voteCount": "38",
+          "type": "football",
+          "abbreviation": "3RD",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782853200000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782853200000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "8031992414216802440",
+        "team1": {
+          "id": "6712437723397348024",
+          "name": "Mexico",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/9fb9638691b9d68fc12e77e401f4f88a.png",
+          "voteCount": "33",
+          "type": "football",
+          "abbreviation": "MEX",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "4861458276547973256",
+          "name": "C3/E3/F3/H3/I3",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/bc982d4a654cc492ea9b293d1d2caf79.png",
+          "voteCount": "47",
+          "type": "football",
+          "abbreviation": "3RD",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782867600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "Round of 32",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782867600000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "4393083915301542584",
+        "team1": {
+          "id": "2951932034542983864",
+          "name": "L1",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/5e693bcf327aa11a71171a7da9032a79.png",
+          "voteCount": "11",
+          "type": "football",
+          "abbreviation": "L01",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "934319401481001656",
+          "name": "E3/H3/I3/J3/K3",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/0821ad3aea19ba25f67f4992a8f0477b.png",
+          "voteCount": "24",
+          "type": "football",
+          "abbreviation": "3RD",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782921600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782921600000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "3030745028021967544",
+        "team1": {
+          "id": "501973837253434040",
+          "name": "G1",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/0ff4807b5632e4623cb81ef38b29b145.png",
+          "voteCount": "16",
+          "type": "football",
+          "abbreviation": "G01",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "1301362771111697080",
+          "name": "A3/E3/H3/I3/J3",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/6f7db1df400793494f87008506ebda43.png",
+          "voteCount": "31",
+          "type": "football",
+          "abbreviation": "3RD",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782936000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782936000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "9083582927207914168",
+        "team1": {
+          "id": "2208838096026852024",
+          "name": "USA",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/b5fe0e35464e88d2123aed6816a11ec6.png",
+          "voteCount": "6",
+          "type": "football",
+          "abbreviation": "USA",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "3318975404173679288",
+          "name": "B3/E3/F3/I3/J3",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/3bb923550524a6330f90b3f32554136d.png",
+          "voteCount": "164",
+          "type": "football",
+          "abbreviation": "3RD",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1782950400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "Round of 32",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1782950400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "1373420365149524104",
+        "team1": {
+          "id": "8723294957018173576",
+          "name": "H1",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/bf086a93346d76ad4a3317a27c8f6a01.png",
+          "voteCount": "14",
+          "type": "football",
+          "abbreviation": "H01",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "9011525333169885320",
+          "name": "J2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/c384a4ed12139010f14c2afcd92d1d97.png",
+          "voteCount": "28",
+          "type": "football",
+          "abbreviation": "J02",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783018800000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783018800000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "2634428260813262984",
+        "team1": {
+          "id": "2346197884661551240",
+          "name": "K2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/8bedce58887c24f931cfa61b4b86a7ec.png",
+          "voteCount": "10",
+          "type": "football",
+          "abbreviation": "K02",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "6381423150785515656",
+          "name": "L2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/18912463ab9467dea27bcb5a16b74d57.png",
+          "voteCount": "25",
+          "type": "football",
+          "abbreviation": "L02",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783033200000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783033200000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "8543150971923353736",
+        "team1": {
+          "id": "4796156081951101064",
+          "name": "B1",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/42db1f4efd39125c8b6e2a3aab2f0726.png",
+          "voteCount": "14",
+          "type": "football",
+          "abbreviation": "B01",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "2778543448889118856",
+          "name": "E3/F3/G3/I3/J3",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/0d6afff6ac60ace1402a919ca8511e16.png",
+          "voteCount": "32",
+          "type": "football",
+          "abbreviation": "3RD",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783047600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783047600000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "1841794726396055688",
+        "team1": {
+          "id": "6495309169326194696",
+          "name": "D2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/44b397a4acf09bde5f00bff938c627ec.png",
+          "voteCount": "22",
+          "type": "football",
+          "abbreviation": "D2",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "8182863001733714056",
+          "name": "G2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/df1b4fd4ae5d4e49c1f483c6a5d0a4bf.png",
+          "voteCount": "24",
+          "type": "football",
+          "abbreviation": "G02",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783101600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783101600000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "5444674428292452488",
+        "team1": {
+          "id": "4834436678783851192",
+          "name": "Argentina",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/e8a24806fbe59bd12b17d6bded78c323.png",
+          "voteCount": "33",
+          "type": "football",
+          "abbreviation": "ARG",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "7174056685202722952",
+          "name": "H2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/23b98f5d0efbb0b5255058b3a697741c.png",
+          "voteCount": "46",
+          "type": "football",
+          "abbreviation": "H02",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783116000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "Round of 32",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783116000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "7516330256882880648",
+        "team1": {
+          "id": "3427061795230470280",
+          "name": "K1",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/5ee1d38701fc43501e718dbcb2c5f576.png",
+          "voteCount": "30",
+          "type": "football",
+          "abbreviation": "K01",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "3481104990758916232",
+          "name": "D3/E3/I3/J3/L3",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/e8cb71399cf2aa276c978e60ab8e9885.png",
+          "voteCount": "21",
+          "type": "football",
+          "abbreviation": "3RD",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783128600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783128600000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "3336989802683060360",
+        "team1": {
+          "id": "4345796119214051464",
+          "name": "Winner R32 match 1",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/8c3dc6ee6937dac15ac49965141bf181.png",
+          "voteCount": "19",
+          "type": "football",
+          "abbreviation": "W01",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "6219293564200177800",
+          "name": "Winner R32 match 3",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/61c90de4c784e2ac4ad775cdb2dd95a4.png",
+          "voteCount": "18",
+          "type": "football",
+          "abbreviation": "W03",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783184400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783184400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "2112010704038285448",
+        "team1": {
+          "id": "5282544841707114632",
+          "name": "Winner R32 match 2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/150fc45da8e9e9903d07fc989f7356d6.png",
+          "voteCount": "16",
+          "type": "football",
+          "abbreviation": "W02",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "8453078979375943816",
+          "name": "Winner R32 match 5",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/7a683d5f298baf6bb7ffc63f02f8a5bf.png",
+          "voteCount": "11",
+          "type": "football",
+          "abbreviation": "W05",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783198800000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783198800000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "58369273957339272",
+        "team1": {
+          "id": "7732503038996664456",
+          "name": "Winner R32 match 4",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/08f424057a137acc5acd88fe5ad4e2b3.png",
+          "voteCount": "46",
+          "type": "football",
+          "abbreviation": "W04",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "8020733415148477112",
+          "name": "Winner R32 match 6",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/078581ad0e32c487301b2a9d90aa212a.png",
+          "voteCount": "11",
+          "type": "football",
+          "abbreviation": "W06",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783281600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783281600000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "4814170480460683960",
+        "team1": {
+          "id": "6399437549295098552",
+          "name": "Winner R32 match 7",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/4f6090ec6d672a87cbb4fb5086418b26.png",
+          "voteCount": "10",
+          "type": "football",
+          "abbreviation": "W07",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "2075981907019422392",
+          "name": "Winner R32 match 8",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/219da4905fcc46dba980abd5a77063a2.png",
+          "voteCount": "26",
+          "type": "football",
+          "abbreviation": "W08",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783296000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783296000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "2580385065284817032",
+        "team1": {
+          "id": "490714838184906888",
+          "name": "Winner R32 match 11",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/400670bd7207116c510ee063f290862f.png",
+          "voteCount": "20",
+          "type": "football",
+          "abbreviation": "W11",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "7912647024091484296",
+          "name": "Winner R32 match 12",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/16de445873434bb22eb506c0836fffb8.png",
+          "voteCount": "24",
+          "type": "football",
+          "abbreviation": "W12",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783364400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783364400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "5922055988793725064",
+        "team1": {
+          "id": "6903840707560493192",
+          "name": "Winner R32 match 9",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/8d4dafd7fd82e18e6ed0fcf069001dd5.png",
+          "voteCount": "26",
+          "type": "football",
+          "abbreviation": "W09",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "157448465759490184",
+          "name": "Winner R32 match 10",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/db04ef55f4190747c4f801620b5d3af8.png",
+          "voteCount": "20",
+          "type": "football",
+          "abbreviation": "W10",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783382400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783382400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "6426459147059220616",
+        "team1": {
+          "id": "1598600346518048904",
+          "name": "Winner R32 match 14",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/11f23475b8156b50e320fdefc2de6a95.png",
+          "voteCount": "185",
+          "type": "football",
+          "abbreviation": "W14",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "661851624024985736",
+          "name": "Winner R32 match 16",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/fe3746eeed7789aa7d201b684c265b9a.png",
+          "voteCount": "29",
+          "type": "football",
+          "abbreviation": "W16",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783440000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783440000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "517736435949129864",
+        "team1": {
+          "id": "3255925009390391432",
+          "name": "Winner R32 match 13",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/531ab7a18d4d32302e7e37a430d0d181.png",
+          "voteCount": "25",
+          "type": "football",
+          "abbreviation": "W13",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "7723495839741923464",
+          "name": "Winner R32 match 15",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/16/bcdd8b8b8c146344368b7b2c2bfa0676.png",
+          "voteCount": "43",
+          "type": "football",
+          "abbreviation": "W15",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783454400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783454400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "1058168391233589384",
+        "team1": {
+          "id": "7900432253065871456",
+          "name": "Winner R16 match 1",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/de9fb0f2c2334032a8bfaac5cfe9cd6a.png",
+          "voteCount": "14",
+          "type": "football",
+          "abbreviation": "WR16-1",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "5306358867700465760",
+          "name": "Winner R16 match 2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/9b9c49bd500d93f8efef4aea4b76d877.png",
+          "voteCount": "24",
+          "type": "football",
+          "abbreviation": "WR16-2",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783627200000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783627200000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "4516932905054231224",
+        "team1": {
+          "id": "3018530256996171784",
+          "name": "Winner R16 match 5",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/34f66d530014cee511c74aeb3c590eb9.png",
+          "voteCount": "16",
+          "type": "football",
+          "abbreviation": "WR16-5",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "64168901441208416",
+          "name": "Winner R16 match 6",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/1eebb0d8db5f340b6fae7ef0d3fa5c57.png",
+          "voteCount": "10",
+          "type": "football",
+          "abbreviation": "WR16-6",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783710000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783710000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "3580184182561067144",
+        "team1": {
+          "id": "5072171687077117960",
+          "name": "Winner R16 match 3",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/e5e5407869116016f3d48dcea3d2b5e5.png",
+          "voteCount": "13",
+          "type": "football",
+          "abbreviation": "WR16-3",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "1325176797104850768",
+          "name": "Winner R16 match 4",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/c81bfb47484a3e0ac85a64c01956afdd.png",
+          "voteCount": "11",
+          "type": "football",
+          "abbreviation": "WR16-4",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783803600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783803600000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "1850801925650796680",
+        "team1": {
+          "id": "6297150785721892872",
+          "name": "Winner R16 match 7",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/81c89292d321ffa9497f4383377ee178.png",
+          "voteCount": "19",
+          "type": "football",
+          "abbreviation": "WR16-7",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "3306760633147965536",
+          "name": "Winner R16 match 8",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/2595149cfe5eadcc07d8a48a3e202f1b.png",
+          "voteCount": "28",
+          "type": "football",
+          "abbreviation": "WR16-8",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1783818000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1783818000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "2715493054105931912",
+        "team1": {
+          "id": "149737294361247840",
+          "name": "Winner QF1",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/6f0c307ab025b5907f9ec6f74d141bab.png",
+          "voteCount": "12",
+          "type": "football",
+          "abbreviation": "WQF1",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "1771033160214626400",
+          "name": "Winner QF2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/04096d2ea5ee5b7aded8c5c3e2e26398.png",
+          "voteCount": "33",
+          "type": "football",
+          "abbreviation": "WQF2",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1784055600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1784055600000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "8480100577140166792",
+        "team1": {
+          "id": "3968789778371331920",
+          "name": "Winner QF3",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/5aac6c60b5ddac4f006c830ccec0dddd.png",
+          "voteCount": "35",
+          "type": "football",
+          "abbreviation": "WQF3",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "5049653688940347488",
+          "name": "Winner QF4",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/595e0b1745b86533e00c0938d917a3ea.png",
+          "voteCount": "69",
+          "type": "football",
+          "abbreviation": "WQF4",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1784142000000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1784142000000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "4444875311016202376",
+        "team1": {
+          "id": "2131321130404169552",
+          "name": "Loser SF1",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/307350d28b781ecd16e2cb65e0e0b451.png",
+          "voteCount": "149",
+          "type": "football",
+          "abbreviation": "Loser SF1",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "546054061569754960",
+          "name": "Loser SF2",
+          "score": "0",
+          "avatar": "https://pbcdn.aoneroom.com/image/2025/12/29/4612c31f8bfca1d22f524e974328792c.png",
+          "voteCount": "94",
+          "type": "football",
+          "abbreviation": "Loser SF2",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1784408400000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1784408400000",
+        "season": "2026",
+        "oddsList": []
+      },
+      {
+        "id": "1418456361423229064",
+        "team1": {
+          "id": "5989355654568461056",
+          "name": "Winner SF 1",
+          "score": "0",
+          "avatar": "https://pacdn.aoneroom.com/image/2025/10/14/019ef475e956471f94a89dac1d007600.png",
+          "voteCount": "347",
+          "type": "football",
+          "abbreviation": "WSF1",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "team2": {
+          "id": "3683512645354767104",
+          "name": "Winner SF 2",
+          "score": "0",
+          "avatar": "https://pacdn.aoneroom.com/image/2025/10/14/019ef475e956471f94a89dac1d007600.png",
+          "voteCount": "455",
+          "type": "football",
+          "abbreviation": "WSF2",
+          "regularScore": "",
+          "nameI18n": {
+
+          },
+          "nameTag": ""
+        },
+        "status": "MatchNotStart",
+        "playType": "PlayTypeText",
+        "playPath": "",
+        "startTime": "1784487600000",
+        "endTime": "0",
+        "type": "football",
+        "timeDesc": "",
+        "playSource": [],
+        "statusLive": "Living",
+        "league": "FIFA World Cup",
+        "liveDeviceId": "",
+        "teamMatchInfo1": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "teamMatchInfo2": {
+          "score": "0",
+          "crtRunsScored": "",
+          "crtWicketsLost": "",
+          "crtOvers": "",
+          "crtOversExtraBalls": ""
+        },
+        "matchResult": "",
+        "matchRound": "FIFA World Cup",
+        "replay": [],
+        "highlights": [],
+        "extCountryCode": "",
+        "leagueId": "4186762757372631736",
+        "isCollect": false,
+        "arrangedTime": "1784487600000",
+        "season": "2026",
+        "oddsList": []
+      }
+    ]
+  }
+}
