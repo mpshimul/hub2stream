@@ -1,8 +1,8 @@
 {
-  "versionCode": 105,
+  "versionCode": 107,
   "versionName": "1.0.5",
   "downloadUrl": "https://github.com/mpshimul/hub2stream/releases/latest/download/app-release.apk",
   "browserUrl": "https://github.com/mpshimul/hub2stream/releases/latest/download/app-release.apk",
   "changelog": "আপডেট বাটনে ক্লিক করলে যদি অ্যাপ ক্র্যাশ করে। তাহলে এই লিংকটি সরাসরি ব্রাউজারে ওপেন করে অ্যাপটি আপডেট করে নিন: cutt.ly/hub2stream",
-  "critical": false
+  "critical": true
 }
