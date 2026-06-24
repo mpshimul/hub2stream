@@ -1,1 +1,13 @@
 
+{
+  "playlists": [
+    {
+      "name": "Toffee",
+      "url": "https://raw.githubusercontent.com/sm-monirulislam/Toffee-Auto-Update-Playlist/refs/heads/main/toffee_all_player.m3u"
+    },
+    {
+      "name": "Sports HD",
+      "url": "https://example.com/sports.m3u"
+    }
+  ]
+}
