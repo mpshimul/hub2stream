@@ -11,7 +11,7 @@
     },
 {
 "name": "Mixed",
-"url": "https://raw.githubusercontent.com/time2shine/IPTV/refs/heads/master/combined.m3u"
+"url": "#https://raw.githubusercontent.com/time2shine/IPTV/refs/heads/master/combined.m3u"
 }
   ]
 }
