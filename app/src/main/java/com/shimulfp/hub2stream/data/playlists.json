@@ -8,6 +8,10 @@
     {
       "name": "Akash",
       "url": "https://raw.githubusercontent.com/srhady/Hady/refs/heads/main/akash_live.m3u"
-    }
+    },
+{
+"name": "Mixed",
+"url": "https://raw.githubusercontent.com/time2shine/IPTV/refs/heads/master/combined.m3u"
+}
   ]
 }
