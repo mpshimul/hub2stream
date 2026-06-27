@@ -1,7 +1,68 @@
 #EXTM3U
-# Validated on 2026-06-26 18:51:23 UTC
+# Validated on 2026-06-27 16:57:44 UTC
 # Working streams: 73 / 78
 # Quality tags are based on REAL resolution (probed with ffprobe)
+# Channels are sorted with FIFA WORLD CUP channels at the top.
+
+# ---- FIFA WC 01: Panama vs England 5:00 PM (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 01: Panama vs England 5:00 PM
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949744.ts
+
+# ---- FIFA WC 02: Panama vs England 5:00 PM (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 02: Panama vs England 5:00 PM
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949745.ts
+
+# ---- FIFA WC 03: Panama vs England 5:00 PM EN espanol (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 03: Panama vs England 5:00 PM EN espanol
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949746.ts
+
+# ---- FIFA WC 04: FEED Panama vs England 5:00 PM (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 04: FEED Panama vs England 5:00 PM [4K]
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949747.ts
+
+# ---- FIFA WC 05: Croatia vs Ghana 5:00 PM (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 05: Croatia vs Ghana 5:00 PM
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949748.ts
+
+# ---- FIFA WC 06: Croatia vs Ghana 5:00 PM (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 06: Croatia vs Ghana 5:00 PM
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949749.ts
+
+# ---- FIFA WC 07: Croatia vs Ghana 5:00 PM EN espanol (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 07: Croatia vs Ghana 5:00 PM EN espanol
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949750.ts
+
+# ---- FIFA WC 08: FEED Croatia vs Ghana 5:00 PM (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 08: FEED Croatia vs Ghana 5:00 PM [4K]
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949751.ts
+
+# ---- FIFA WC 09: Colombia vs Portugal 7:30 pm (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 09: Colombia vs Portugal 7:30 pm
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949752.ts
+
+# ---- FIFA WC 10 : Colombia vs Portugal 7:30 pm (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 10 : Colombia vs Portugal 7:30 pm
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949753.ts
+
+# ---- FIFA WC 11 : Colombia vs Portugal 7:30 pm EN espanol (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 11 : Colombia vs Portugal 7:30 pm EN espanol
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949754.ts
+
+# ---- FIFA WC 12 : FEED Colombia vs Portugal 7:30 pm (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 12 : FEED Colombia vs Portugal 7:30 pm [4K]
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949755.ts
+
+# ---- FIFA WC 13 : Congo vs Uzbekistan 7:30 PM (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 13 : Congo vs Uzbekistan 7:30 PM
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949756.ts
+
+# ---- FIFA WC 15 : Congo vs Uzbekistan 7:30 PM EN espanol (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 15 : Congo vs Uzbekistan 7:30 PM EN espanol
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949758.ts
+
+# ---- FIFA WC 16 : FEED Cape Congo vs Uzbekistan 7:30 PM (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 16 : FEED Cape Congo vs Uzbekistan 7:30 PM [4K]
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949759.ts
 
 # ---- Bein Sports Max 1 (3 variants) ----
 #EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 1 [4K]
@@ -58,66 +119,6 @@ http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944485.ts
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944374.ts
 #EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_6.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 6 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944380.ts
-
-# ---- FIFA WC 01: Norway vs France 3:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 01: Norway vs France 3:00 PM
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949744.ts
-
-# ---- FIFA WC 02: Norway vs France 3:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 02: Norway vs France 3:00 PM
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949745.ts
-
-# ---- FIFA WC 03: Norway vs France 3:00 PM EN espanol (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 03: Norway vs France 3:00 PM EN espanol
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949746.ts
-
-# ---- FIFA WC 04: FEED Norway vs France 3:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 04: FEED Norway vs France 3:00 PM [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949747.ts
-
-# ---- FIFA WC 05: Senegal vs Iraq 3:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 05: Senegal vs Iraq 3:00 PM
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949748.ts
-
-# ---- FIFA WC 06: Senegal vs Iraq 3:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 06: Senegal vs Iraq 3:00 PM
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949749.ts
-
-# ---- FIFA WC 07: Senegal vs Iraq 3:00 PM EN espanol (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 07: Senegal vs Iraq 3:00 PM EN espanol
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949750.ts
-
-# ---- FIFA WC 08: FEED Senegal vs Iraq 3:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 08: FEED Senegal vs Iraq 3:00 PM [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949751.ts
-
-# ---- FIFA WC 09: Uruguay vs Spain 8:00 pm (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 09: Uruguay vs Spain 8:00 pm
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949752.ts
-
-# ---- FIFA WC 10 : Uruguay vs Spain 8:00 pm (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 10 : Uruguay vs Spain 8:00 pm
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949753.ts
-
-# ---- FIFA WC 11 : Uruguay vs Spain 8:00 pm EN espanol (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 11 : Uruguay vs Spain 8:00 pm EN espanol
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949754.ts
-
-# ---- FIFA WC 12 : FEED Uruguay vs Spain 8:00 pm (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 12 : FEED Uruguay vs Spain 8:00 pm [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949755.ts
-
-# ---- FIFA WC 13 : Cape Verde vs Saudi Arabia 8:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 13 : Cape Verde vs Saudi Arabia 8:00 PM
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949756.ts
-
-# ---- FIFA WC 14 : Cape Verde vs Saudi Arabia 8:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 14 : Cape Verde vs Saudi Arabia 8:00 PM
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949757.ts
-
-# ---- FIFA WC 15 : Cape Verde vs Saudi Arabia 8:00 PM EN espanol (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 15 : Cape Verde vs Saudi Arabia 8:00 PM EN espanol
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949758.ts
 
 # ---- beIN SPORTS MAX PPV 1 (1 variants) ----
 #EXTINF:-1 tvg-logo="https://img.kooora.com/?i=o%2Fh%2F1%2F654%2Fbein-sports-max-1.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN SPORTS MAX PPV 1
