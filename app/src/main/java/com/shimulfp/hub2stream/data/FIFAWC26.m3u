@@ -1,9 +1,8 @@
 #EXTM3U
 # Validated on 2026-06-27 18:25:45 UTC
-# Working streams: 72 / 78
-# Quality tags are based on REAL resolution (probed with ffprobe)
-# 'group-title' has been removed
-# All times have been stripped from channel names
+# Working streams: 72 / 78
+# TV app: https://cutt.ly/hub2stream
+# https://github.com/mpshimul/hub2stream
 
 # ---- FIFA WC 01 Panama vs England (1 variants) ----
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 01 Panama vs England
