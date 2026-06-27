@@ -1,218 +1,215 @@
 #EXTM3U
-# Validated on 2026-06-27 16:57:44 UTC
-# Working streams: 73 / 78
+# Validated on 2026-06-27 18:25:45 UTC
+# Working streams: 72 / 78
 # Quality tags are based on REAL resolution (probed with ffprobe)
-# Channels are sorted with FIFA WORLD CUP channels at the top.
+# 'group-title' has been removed
+# All times have been stripped from channel names
 
-# ---- FIFA WC 01: Panama vs England 5:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 01: Panama vs England 5:00 PM
+# ---- FIFA WC 01 Panama vs England (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 01 Panama vs England
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949744.ts
 
-# ---- FIFA WC 02: Panama vs England 5:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 02: Panama vs England 5:00 PM
+# ---- FIFA WC 02 Panama vs England (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 02 Panama vs England
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949745.ts
 
-# ---- FIFA WC 03: Panama vs England 5:00 PM EN espanol (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 03: Panama vs England 5:00 PM EN espanol
+# ---- FIFA WC 03 Panama vs England EN espanol (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 03 Panama vs England EN espanol
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949746.ts
 
-# ---- FIFA WC 04: FEED Panama vs England 5:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 04: FEED Panama vs England 5:00 PM [4K]
+# ---- FIFA WC 04 FEED Panama vs England (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 04 FEED Panama vs England [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949747.ts
 
-# ---- FIFA WC 05: Croatia vs Ghana 5:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 05: Croatia vs Ghana 5:00 PM
+# ---- FIFA WC 05 Croatia vs Ghana (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 05 Croatia vs Ghana
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949748.ts
 
-# ---- FIFA WC 06: Croatia vs Ghana 5:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 06: Croatia vs Ghana 5:00 PM
+# ---- FIFA WC 06 Croatia vs Ghana (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 06 Croatia vs Ghana
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949749.ts
 
-# ---- FIFA WC 07: Croatia vs Ghana 5:00 PM EN espanol (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 07: Croatia vs Ghana 5:00 PM EN espanol
+# ---- FIFA WC 07 Croatia vs Ghana EN espanol (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 07 Croatia vs Ghana EN espanol
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949750.ts
 
-# ---- FIFA WC 08: FEED Croatia vs Ghana 5:00 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 08: FEED Croatia vs Ghana 5:00 PM [4K]
+# ---- FIFA WC 08 FEED Croatia vs Ghana (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 08 FEED Croatia vs Ghana [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949751.ts
 
-# ---- FIFA WC 09: Colombia vs Portugal 7:30 pm (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 09: Colombia vs Portugal 7:30 pm
+# ---- FIFA WC 09 Colombia vs Portugal (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 09 Colombia vs Portugal
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949752.ts
 
-# ---- FIFA WC 10 : Colombia vs Portugal 7:30 pm (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 10 : Colombia vs Portugal 7:30 pm
+# ---- FIFA WC 10 Colombia vs Portugal (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 10 Colombia vs Portugal
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949753.ts
 
-# ---- FIFA WC 11 : Colombia vs Portugal 7:30 pm EN espanol (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 11 : Colombia vs Portugal 7:30 pm EN espanol
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949754.ts
-
-# ---- FIFA WC 12 : FEED Colombia vs Portugal 7:30 pm (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 12 : FEED Colombia vs Portugal 7:30 pm [4K]
+# ---- FIFA WC 12 FEED Colombia vs Portugal (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 12 FEED Colombia vs Portugal [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949755.ts
 
-# ---- FIFA WC 13 : Congo vs Uzbekistan 7:30 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 13 : Congo vs Uzbekistan 7:30 PM
+# ---- FIFA WC 13 Congo vs Uzbekistan (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 13 Congo vs Uzbekistan
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949756.ts
 
-# ---- FIFA WC 15 : Congo vs Uzbekistan 7:30 PM EN espanol (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 15 : Congo vs Uzbekistan 7:30 PM EN espanol
+# ---- FIFA WC 14 Congo vs Uzbekistan (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 14 Congo vs Uzbekistan
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949757.ts
+
+# ---- FIFA WC 15 Congo vs Uzbekistan EN espanol (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 15 Congo vs Uzbekistan EN espanol
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949758.ts
 
-# ---- FIFA WC 16 : FEED Cape Congo vs Uzbekistan 7:30 PM (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png" group-title="|US| ✪ FIFA WORLD CUP 2026",FIFA WC 16 : FEED Cape Congo vs Uzbekistan 7:30 PM [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949759.ts
-
 # ---- Bein Sports Max 1 (3 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 1 [4K]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",Bein Sports Max 1 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944357.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 1 [HD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",Bein Sports Max 1 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944369.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 1 [SD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",Bein Sports Max 1 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944375.ts
 
 # ---- Bein Sports Max 2 (3 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 2 [4K]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png",Bein Sports Max 2 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944358.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 2 [HD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png",Bein Sports Max 2 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944370.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 2 [SD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png",Bein Sports Max 2 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944376.ts
 
 # ---- Bein Sports Max 3 (3 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 3 [4K]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-SD.png",Bein Sports Max 3 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944359.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 3 [HD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-SD.png",Bein Sports Max 3 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944371.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 3 [SD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-SD.png",Bein Sports Max 3 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944377.ts
 
 # ---- Bein Sports Max 4 (3 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 4 [4K]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-SD.png",Bein Sports Max 4 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944360.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 4 [HD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-SD.png",Bein Sports Max 4 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944372.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 4 [SD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-SD.png",Bein Sports Max 4 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944378.ts
 
 # ---- Bein Sports Max 5 (5 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 5 [4K]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",Bein Sports Max 5 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1946727.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_5.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 5 [4K]
+#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_5.png",Bein Sports Max 5 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944361.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_5.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 5 [HD]
+#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_5.png",Bein Sports Max 5 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944483.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_5.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 5 [HD]
+#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_5.png",Bein Sports Max 5 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944373.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_5.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 5 [SD]
+#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_5.png",Bein Sports Max 5 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944379.ts
 
 # ---- Bein Sports Max 6 (5 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 6 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1946735.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_6.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 6 [4K]
+#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_6.png",Bein Sports Max 6 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944362.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_6.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 6 [HD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",Bein Sports Max 6 [4K]
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1946735.ts
+#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_6.png",Bein Sports Max 6 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944485.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_6.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 6 [HD]
+#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_6.png",Bein Sports Max 6 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944374.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_6.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",Bein Sports Max 6 [SD]
+#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_6.png",Bein Sports Max 6 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944380.ts
 
 # ---- beIN SPORTS MAX PPV 1 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://img.kooora.com/?i=o%2Fh%2F1%2F654%2Fbein-sports-max-1.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN SPORTS MAX PPV 1
+#EXTINF:-1 tvg-logo="https://img.kooora.com/?i=o%2Fh%2F1%2F654%2Fbein-sports-max-1.png",beIN SPORTS MAX PPV 1
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1953605.ts
 
 # ---- beIN SPORTS MAX PPV 2 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://www.egblog.news/wp-content/uploads/2024/01/value-800x500.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN SPORTS MAX PPV 2
+#EXTINF:-1 tvg-logo="https://www.egblog.news/wp-content/uploads/2024/01/value-800x500.png",beIN SPORTS MAX PPV 2
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1953606.ts
 
 # ---- beIN Sports MAX 1 (6 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-4K.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 1 [4K]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-4K.png",beIN Sports MAX 1 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146126.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 1 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146122.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 1 [HD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png",beIN Sports MAX 1 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/106199.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 1 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146118.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 1 [SD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png",beIN Sports MAX 1 [HD]
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146122.ts
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",beIN Sports MAX 1 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/196473.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 1
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",beIN Sports MAX 1 [SD]
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146118.ts
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png",beIN Sports MAX 1
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1063488.ts
 
 # ---- beIN Sports MAX 2 (6 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-4K.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 2 [4K]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-4K.png",beIN Sports MAX 2 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146127.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 2 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146123.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 2 [HD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png",beIN Sports MAX 2 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/106200.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 2 [SD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png",beIN Sports MAX 2 [HD]
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146123.ts
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png",beIN Sports MAX 2 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146119.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 2 [SD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png",beIN Sports MAX 2 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/196472.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 2
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png",beIN Sports MAX 2
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1063489.ts
 
 # ---- beIN Sports MAX 3 (5 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-4K.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 3 [4K]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-4K.png",beIN Sports MAX 3 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146128.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 3 [HD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-HD.png",beIN Sports MAX 3 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146124.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 3 [HD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-HD.png",beIN Sports MAX 3 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/106201.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 3 [SD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-SD.png",beIN Sports MAX 3 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146120.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 3
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png",beIN Sports MAX 3
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1948328.ts
 
 # ---- beIN Sports MAX 4 (5 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-4K.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 4 [4K]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-4K.png",beIN Sports MAX 4 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146129.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 4 [HD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-HD.png",beIN Sports MAX 4 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146125.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 4 [HD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-HD.png",beIN Sports MAX 4 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146062.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 4 [SD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-SD.png",beIN Sports MAX 4 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146121.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 4
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png",beIN Sports MAX 4
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1948329.ts
 
 # ---- beIN Sports MAX 5 (2 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 5 [HD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png",beIN Sports MAX 5 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1946730.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 5 [SD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",beIN Sports MAX 5 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1946728.ts
 
 # ---- beIN Sports MAX 6 (2 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 6 [HD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png",beIN Sports MAX 6 [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1946734.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports MAX 6 [SD]
+#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",beIN Sports MAX 6 [SD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1946732.ts
 
 # ---- beIN Sports R (1) (1 variants) ----
-#EXTINF:-1 tvg-logo="https://i.ibb.co/5XMr9C7X/HDR-1080.png" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN Sports R (1) [4K]
+#EXTINF:-1 tvg-logo="https://i.ibb.co/5XMr9C7X/HDR-1080.png",beIN Sports R (1) [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1950411.ts
 
 # ---- beIN World FTA (1 variants) ----
-#EXTINF:-1 tvg-logo="https://pbs.twimg.com/media/HJwnLZ2WwAAvb1I.jpg" group-title="|AR| ✪ FIFA WORLD CUP 2026",beIN World FTA [HD]
+#EXTINF:-1 tvg-logo="https://pbs.twimg.com/media/HJwnLZ2WwAAvb1I.jpg",beIN World FTA [HD]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1953317.ts
 
 # ---- |2 | SOLO SPORT 2 (3 variants) ----
-#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500" group-title="|24K| ✪ SOLO SPORT FIFA WORLD CUP 2026",|2 | SOLO SPORT 2 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957340.ts
-#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500" group-title="|24K| ✪ SOLO SPORT FIFA WORLD CUP 2026",|2 | SOLO SPORT 2 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957339.ts
-#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500" group-title="|24K| ✪ SOLO SPORT FIFA WORLD CUP 2026",|2 | SOLO SPORT 2 [4K]
+#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500",|2 | SOLO SPORT 2 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957341.ts
+#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500",|2 | SOLO SPORT 2 [4K]
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957339.ts
+#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500",|2 | SOLO SPORT 2 [4K]
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957340.ts
 
 # ---- |2 | SOLO SPORT 3 (3 variants) ----
-#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500" group-title="|24K| ✪ SOLO SPORT FIFA WORLD CUP 2026",|2 | SOLO SPORT 3 [4K]
+#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500",|2 | SOLO SPORT 3 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957344.ts
-#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500" group-title="|24K| ✪ SOLO SPORT FIFA WORLD CUP 2026",|2 | SOLO SPORT 3 [4K]
+#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500",|2 | SOLO SPORT 3 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957343.ts
-#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500" group-title="|24K| ✪ SOLO SPORT FIFA WORLD CUP 2026",|2 | SOLO SPORT 3 [4K]
+#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500",|2 | SOLO SPORT 3 [4K]
 http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957345.ts
 
