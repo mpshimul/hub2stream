@@ -6,6 +6,10 @@
       "url": "https://raw.githubusercontent.com/mpshimul/hub2stream/refs/heads/main/app/src/main/java/com/shimulfp/hub2stream/data/FIFAWC26.m3u"
     },
     {
+      "name": "AynaOTT",
+      "url": "https://raw.githubusercontent.com/sm-monirulislam/AynaOTT-auto-update-playlist/refs/heads/main/AynaOTT.m3u"
+    },
+    {
       "name": "Toffee",
       "url": "https://raw.githubusercontent.com/sm-monirulislam/SM-Live-TV/refs/heads/main/Toffee.m3u"
     },
