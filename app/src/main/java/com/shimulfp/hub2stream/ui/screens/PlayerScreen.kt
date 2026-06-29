@@ -259,12 +259,14 @@ fun PlayerScreen(
             } else {
                 Rational(9, 16)
             }
-            activity?.setPictureInPictureParams(
-                PictureInPictureParams.Builder()
-                    .setAspectRatio(aspectRatio)
-                    .setAutoEnterEnabled(true)
-                    .build()
-            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                activity?.setPictureInPictureParams(
+                    PictureInPictureParams.Builder()
+                        .setAspectRatio(aspectRatio)
+                        .setAutoEnterEnabled(true)
+                        .build()
+                )
+            }
             Log.d(TAG, "PIP params set (orientation: ${configuration.orientation})")
         }
     }
@@ -296,12 +298,14 @@ fun PlayerScreen(
                         } else {
                             Rational(9, 16)
                         }
-                        activity?.setPictureInPictureParams(
-                            PictureInPictureParams.Builder()
-                                .setAspectRatio(aspectRatio)
-                                .setAutoEnterEnabled(true)
-                                .build()
-                        )
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                            activity?.setPictureInPictureParams(
+                                PictureInPictureParams.Builder()
+                                    .setAspectRatio(aspectRatio)
+                                    .setAutoEnterEnabled(true)
+                                    .build()
+                            )
+                        }
                         Log.d(TAG, "PIP params set on pause for auto-enter")
                     } else {
                         // Pause playback if PIP is not supported or if it's a live stream
@@ -489,11 +493,13 @@ fun PlayerScreen(
     fun clearPipAutoEnter() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             try {
-                activity?.setPictureInPictureParams(
-                    PictureInPictureParams.Builder()
-                        .setAutoEnterEnabled(false)
-                        .build()
-                )
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                    activity?.setPictureInPictureParams(
+                        PictureInPictureParams.Builder()
+                            .setAutoEnterEnabled(false)
+                            .build()
+                    )
+                }
                 Log.d(TAG, "PIP auto-enter disabled")
             } catch (e: Exception) {
                 Log.w(TAG, "Failed to clear PIP params: ${e.message}")
@@ -1318,11 +1324,13 @@ fun PlayerScreen(
             // Clear PIP auto-enter so it doesn't leak to other screens
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 try {
-                    activity?.setPictureInPictureParams(
-                        PictureInPictureParams.Builder()
-                            .setAutoEnterEnabled(false)
-                            .build()
-                    )
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                        activity?.setPictureInPictureParams(
+                            PictureInPictureParams.Builder()
+                                .setAutoEnterEnabled(false)
+                                .build()
+                        )
+                    }
                 } catch (_: Exception) {}
             }
             activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED

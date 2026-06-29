@@ -243,8 +243,8 @@ object LiveTVRepository {
     /**
      * Refresh a single source by ID.
      */
-    suspend fun refreshSource(sourceId: String): SourceChannels {
-        val source = allSources.firstOrNull { it.id == sourceId } ?: return SourceChannels(
+    suspend fun refreshSource(sourceId: String): SourceChannels = withContext(Dispatchers.IO) {
+        val source = allSources.firstOrNull { it.id == sourceId } ?: return@withContext SourceChannels(
             LiveTVSource(sourceId, sourceId), emptyList(), error = "Unknown source"
         )
         val channels = fetchFromSource(sourceId, forceRefresh = true)
@@ -264,7 +264,7 @@ object LiveTVRepository {
         )
         // Update both caches
         updateCacheEntry(sourceId, result)
-        return getCachedResult(sourceId) ?: result
+        getCachedResult(sourceId) ?: result
     }
 
     /**

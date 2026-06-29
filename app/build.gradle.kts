@@ -72,7 +72,7 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.16.0")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.7")
 
     // Continue Watching
     implementation("androidx.datastore:datastore-preferences:1.0.0")

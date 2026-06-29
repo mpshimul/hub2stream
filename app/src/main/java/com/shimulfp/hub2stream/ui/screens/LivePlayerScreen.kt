@@ -1074,7 +1074,8 @@ fun LivePlayerScreen(
             .build()
             .apply {
                 if (mediaItems.isNotEmpty()) {
-                    setMediaItems(mediaItems, startIndex, C.TIME_UNSET)
+                    val safeStartIndex = startIndex.coerceIn(0, mediaItems.size - 1)
+                    setMediaItems(mediaItems, safeStartIndex, C.TIME_UNSET)
                 }
                 repeatMode = Player.REPEAT_MODE_ONE
                 prepare()
@@ -1797,15 +1798,15 @@ fun LivePlayerScreen(
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     androidx.compose.material3.CircularProgressIndicator(
-                        color = Color.Yellow,
-                        modifier = Modifier.size(48.dp),
+                        color = Color.Yellow.copy(alpha = 0.7f),
+                        modifier = Modifier.size(30.dp),
                         strokeWidth = 3.dp
                     )
-                    Text(
+                    /** Text(
                         text = "Buffering...",
                         color = Color.White,
                         fontSize = 14.sp
-                    )
+                    ) **/
                 }
             }
         }
