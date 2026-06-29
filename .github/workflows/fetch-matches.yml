@@ -1,0 +1,40 @@
+name: Fetch FIFA World Cup 2026 Matches
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'      # every 2 hours
+  workflow_dispatch:            # manual trigger from GitHub UI
+
+# 👇 Grant write permissions
+permissions:
+  contents: write
+  
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install axios
+
+      - name: Run fetch script
+        run: node fetch-matches.js
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git add FIFAWorldCup2026API/
+          git diff --staged --quiet || git commit -m "chore: auto-update match data [skip ci]"
+          git push
