@@ -16,7 +16,14 @@ class FifaWorldCupViewModel(application: Application) : AndroidViewModel(applica
         private const val ITEMS_PER_PAGE = 15
     }
 
-    private val repo = UpcomingMatchesRepository()
+    // Repository is now a singleton - shared across all ViewModels
+    private val repo = UpcomingMatchesRepository
+
+    // All matches (for filter counts)
+    private val _allMatches = MutableStateFlow<List<UpcomingMatch>>(emptyList())
+    val allMatches: StateFlow<List<UpcomingMatch>> = _allMatches
+
+    // Displayed items (paginated)
     private val _items = MutableStateFlow<List<UpcomingMatch>>(emptyList())
     val items: StateFlow<List<UpcomingMatch>> = _items
 
@@ -38,25 +45,74 @@ class FifaWorldCupViewModel(application: Application) : AndroidViewModel(applica
 
     fun loadMatches(leagueId: String = "4186762757372631736") {
         viewModelScope.launch {
+            // Don't show loading if we already have data
+            val alreadyHasData = _allMatches.value.isNotEmpty()
+            if (alreadyHasData) {
+                Log.d(TAG, "loadMatches - Already have ${_allMatches.value.size} matches, using cached state")
+                _isLoading.value = false
+                return@launch
+            }
+
             _isLoading.value = true
             _error.value = null
             currentPage = 1
             currentLeagueId = leagueId
             _hasMore.value = true
-            Log.d(TAG, "loadMatches - leagueId=$leagueId, page=1")
+            Log.d(TAG, "loadMatches - leagueId=$leagueId, page=1 (using shared cache)")
             try {
-                // Clear cache to ensure fresh data
-                repo.clearCache()
-                val result = repo.getUpcomingMatchesPaginated(leagueId, page = 1, pageSize = ITEMS_PER_PAGE)
+                // Use cached data by default - share cache with HomeViewModel
+                val cacheAge = repo.getCacheAge()
+                val cacheAgeText = if (cacheAge == 0L) "not initialized" else "${cacheAge / 1000}s"
+                Log.d(TAG, "Current cache age: $cacheAgeText")
+
+                // Load ALL matches first for filter counts
+                val allMatchesList = repo.getUpcomingMatches(leagueId, forceRefresh = false)
+                _allMatches.value = allMatchesList
+                Log.d(TAG, "Loaded ${allMatchesList.size} total matches for filter counts")
+
+                // Then load paginated items for display
+                val result = repo.getUpcomingMatchesPaginated(leagueId, page = 1, pageSize = ITEMS_PER_PAGE, forceRefresh = false)
                 _items.value = result.items
                 _hasMore.value = result.hasMore
-                Log.d(TAG, "Loaded ${result.items.size} items, hasMore=${result.hasMore}")
+                Log.d(TAG, "Loaded ${result.items.size} display items, hasMore=${result.hasMore}")
                 if (result.items.isEmpty()) {
                     _error.value = "No upcoming FIFA World Cup matches found."
                 }
             } catch (e: Exception) {
                 _error.value = e.message
                 Log.e(TAG, "Error loading FIFA World Cup matches", e)
+            } finally {
+                _isLoading.value = false
+            }
+        }
+    }
+
+    /**
+     * Force refresh data from API (bypassing cache)
+     */
+    fun refreshMatches() {
+        viewModelScope.launch {
+            _isLoading.value = true
+            _error.value = null
+            currentPage = 1
+            Log.d(TAG, "refreshMatches - forcing fresh API call")
+            try {
+                // Load ALL matches first for filter counts
+                val allMatchesList = repo.getUpcomingMatches(currentLeagueId, forceRefresh = true)
+                _allMatches.value = allMatchesList
+                Log.d(TAG, "Loaded ${allMatchesList.size} total matches for filter counts")
+
+                // Then load paginated items for display
+                val result = repo.getUpcomingMatchesPaginated(currentLeagueId, page = 1, pageSize = ITEMS_PER_PAGE, forceRefresh = false)
+                _items.value = result.items
+                _hasMore.value = result.hasMore
+                Log.d(TAG, "Refreshed ${result.items.size} display items, hasMore=${result.hasMore}")
+                if (result.items.isEmpty()) {
+                    _error.value = "No upcoming FIFA World Cup matches found."
+                }
+            } catch (e: Exception) {
+                _error.value = e.message
+                Log.e(TAG, "Error refreshing FIFA World Cup matches", e)
             } finally {
                 _isLoading.value = false
             }
@@ -73,7 +129,7 @@ class FifaWorldCupViewModel(application: Application) : AndroidViewModel(applica
 
                 try {
                     Log.d(TAG, "Fetching page $currentPage for league: $currentLeagueId")
-                    val result = repo.getUpcomingMatchesPaginated(currentLeagueId, page = currentPage, pageSize = ITEMS_PER_PAGE)
+                    val result = repo.getUpcomingMatchesPaginated(currentLeagueId, page = currentPage, pageSize = ITEMS_PER_PAGE, forceRefresh = false)
                     Log.d(TAG, "Got ${result.items.size} items from page $currentPage, hasMore=${result.hasMore}")
 
                     if (result.items.isEmpty()) {

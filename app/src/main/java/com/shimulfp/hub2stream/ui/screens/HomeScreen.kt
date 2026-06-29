@@ -1,6 +1,7 @@
 package com.shimulfp.hub2stream.ui.screens
 
 import android.content.res.Configuration
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -29,7 +30,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Card
@@ -48,6 +51,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -55,6 +59,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.animation.core.*
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
@@ -75,8 +81,10 @@ import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+
 import com.shimulfp.hub2stream.extractor.models.LiveChannel
 import com.shimulfp.hub2stream.extractor.models.MediaItemPreview
+import com.shimulfp.hub2stream.extractor.models.MatchStatus
 import com.shimulfp.hub2stream.extractor.models.SportsEvent
 import com.shimulfp.hub2stream.extractor.models.UpcomingMatch
 import com.shimulfp.hub2stream.models.ContinueWatchingItem
@@ -85,6 +93,7 @@ import com.shimulfp.hub2stream.ui.components.CategoryRow
 import com.shimulfp.hub2stream.ui.components.ContinueWatchingCard
 import com.shimulfp.hub2stream.ui.components.MoviePoster
 import com.shimulfp.hub2stream.ui.navigation.Screen
+import com.shimulfp.hub2stream.ui.theme.DarkPrimaryContainer
 import com.shimulfp.hub2stream.ui.theme.FocusAccent
 import com.shimulfp.hub2stream.utils.CategoryCache
 import com.shimulfp.hub2stream.utils.isTv
@@ -92,11 +101,6 @@ import com.shimulfp.hub2stream.viewmodels.HomeViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.net.URLEncoder
-
-enum class CardOrientation {
-    Portrait,
-    Landscape
-}
 
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -109,12 +113,29 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = viewMode
     // Set the overall visual style here (Landscape fits sports beautifully)
     val sportsCardOrientation = CardOrientation.Landscape
 
+    // Timer trigger for real-time updates - updates every second
+    var timerTrigger by remember { mutableStateOf(0) }
+    LaunchedEffect(Unit) {
+        while (true) {
+            kotlinx.coroutines.delay(1000L)
+            timerTrigger++
+        }
+    }
+
     val searchButtonFocusRequester = remember { FocusRequester() }
     val liveSportsMoreFocusRequester = remember { FocusRequester() }
     val clearButtonFocusRequester = remember { FocusRequester() }
     var isSearchButtonFocused by remember { mutableStateOf(false) }
     var isLiveSportsMoreFocused by remember { mutableStateOf(false) }
     var isClearButtonFocused by remember { mutableStateOf(false) }
+
+    // Auto-refresh sports data every 2 minutes
+    LaunchedEffect(Unit) {
+        while (true) {
+            kotlinx.coroutines.delay(120000) // 2 minutes
+            viewModel.refreshSportsData()
+        }
+    }
 
     Scaffold(
         topBar = {
@@ -168,26 +189,49 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = viewMode
                             horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Text("Live Sports", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-                            TextButton(
-                                onClick = { navController.navigate(Screen.LiveSports.route) },
-                                modifier = Modifier
-                                    .focusRequester(liveSportsMoreFocusRequester)
-                                    .onFocusChanged { focusState -> isLiveSportsMoreFocused = focusState.isFocused }
-                                    .then(
-                                        if (isLiveSportsMoreFocused) {
-                                            Modifier.border(
-                                                width = 2.dp,
-                                                color = FocusAccent,
-                                                shape = RoundedCornerShape(8.dp)
-                                            )
-                                        } else {
-                                            Modifier
-                                        }
-                                    )
+                            Column {
+                                Text("Sports", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+                                Text(
+                                    "Live & Upcoming",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                            Row(
+                                horizontalArrangement = Arrangement.spacedBy(4.dp),
+                                verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Text("More", color = if (isLiveSportsMoreFocused) FocusAccent else MaterialTheme.colorScheme.primary)
-                                Icon(Icons.AutoMirrored.Filled.ArrowForward, null, Modifier.size(16.dp), tint = if (isLiveSportsMoreFocused) FocusAccent else MaterialTheme.colorScheme.primary)
+                                IconButton(
+                                    onClick = { viewModel.refreshSportsData() },
+                                    enabled = !uiState.isLoadingSports
+                                ) {
+                                    Icon(
+                                        Icons.Filled.Refresh,
+                                        contentDescription = "Refresh sports",
+                                        modifier = if (uiState.isLoadingSports) Modifier.size(16.dp) else Modifier.size(20.dp),
+                                        tint = if (uiState.isLoadingSports) MaterialTheme.colorScheme.onSurfaceVariant else MaterialTheme.colorScheme.primary
+                                    )
+                                }
+                                TextButton(
+                                    onClick = { navController.navigate(Screen.LiveSports.route) },
+                                    modifier = Modifier
+                                        .focusRequester(liveSportsMoreFocusRequester)
+                                        .onFocusChanged { focusState -> isLiveSportsMoreFocused = focusState.isFocused }
+                                        .then(
+                                            if (isLiveSportsMoreFocused) {
+                                                Modifier.border(
+                                                    width = 2.dp,
+                                                    color = FocusAccent,
+                                                    shape = RoundedCornerShape(8.dp)
+                                                )
+                                            } else {
+                                                Modifier
+                                            }
+                                        )
+                                ) {
+                                    Text("More", color = if (isLiveSportsMoreFocused) FocusAccent else MaterialTheme.colorScheme.primary)
+                                    Icon(Icons.AutoMirrored.Filled.ArrowForward, null, Modifier.size(16.dp), tint = if (isLiveSportsMoreFocused) FocusAccent else MaterialTheme.colorScheme.primary)
+                                }
                             }
                         }
 
@@ -258,7 +302,8 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = viewMode
                                 UpcomingMatchCard(
                                     match = match,
                                     orientation = sportsCardOrientation,
-                                    onClick = { }
+                                    timerTrigger = timerTrigger,  // Pass timer for real-time updates
+                                    onClick = { playUpcomingMatch(navController, match, uiState.upcomingMatches) }
                                 )
                             }
                         }
@@ -280,7 +325,7 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = viewMode
                             ChannelCard(
                                 channel = channel,
                                 onClick = { playChannelWithPlaylist(navController, uiState.liveChannels, channel) },
-                                modifier = Modifier.width(120.dp).height(120.dp),
+                                modifier = Modifier.width(90.dp).height(90.dp),
                                 requestFocus = requestFocus
                             )
                         },
@@ -508,6 +553,7 @@ fun SportsEventCardForCarousel(
 
     var isFocused by remember { mutableStateOf(false) }
     val focusRequester = remember { FocusRequester() }
+    val isPlayable = event.streamUrl.isNotBlank()
 
     // Adaptive Size logic handling TV and both Phone positions
     // Unified Adaptive Size logic handling TV, Phone Landscape, and Phone Portrait explicitly
@@ -549,9 +595,10 @@ fun SportsEventCardForCarousel(
                 else Modifier
             )
             .clickable(
+                enabled = isPlayable,
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null
-            ) { onClick() },
+            ) { if (isPlayable) onClick() },
         shape = RoundedCornerShape(12.dp),
         elevation = CardDefaults.cardElevation(if (isFocused) 16.dp else 4.dp)
     ) {
@@ -568,6 +615,115 @@ fun SportsEventCardForCarousel(
                 modifier = Modifier.fillMaxSize(), // Spans across the entire card area
                 contentScale = ContentScale.Crop   // Crops the image to match perfectly
             )
+
+            // STATUS BADGE - Shows Live or Upcoming status
+            if (event.status.isNotBlank()) {
+                val isLive = event.status.equals("Live", ignoreCase = true)
+                val isUpcoming = event.status.equals("Upcoming", ignoreCase = true)
+
+                if (isLive || isUpcoming) {
+                    // Pulsing animation for Live badge
+                    val infiniteTransition = rememberInfiniteTransition(label = "pulse")
+                    val alpha by infiniteTransition.animateFloat(
+                        initialValue = 1f,
+                        targetValue = 0.7f,
+                        animationSpec = infiniteRepeatable(
+                            animation = tween(1000, easing = FastOutSlowInEasing),
+                            repeatMode = RepeatMode.Reverse
+                        ),
+                        label = "pulse"
+                    )
+
+                    Surface(
+                        modifier = Modifier
+                            .align(Alignment.TopStart)
+                            .padding(start = 8.dp, top = 8.dp)
+                            .then(if (isLive) Modifier.alpha(alpha) else Modifier),
+                        shape = RoundedCornerShape(8.dp),
+                        color = if (isLive) Color(0xFFE53935) else Color(0xFF2196F3)
+                    ) {
+                        Text(
+                            if (isLive) "LIVE" else "UPCOMING",
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.White,
+                            letterSpacing = 1.sp,
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                        )
+                    }
+                }
+            }
+
+            // COUNTDOWN TIMER FOR UPCOMING MATCHES
+            if (event.status.equals("Upcoming", ignoreCase = true) && event.startTime.isNotBlank()) {
+                val startTimeMs = try {
+                    // Try multiple date formats
+                    val formats = listOf(
+                        "yyyy-MM-dd'T'HH:mm:ss",
+                        "yyyy-MM-dd'T'HH:mm:ssZ",
+                        "yyyy-MM-dd'T'HH:mm:ss.SSS",
+                        "yyyy-MM-dd HH:mm:ss",
+                        "yyyy-MM-dd"
+                    )
+
+                    var timestamp = 0L
+                    for (format in formats) {
+                        try {
+                            val sdf = java.text.SimpleDateFormat(format, java.util.Locale.US)
+                            sdf.timeZone = java.util.TimeZone.getTimeZone("UTC")
+                            timestamp = sdf.parse(event.startTime)?.time ?: 0L
+                            if (timestamp > 0) break
+                        } catch (e: Exception) {
+                            // Try next format
+                        }
+                    }
+                    timestamp
+                } catch (e: Exception) {
+                    0L
+                }
+
+                if (startTimeMs > 0) {
+                    var currentTime by remember { mutableStateOf(System.currentTimeMillis()) }
+
+                    LaunchedEffect(Unit) {
+                        while (true) {
+                            kotlinx.coroutines.delay(1000L)
+                            currentTime = System.currentTimeMillis()
+                        }
+                    }
+
+                    val timeRemainingMs = startTimeMs - currentTime
+
+                    if (timeRemainingMs > 0) {
+                        val days = timeRemainingMs / (1000 * 60 * 60 * 24)
+                        val hours = (timeRemainingMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                        val minutes = (timeRemainingMs % (1000 * 60 * 60)) / (1000 * 60)
+                        val seconds = (timeRemainingMs % (1000 * 60)) / 1000
+
+                        val countdownText = when {
+                            days > 0 -> "${days}d ${hours}h"
+                            hours > 0 -> "${hours}h ${minutes}m"
+                            else -> "${minutes}m ${seconds}s"
+                        }
+
+                        Surface(
+                            modifier = Modifier
+                                .align(Alignment.TopEnd)
+                                .padding(end = 8.dp, top = 8.dp),
+                            shape = RoundedCornerShape(8.dp),
+                            color = Color(0xFFE8C200)
+                        ) {
+                            Text(
+                                countdownText,
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = Color.Black,
+                                modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                            )
+                        }
+                    }
+                }
+            }
 
             // Dynamic background scrim matching content layouts
             val overlayFraction = if (orientation == CardOrientation.Landscape) {
@@ -637,12 +793,21 @@ fun SportsEventCardForCarousel(
                         .background(Color.Black.copy(alpha = 0.4f)),
                     contentAlignment = Alignment.Center
                 ) {
-                    Icon(
-                        Icons.Filled.PlayArrow,
-                        "Play",
-                        tint = Color.White,
-                        modifier = Modifier.size(if (orientation == CardOrientation.Landscape) 42.dp else 56.dp)
-                    )
+                    if (isPlayable) {
+                        Icon(
+                            Icons.Filled.PlayArrow,
+                            "Play",
+                            tint = Color.White,
+                            modifier = Modifier.size(if (orientation == CardOrientation.Landscape) 42.dp else 56.dp)
+                        )
+                    } else {
+                        Icon(
+                            Icons.Filled.Lock,
+                            "Not available yet",
+                            tint = Color.White.copy(alpha = 0.7f),
+                            modifier = Modifier.size(if (orientation == CardOrientation.Landscape) 42.dp else 56.dp)
+                        )
+                    }
                 }
             }
         }
@@ -650,15 +815,116 @@ fun SportsEventCardForCarousel(
 }
 
 private fun playChannelWithPlaylist(navController: NavController, allChannels: List<LiveChannel>, selected: LiveChannel) {
-    val playlist = allChannels.map { mapOf("url" to it.streamUrl, "title" to it.name, "logo" to it.logo) }
+    val playlist = allChannels.map { mapOf("url" to it.streamUrl, "title" to it.name, "logo" to it.logo, "sourceId" to it.sourceId) }
     val json = jacksonObjectMapper().writeValueAsString(playlist)
     navController.navigate(Screen.LivePlayer.pass(url = selected.streamUrl, title = selected.name, channelsJson = URLEncoder.encode(json, "UTF-8"), startIndex = allChannels.indexOf(selected)))
 }
 
 private fun playSportsEventWithPlaylist(navController: NavController, allEvents: List<SportsEvent>, selected: SportsEvent) {
-    val playlist = allEvents.map { mapOf("url" to it.streamUrl, "title" to it.name) }
-    val json = jacksonObjectMapper().writeValueAsString(playlist)
-    navController.navigate(Screen.LivePlayer.pass(url = selected.streamUrl, title = selected.name, channelsJson = URLEncoder.encode(json, "UTF-8"), startIndex = allEvents.indexOf(selected)))
+    if (selected.streamUrl.isBlank()) {
+        // Selected event doesn't have a stream URL (likely upcoming)
+        return
+    }
+
+    // Use the match-specific channels if available, otherwise fall back to single channel
+    val channels = if (selected.channels.isNotEmpty()) {
+        // Use match's channel list from M3U
+        selected.channels.map { channel ->
+            mapOf(
+                "url" to channel.url,
+                "title" to channel.name,
+                "id" to channel.id,
+                "logo" to channel.logo,
+                "cookies" to channel.cookies  // Include cookies for authenticated streams
+            )
+        }
+    } else {
+        // Fallback: single channel
+        listOf(mapOf("url" to selected.streamUrl, "title" to selected.name, "id" to selected.id, "logo" to selected.logo, "cookies" to selected.cookies))
+    }
+
+    // Find the index (default to first channel)
+    val startIndex = 0
+
+    val json = jacksonObjectMapper().writeValueAsString(channels)
+    navController.navigate(Screen.LivePlayer.pass(url = selected.streamUrl, title = selected.name, channelsJson = URLEncoder.encode(json, "UTF-8"), startIndex = startIndex))
+}
+
+/**
+ * Play an upcoming match with match-specific channels from M3U
+ */
+private fun playUpcomingMatch(
+    navController: NavController,
+    selected: UpcomingMatch,
+    allMatches: List<UpcomingMatch>
+) {
+    if (selected.streamUrl.isBlank()) {
+        Log.w("HomeScreen", "Selected match has no stream URL: ${selected.name}")
+        return
+    }
+
+    // Get validated channels from validation service (these are the working M3U links)
+    val validatedChannels = com.shimulfp.hub2stream.data.FIFAChannelValidationService.getChannelsForMatch(selected.id)
+    Log.d("HomeScreen", "Validated channels count: ${validatedChannels.size}")
+
+    // Merge API channel (from match channels) with validated channels
+    // API channel: "Live Stream" from Aoneroom (only in live matches)
+    // Validated channels: M3U from validation service
+    val channelsToUse = if (selected.status == "LIVE") {
+        // For live matches, check if match has API "Live Stream" channel
+        val apiChannel = selected.channels.find { it.name == "Live Stream" }
+        if (apiChannel != null) {
+            Log.d("HomeScreen", "Merging: API channel (${apiChannel.url}) + ${validatedChannels.size} validated channels")
+            // Add API channel at the beginning, then validated channels
+            listOf(apiChannel) + validatedChannels
+        } else {
+            Log.d("HomeScreen", "Live match has no API channel, using validated channels only")
+            validatedChannels
+        }
+    } else if (validatedChannels.isNotEmpty()) {
+        Log.d("HomeScreen", "Non-live match, using validated channels only")
+        validatedChannels
+    } else if (selected.channels.isNotEmpty()) {
+        Log.d("HomeScreen", "Using original match channels (no validated channels available)")
+        selected.channels
+    } else {
+        Log.d("HomeScreen", "Using fallback stream URL")
+        emptyList()
+    }
+
+    Log.d("HomeScreen", "Final channels to use: ${channelsToUse.size}")
+
+    // Create playlist from channels
+    val channels = if (channelsToUse.isNotEmpty()) {
+        channelsToUse.map { channel ->
+            mapOf(
+                "url" to channel.url,
+                "title" to channel.name,
+                "id" to channel.id,
+                "logo" to channel.logo,
+                "cookies" to channel.cookies  // Include cookies for authenticated streams
+            )
+        }
+    } else {
+        // Fallback: single channel from streamUrl
+        listOf(mapOf("url" to selected.streamUrl, "title" to selected.name, "id" to selected.id, "logo" to selected.logo, "cookies" to ""))
+    }
+
+    val mapper = jacksonObjectMapper()
+    val channelsJson = mapper.writeValueAsString(channels)
+    val encoded = URLEncoder.encode(channelsJson, "UTF-8")
+
+    // Default to first channel
+    val startIndex = 0
+
+    navController.navigate(
+        Screen.LivePlayer.pass(
+            url = channels.first()["url"]!!,
+            title = selected.name,
+            channelsJson = encoded,
+            startIndex = startIndex
+        )
+    )
 }
 
 @OptIn(ExperimentalComposeUiApi::class)
@@ -667,7 +933,8 @@ fun UpcomingMatchCard(
     match: UpcomingMatch,
     orientation: CardOrientation,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    timerTrigger: Int = 0  // Trigger for real-time timer updates (screen-controlled)
 ) {
     val context = LocalContext.current
     val configuration = LocalConfiguration.current
@@ -677,19 +944,43 @@ fun UpcomingMatchCard(
     var isFocused by remember { mutableStateOf(false) }
     val focusRequester = remember { FocusRequester() }
 
-    // Reduced height for more compact cards
+    // Direct raw CDN link for Coil to fetch the asset safely
+    val centerOverlayImageUrl = "https://raw.githubusercontent.com/mpshimul/hub2stream/main/WC26_Logo.webp"
+
+    // Performance optimization for gradients
+    val team1Gradient = remember {
+        Brush.horizontalGradient(
+            colors = listOf(Color.Black.copy(alpha = 0.6f), Color.Transparent)
+        )
+    }
+    val team2Gradient = remember {
+        Brush.horizontalGradient(
+            colors = listOf(Color.Transparent, Color.Black.copy(alpha = 0.6f))
+        )
+    }
+    val verticalBackgroundGradient = remember {
+        Brush.verticalGradient(
+            colors = listOf(
+                Color.Black.copy(alpha = 0.8f),
+                Color.Black.copy(alpha = 0.4f),
+                Color.Black.copy(alpha = 0.8f)
+            )
+        )
+    }
+
+    // Dynamic width / height measurements
     val sizeModifier = if (isTv || isLandscape) {
         val screenWidthDp = configuration.screenWidthDp.dp
         val totalHorizontalPadding = 24.dp
         val horizontalSpacingGaps = 24.dp
         val calculatedWidth = (screenWidthDp - totalHorizontalPadding - horizontalSpacingGaps) / 2
-        val calculatedHeight = calculatedWidth * 5 / 15  // Slightly taller than 16:9 to fit content
+        val calculatedHeight = calculatedWidth * 5 / 15
         Modifier.width(calculatedWidth).height(calculatedHeight)
     } else {
         val screenWidthDp = configuration.screenWidthDp.dp
         val totalHorizontalPadding = 32.dp
         val calculatedWidth = screenWidthDp - totalHorizontalPadding
-        Modifier.width(calculatedWidth).height(150.dp)  // Reduced from 260.dp to 180.dp
+        Modifier.width(calculatedWidth).height(150.dp)
     }
 
     Card(
@@ -704,6 +995,11 @@ fun UpcomingMatchCard(
                     .border(3.dp, FocusAccent, RoundedCornerShape(12.dp))
                 else Modifier
             )
+            .border(
+                width = 3.dp,
+                color = DarkPrimaryContainer,
+                shape = RoundedCornerShape(12.dp)
+            )
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null
@@ -712,7 +1008,8 @@ fun UpcomingMatchCard(
         elevation = CardDefaults.cardElevation(if (isFocused) 16.dp else 4.dp)
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
-            // Split background with both team flags
+
+            // LAYER 1: Split background with both team flags
             Box(
                 modifier = Modifier
                     .fillMaxSize()
@@ -720,12 +1017,12 @@ fun UpcomingMatchCard(
             ) {
                 Row(modifier = Modifier.fillMaxSize()) {
                     // Team 1 flag background (left half)
-                    if (match.team1Logo.isNotBlank()) {
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .fillMaxHeight()
-                        ) {
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .fillMaxHeight()
+                    ) {
+                        if (match.team1Logo.isNotBlank()) {
                             AsyncImage(
                                 model = ImageRequest.Builder(LocalContext.current)
                                     .data(match.team1Logo)
@@ -735,29 +1032,17 @@ fun UpcomingMatchCard(
                                 modifier = Modifier.fillMaxSize(),
                                 contentScale = ContentScale.Crop
                             )
-                            // Gradient overlay on team1 side (fades toward center)
-                            Box(
-                                modifier = Modifier
-                                    .fillMaxSize()
-                                    .background(
-                                        Brush.horizontalGradient(
-                                            colors = listOf(
-                                                Color.Black.copy(alpha = 0.6f),
-                                                Color.Transparent
-                                            )
-                                        )
-                                    )
-                            )
                         }
+                        Box(modifier = Modifier.fillMaxSize().background(team1Gradient))
                     }
 
                     // Team 2 flag background (right half)
-                    if (match.team2Logo.isNotBlank()) {
-                        Box(
-                            modifier = Modifier
-                                .weight(1f)
-                                .fillMaxHeight()
-                        ) {
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .fillMaxHeight()
+                    ) {
+                        if (match.team2Logo.isNotBlank()) {
                             AsyncImage(
                                 model = ImageRequest.Builder(LocalContext.current)
                                     .data(match.team2Logo)
@@ -767,49 +1052,52 @@ fun UpcomingMatchCard(
                                 modifier = Modifier.fillMaxSize(),
                                 contentScale = ContentScale.Crop
                             )
-                            // Gradient overlay on team2 side (fades from center)
-                            Box(
-                                modifier = Modifier
-                                    .fillMaxSize()
-                                    .background(
-                                        Brush.horizontalGradient(
-                                            colors = listOf(
-                                                Color.Transparent,
-                                                Color.Black.copy(alpha = 0.6f)
-                                            )
-                                        )
-                                    )
-                            )
                         }
+                        Box(modifier = Modifier.fillMaxSize().background(team2Gradient))
                     }
                 }
 
-                // Vertical gradient overlay for better text readability
+                // Vertical gradient overlay for text readability
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
-                        .background(
-                            Brush.verticalGradient(
-                                colors = listOf(
-                                    Color.Black.copy(alpha = 0.6f),
-                                    Color.Black.copy(alpha = 0.3f),
-                                    Color.Black.copy(alpha = 0.7f)
-                                )
-                            )
-                        )
+                        .background(verticalBackgroundGradient)
                 )
             }
 
-            // "Upcoming" badge on left side
+            // LAYER 2: Tournament Custom Logo Overlay centered above backgrounds
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(centerOverlayImageUrl)
+                    .crossfade(true)
+                    .build(),
+                contentDescription = "Tournament Watermark",
+                contentScale = ContentScale.Fit,
+                alpha = 0.7f, // Made translucent to subtle up the center visual behind text fields
+                modifier = Modifier
+                    .fillMaxHeight(1f) // Automatically scales naturally relative to your card sizing
+                    .align(Alignment.Center)
+
+            )
+
+            // LAYER 3: Status badge on top-left edge (based on real-time status)
+            val realTimeStatus = match.getRealTimeStatus()
+            val (badgeText, badgeColor) = when (realTimeStatus) {
+                MatchStatus.LIVE -> "LIVE" to Color.Red
+                MatchStatus.SOON -> "SOON" to Color(0xFFFF6B00)
+                MatchStatus.TODAY -> "TODAY" to Color(0xFF2196F3)
+                MatchStatus.UPCOMING -> "UPCOMING" to Color(0xFFE8C200)
+                MatchStatus.ENDED -> "ENDED" to Color.Gray
+            }
             Surface(
                 modifier = Modifier
                     .align(Alignment.TopStart)
                     .padding(start = 8.dp, top = 8.dp),
                 shape = RoundedCornerShape(8.dp),
-                color = Color(0xFFE8C200)
+                color = badgeColor
             ) {
                 Text(
-                    "UPCOMING",
+                    badgeText,
                     fontSize = 9.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.Black,
@@ -818,7 +1106,7 @@ fun UpcomingMatchCard(
                 )
             }
 
-            // Content layout
+            // LAYER 4: Foreground content elements
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -830,7 +1118,7 @@ fun UpcomingMatchCard(
                 // Date pill
                 Surface(
                     shape = RoundedCornerShape(20.dp),
-                    color = Color.Green.copy(alpha = 0.20f)
+                    color = Color.Green.copy(alpha = 0.30f)
                 ) {
                     Text(
                         match.date.uppercase(),
@@ -851,44 +1139,63 @@ fun UpcomingMatchCard(
 
                 Spacer(modifier = Modifier.height(6.dp))
 
-                // Time with time remaining in parentheses
+                // Time with real-time countdown
                 Text(
-                    "${match.time} (${match.timeRemaining})",
+                    "${match.time} (${match.getFormattedTimeInfo()})",
                     fontSize = if (isTv) 16.sp else 13.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.White,
                     style = androidx.compose.ui.text.TextStyle(
                         shadow = androidx.compose.ui.graphics.Shadow(
                             color = Color.Black,
-                            blurRadius = 6f,
-                            offset = androidx.compose.ui.geometry.Offset(0f, 2f)
+                            blurRadius = 10f,
+                            offset = androidx.compose.ui.geometry.Offset(0f, 5f)
                         )
                     )
                 )
 
                 Spacer(modifier = Modifier.height(2.dp))
 
-                // Team row: [Team1 Logo] Team1 Name VS Team2 Name [Team2 Logo]
+                // Show score for ENDED matches above team names
+                if (realTimeStatus == MatchStatus.ENDED && match.team1Score.isNotBlank() && match.team2Score.isNotBlank()) {
+                    Text(
+                        "${match.team1Score} - ${match.team2Score}",
+                        fontSize = if (isTv) 36.sp else 30.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.White,
+                        letterSpacing = 2.sp,
+                        style = androidx.compose.ui.text.TextStyle(
+                            shadow = androidx.compose.ui.graphics.Shadow(
+                                color = Color.Black,
+                                blurRadius = 12f,
+                                offset = androidx.compose.ui.geometry.Offset(0f, 3f)
+                            )
+                        )
+                    )
+                    Spacer(modifier = Modifier.height(4.dp))
+                }
+
+                // Team details row
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    // Team 1
-
+                    // Team 1 configuration
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.End,
                         modifier = Modifier.weight(1f)
                     ) {
-                        // Team 1 name
                         Text(
-                            match.team1,
+                            text = match.team1,
                             fontSize = if (isTv) 20.sp else 17.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.White,
                             maxLines = 2,
                             overflow = TextOverflow.Ellipsis,
+                            textAlign = TextAlign.End, // Ensures long text still aligns nicely against the right side
+                            modifier = Modifier.weight(1f), // <--- FIX: Forces text to occupy remaining space & wrap properly
                             style = androidx.compose.ui.text.TextStyle(
                                 shadow = androidx.compose.ui.graphics.Shadow(
                                     color = Color.Black,
@@ -897,9 +1204,10 @@ fun UpcomingMatchCard(
                                 )
                             )
                         )
+
                         Spacer(modifier = Modifier.width(8.dp))
-                        // Team 1 logo (circular and bigger)
-                        if (match.team2Logo.isNotBlank()) {
+
+                        if (match.team1Logo.isNotBlank()) {
                             AsyncImage(
                                 model = ImageRequest.Builder(LocalContext.current)
                                     .data(match.team1Logo)
@@ -907,11 +1215,11 @@ fun UpcomingMatchCard(
                                     .build(),
                                 contentDescription = match.team1,
                                 modifier = Modifier
-                                    .size(50.dp)
+                                    .size(50.dp) // Now safely guaranteed to stay at 50.dp
                                     .border(
                                         width = 2.dp,
-                                        color = FocusAccent, // Uses your existing gold FocusAccent theme color
-                                        shape = RoundedCornerShape(25.dp) // Perfect circle (size / 2)
+                                        color = FocusAccent,
+                                        shape = RoundedCornerShape(25.dp)
                                     )
                                     .padding(2.dp)
                                     .clip(RoundedCornerShape(25.dp)),
@@ -936,13 +1244,12 @@ fun UpcomingMatchCard(
                         )
                     )
 
-                    // Team 2
+                    // Team 2 configuration
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Start,
                         modifier = Modifier.weight(1f)
                     ) {
-                        // Team 2 logo (circular and bigger)
                         if (match.team2Logo.isNotBlank()) {
                             AsyncImage(
                                 model = ImageRequest.Builder(LocalContext.current)
@@ -951,11 +1258,11 @@ fun UpcomingMatchCard(
                                     .build(),
                                 contentDescription = match.team2,
                                 modifier = Modifier
-                                    .size(50.dp)
+                                    .size(50.dp) // Safe from shrinking
                                     .border(
                                         width = 2.dp,
-                                        color = FocusAccent, // Uses your existing gold FocusAccent theme color
-                                        shape = RoundedCornerShape(25.dp) // Perfect circle (size / 2)
+                                        color = FocusAccent,
+                                        shape = RoundedCornerShape(25.dp)
                                     )
                                     .padding(2.dp)
                                     .clip(RoundedCornerShape(25.dp)),
@@ -963,14 +1270,16 @@ fun UpcomingMatchCard(
                             )
                             Spacer(modifier = Modifier.width(8.dp))
                         }
-                        // Team 1 name
+
                         Text(
-                            match.team2,
+                            text = match.team2,
                             fontSize = if (isTv) 20.sp else 17.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.White,
                             maxLines = 2,
                             overflow = TextOverflow.Ellipsis,
+                            textAlign = TextAlign.Start, // Aligns beautifully next to the logo on the left
+                            modifier = Modifier.weight(1f), // <--- FIX: Keeps Team 2 name bounded and forces 2-line wrapping
                             style = androidx.compose.ui.text.TextStyle(
                                 shadow = androidx.compose.ui.graphics.Shadow(
                                     color = Color.Black,
@@ -984,7 +1293,7 @@ fun UpcomingMatchCard(
 
                 Spacer(modifier = Modifier.weight(1f))
 
-                // Tournament/round at bottom
+                // Tournament/round label at bottom
                 if (match.tournament.isNotBlank()) {
                     Text(
                         match.tournament,
@@ -1005,7 +1314,7 @@ fun UpcomingMatchCard(
                 }
             }
 
-            // Focus overlay
+            // LAYER 5: Interactive D-Pad Focus overlay mask
             if (isFocused) {
                 Box(
                     modifier = Modifier
@@ -1016,7 +1325,6 @@ fun UpcomingMatchCard(
         }
     }
 }
-
 @Composable
 fun MatchCountdown(
     startTimeMs: Long,
@@ -1073,4 +1381,3 @@ fun MatchCountdown(
         }
     }
 }
-

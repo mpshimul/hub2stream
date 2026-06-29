@@ -16,7 +16,7 @@ class CategoryViewModel(application: Application) : AndroidViewModel(application
         private const val TAG = "CategoryViewModel"
     }
 
-    private val repo = MovieRepository(application)
+    private val repo = MovieRepository()
     private val _items = MutableStateFlow<List<MediaItemPreview>>(emptyList())
     val items: StateFlow<List<MediaItemPreview>> = _items
     private val _isLoading = MutableStateFlow(true)

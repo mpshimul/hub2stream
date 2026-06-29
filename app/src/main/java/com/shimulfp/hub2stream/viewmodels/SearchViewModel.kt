@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class SearchViewModel(application: Application) : AndroidViewModel(application) {
-    private val repo = MovieRepository(application)
+    private val repo = MovieRepository()
     private val _searchResults = MutableStateFlow<List<MediaItemPreview>>(emptyList())
     val searchResults: StateFlow<List<MediaItemPreview>> = _searchResults
     private val _isLoading = MutableStateFlow(false)

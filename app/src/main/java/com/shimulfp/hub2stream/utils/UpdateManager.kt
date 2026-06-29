@@ -22,8 +22,10 @@ import java.util.concurrent.TimeUnit
 data class UpdateInfo(
     val versionCode: Int,
     val versionName: String,
-    val downloadUrl: String,
-    val changelog: String
+    val downloadUrl: String = "",
+    val browserUrl: String = "",
+    val changelog: String = "",
+    val critical: Boolean = false
 )
 
 class UpdateManager(private val context: Context) {
@@ -40,10 +42,18 @@ class UpdateManager(private val context: Context) {
     }
 
     private val client = OkHttpClient.Builder()
-        .connectTimeout(30, TimeUnit.SECONDS)
-        .readTimeout(30, TimeUnit.SECONDS)
+        .connectTimeout(15, TimeUnit.SECONDS)
+        .readTimeout(15, TimeUnit.SECONDS)
         .followRedirects(true)
         .build()
+
+    /** Open a URL in the device browser. */
+    fun openInBrowser(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url)).apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
+        context.startActivity(intent)
+    }
 
     suspend fun checkForUpdate(): UpdateInfo? = withContext(Dispatchers.IO) {
         try {

@@ -13,21 +13,17 @@ android {
         applicationId = "com.shimulfp.hub2stream"
         minSdk = 23
         targetSdk = 34
-        versionCode = 102
-        versionName = "1.0.2"
+        versionCode = 107
+        versionName = "1.0.7"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         debug {
-            applicationIdSuffix = ".debug"   // result: com.shimulfp.hub2stream.debug
+            applicationIdSuffix = ".debug"
         }
         release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            // No minification — faster builds
         }
     }
 
@@ -63,10 +59,16 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.6")
 
     implementation("io.coil-kt:coil-compose:2.5.0")
+    implementation("io.coil-kt:coil-gif:2.5.0")
 
     implementation("androidx.media3:media3-exoplayer:1.4.0")
     implementation("androidx.media3:media3-ui:1.4.0")
     implementation("androidx.media3:media3-exoplayer-hls:1.4.0")
+    implementation("androidx.media3:media3-exoplayer-dash:1.4.0")
+    implementation("androidx.media3:media3-datasource:1.4.0")
+    implementation("androidx.media3:media3-decoder:1.4.0")
+    // NOTE: media3-ext-ffmpeg is NOT on Maven — built from source.
+    // Native .so files in app/src/main/jniLibs/ (libffmpegJNI.so + libc++_shared.so)
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
@@ -76,11 +78,15 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
+    // Extension System (API 23+ compatible)
+    implementation("org.jsoup:jsoup:1.17.2")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation(platform("androidx.compose:compose-bom:2024.02.00"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    androidTestImplementation("androidx.compose.ui:ui-test-v4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }

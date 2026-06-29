@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
+
+<!--?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+
+    <!- Allow specific domains that need cleartext HTTP -->
+    <!--domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">dhakamovie.com</domain>
+        <domain includeSubdomains="true">redforce.live</domain>
+        <domain includeSubdomains="true">198.195.239.50</domain>
+        <domain includeSubdomains="true">aoneroom.com</domain>
+        <domain includeSubdomains="true">27.124.71.27</domain>
+        <domain includeSubdomains="true">27.124.71.30</domain>
+        <domain includeSubdomains="true">gpcdn.net</domain>
+        <domain includeSubdomains="true">ottclub.xyz</domain>
+        <domain includeSubdomains="true">213.183.40.147</domain>
+        <domain includeSubdomains="true">92.119.89.235</domain>
+        <domain includeSubdomains="true">5.182.231.61</domain>
+        <domain includeSubdomains="true">5.182.229.27</domain>
+        <domain includeSubdomains="true">213.183.40.227</domain>
+        <domain includeSubdomains="true">92.119.88.107</domain>
+        <domain includeSubdomains="true">5.188.172.187</domain>
+        <domain includeSubdomains="true">5.182.229.11</domain>
+        <domain includeSubdomains="true">5.182.229.19</domain>
+        <domain includeSubdomains="true">77.72.19.139</domain>
+        <domain includeSubdomains="true">ciao-ott.net</domain>
+        <domain includeSubdomains="true">optikl.ink</domain>
+        <domain includeSubdomains="true">buzz-4k.xyz</domain>
+        <domain includeSubdomains="true">148.224.24.221</domain>
+        <domain includeSubdomains="true">172.17.50.112</domain>
+        <domain includeSubdomains="true">10.10.10.7</domain>
+        <domain includeSubdomains="true">starhub.pro</domain>
+        <domain includeSubdomains="true">bpwe.shop</domain>
+    </domain-config>
+</network-security-config-->

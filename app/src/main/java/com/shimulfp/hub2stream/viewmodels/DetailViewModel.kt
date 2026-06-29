@@ -18,7 +18,7 @@ sealed class DetailUiState {
 }
 
 class DetailViewModel(application: Application) : AndroidViewModel(application) {
-    private val repo = MovieRepository(application)
+    private val repo = MovieRepository()
     private val _uiState = MutableStateFlow<DetailUiState>(DetailUiState.Loading)
     val uiState: StateFlow<DetailUiState> = _uiState
 

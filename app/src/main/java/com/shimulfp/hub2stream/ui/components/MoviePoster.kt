@@ -29,6 +29,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import coil.compose.SubcomposeAsyncImage
 import coil.request.ImageRequest
 import com.shimulfp.hub2stream.extractor.models.MediaItemPreview
 import com.shimulfp.hub2stream.ui.theme.FocusAccent
@@ -63,15 +64,27 @@ fun MoviePoster(
         elevation = CardDefaults.cardElevation(if (isFocused) 16.dp else 4.dp)
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
-            // Poster image
-            AsyncImage(
+            // Poster image with placeholder
+            SubcomposeAsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
                     .data(item.posterUrl)
                     .crossfade(true)
                     .build(),
                 contentDescription = item.title,
                 modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Crop
+                contentScale = ContentScale.Crop,
+                loading = {
+                    MoviePosterPlaceholder(
+                        title = item.title,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                },
+                error = {
+                    MoviePosterPlaceholder(
+                        title = item.title,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                }
             )
 
             // Bottom gradient scrim — fades from transparent to dark
