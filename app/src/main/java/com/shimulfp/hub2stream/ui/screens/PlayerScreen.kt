@@ -32,6 +32,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -45,12 +46,16 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
+import com.shimulfp.hub2stream.MainActivity
 import com.shimulfp.hub2stream.ui.navigation.Screen
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.common.TrackSelectionOverride
 import androidx.media3.common.util.UnstableApi
+import androidx.media3.exoplayer.upstream.DefaultBandwidthMeter
 import androidx.media3.datasource.DefaultHttpDataSource
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.DefaultLoadControl
@@ -102,7 +107,7 @@ fun PlayerScreen(
     val scope = rememberCoroutineScope()
     val application = context.applicationContext as Application
     val continueWatchingRepo = remember { ContinueWatchingRepository(application) }
-    val movieRepo = remember { MovieRepository(application) }
+    val movieRepo = remember { MovieRepository() }
 
     // Check if device is a TV
     val isTv = remember {
@@ -168,6 +173,7 @@ fun PlayerScreen(
     var currentScaleMode by remember { mutableIntStateOf(AspectRatioFrameLayout.RESIZE_MODE_FIT) }
     var currentSpeedIndex by remember { mutableIntStateOf(2) } // Start at 1.0x
     var isInPipMode by remember { mutableStateOf(false) }
+    var isEnteringPip by remember { mutableStateOf(false) }
     val playbackSpeeds = listOf(0.5f, 0.75f, 1.0f, 1.25f, 1.5f, 2.0f)
     val scaleModes = listOf(
         AspectRatioFrameLayout.RESIZE_MODE_FIT to "Fit",
@@ -221,13 +227,19 @@ fun PlayerScreen(
             "User-Agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
         )
     }
+    // Bandwidth meter for ABR — measures real throughput so AdaptiveTrackSelection
+    // can auto-switch quality within HLS/DASH adaptive streams.
+    val bandwidthMeter = remember { DefaultBandwidthMeter.getSingletonInstance(context) }
+
     val dataSourceFactory = remember(headers) {
         DefaultHttpDataSource.Factory()
             .setDefaultRequestProperties(headers)
             .setUserAgent(headers["User-Agent"] ?: "ExoPlayer")
+            .setTransferListener(bandwidthMeter)
     }
     val loadControl = DefaultLoadControl.Builder()
-        .setBufferDurationsMs(15000, 50000, 500, 500).build()
+        .setBufferDurationsMs(15000, 50000, 500, 500)
+        .build()
 
     val exoPlayer = remember {
         val trackSelector = DefaultTrackSelector(context)
@@ -238,6 +250,25 @@ fun PlayerScreen(
             .build()
     }.also { exoPlayerState = it; trackSelectorState = it.trackSelector as DefaultTrackSelector }
 
+    // Set PIP params immediately after player creation and update on orientation changes
+    val configuration = LocalConfiguration.current
+    LaunchedEffect(exoPlayer, supportsPip, configuration.orientation) {
+        if (supportsPip) {
+            val aspectRatio = if (configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                Rational(16, 9)
+            } else {
+                Rational(9, 16)
+            }
+            activity?.setPictureInPictureParams(
+                PictureInPictureParams.Builder()
+                    .setAspectRatio(aspectRatio)
+                    .setAutoEnterEnabled(true)
+                    .build()
+            )
+            Log.d(TAG, "PIP params set (orientation: ${configuration.orientation})")
+        }
+    }
+
     // ========== Lifecycle: Pause playback when app goes to background ==========
     val lifecycleOwner = LocalLifecycleOwner.current
     DisposableEffect(lifecycleOwner) {
@@ -245,25 +276,37 @@ fun PlayerScreen(
             when (event) {
                 Lifecycle.Event.ON_PAUSE -> {
                     Log.d(TAG, "App paused")
+                    // Don't pause if we're entering PIP mode
+                    if (isEnteringPip) {
+                        Log.d(TAG, "App paused - entering PIP, keeping playback")
+                        isEnteringPip = false // Reset the flag
+                        return@LifecycleEventObserver
+                    }
+
+                    // Don't pause if already in PIP mode
+                    if (isInPipMode) {
+                        Log.d(TAG, "App paused - already in PIP, keeping playback")
+                        return@LifecycleEventObserver
+                    }
+
                     // Try to enter PIP mode if supported and playing
                     if (supportsPip && exoPlayer.isPlaying && !isLive) {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                            activity?.setPictureInPictureParams(
-                                PictureInPictureParams.Builder()
-                                    .setAspectRatio(
-                                        if (context.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                                            Rational(16, 9)
-                                        } else {
-                                            Rational(9, 16)
-                                        }
-                                    )
-                                    .setAutoEnterEnabled(true)
-                                    .build()
-                            )
+                        val aspectRatio = if (context.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                            Rational(16, 9)
+                        } else {
+                            Rational(9, 16)
                         }
+                        activity?.setPictureInPictureParams(
+                            PictureInPictureParams.Builder()
+                                .setAspectRatio(aspectRatio)
+                                .setAutoEnterEnabled(true)
+                                .build()
+                        )
+                        Log.d(TAG, "PIP params set on pause for auto-enter")
                     } else {
                         // Pause playback if PIP is not supported or if it's a live stream
                         if (exoPlayer.isPlaying) {
+                            Log.d(TAG, "Pausing playback (PIP not supported or live stream)")
                             exoPlayer.pause()
                             exoPlayer.playWhenReady = false
                         }
@@ -272,7 +315,12 @@ fun PlayerScreen(
                 }
                 Lifecycle.Event.ON_RESUME -> {
                     Log.d(TAG, "App resumed")
-                    isInPipMode = false
+                    // Check if we're exiting PIP
+                    if (isInPipMode) {
+                        Log.d(TAG, "Exiting PIP mode")
+                        isInPipMode = false
+                        isEnteringPip = false
+                    }
                     // Optional: Resume playback when app returns to foreground
                     // Uncomment if you want auto-resume behavior
                     // Log.d(TAG, "App resumed - playback remains paused")
@@ -292,13 +340,10 @@ fun PlayerScreen(
         hideJob?.cancel()
         hideJob = scope.launch {
             delay(5000)
-            // Don't auto-hide if dropdown is open on phone/touch devices
-            if (!isTv && openDropdown != null) {
-                return@launch
-            }
+            // Auto-hide controls, close any open dropdown
+            openDropdown = null
             isControlsVisible = false
             // Reset focus to play/pause when auto-hiding
-            openDropdown = null
             focusRow = 3
             bottomFocusIdx = 0
             topFocusIdx = 0
@@ -373,6 +418,9 @@ fun PlayerScreen(
             try {
                 val act = activity ?: return
 
+                // Set flag to prevent lifecycle from pausing playback
+                isEnteringPip = true
+
                 // Remove fullscreen flags before entering PIP
                 act.window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
                 act.window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
@@ -403,21 +451,73 @@ fun PlayerScreen(
                 } else {
                     Log.w(TAG, "Failed to enter PIP mode - enterPictureInPictureMode returned false")
                     showChannelInfoTemporarily("PIP not available")
+                    isEnteringPip = false
                     // Restore fullscreen if PIP failed
                     act.window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
                 }
             } catch (e: IllegalStateException) {
                 Log.e(TAG, "PIP not supported by activity: ${e.message}")
                 showChannelInfoTemporarily("PIP not available")
+                isEnteringPip = false
                 // Try to restore fullscreen on error
                 activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
             } catch (e: Exception) {
                 Log.e(TAG, "Failed to enter PIP mode: ${e.message}", e)
                 showChannelInfoTemporarily("PIP error")
+                isEnteringPip = false
                 // Try to restore fullscreen on error
                 activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
             }
         }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun exitPictureInPictureMode() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            val act = activity ?: return
+            if (act.isInPictureInPictureMode) {
+                Log.d(TAG, "PIP mode active - moving activity to background")
+                // Move activity to background to keep PIP window active
+                act.moveTaskToBack(true)
+                isInPipMode = false
+                isEnteringPip = false
+            }
+        }
+    }
+
+    /** Clear PIP auto-enter params so other screens don't accidentally trigger PIP. */
+    fun clearPipAutoEnter() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            try {
+                activity?.setPictureInPictureParams(
+                    PictureInPictureParams.Builder()
+                        .setAutoEnterEnabled(false)
+                        .build()
+                )
+                Log.d(TAG, "PIP auto-enter disabled")
+            } catch (e: Exception) {
+                Log.w(TAG, "Failed to clear PIP params: ${e.message}")
+            }
+        }
+    }
+
+    // Navigate back - exits PIP if active before navigating
+    fun navigateBack() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            val act = activity
+            if (act != null && act.isInPictureInPictureMode) {
+                Log.d(TAG, "In PIP mode - moving activity to background")
+                // Move to background instead of navigating - PIP stays active
+                act.moveTaskToBack(true)
+                return
+            }
+        }
+        // Disable PIP auto-enter before leaving this screen
+        clearPipAutoEnter()
+        // Pause playback
+        exoPlayer.pause()
+        exoPlayer.playWhenReady = false
+        navController.popBackStack()
     }
 
     // ========== Build MediaItem ==========
@@ -459,7 +559,12 @@ fun PlayerScreen(
 
         scope.launch {
             Log.d(TAG, "Playing episode $index: ${ep.title}")
-            val linkData = ep.url.removePrefix("moviebox://")
+            // Handle both moviebox:// and aoneroom-movies:// prefixes
+            val linkData = when {
+                ep.url.startsWith("moviebox://") -> ep.url.removePrefix("moviebox://")
+                ep.url.startsWith("aoneroom-movies://") -> ep.url.removePrefix("aoneroom-movies://")
+                else -> ep.url
+            }
             val parts = linkData.split("|")
             subjectId = parts.getOrNull(0) ?: ""
             currentSeason = parts.getOrNull(1)?.toIntOrNull() ?: 0
@@ -637,7 +742,7 @@ fun PlayerScreen(
     fun activateFocusedControl() {
         if (focusRow == 0) {
             when (topBarItems.getOrNull(topFocusIdx)) {
-                "back" -> navController.popBackStack()
+                "back" -> navigateBack()
                 "pip" -> enterPictureInPictureMode()
                 "quality" -> { openDropdown = "quality"; dropdownFocusIdx = 0; focusRow = 1 }
                 "audio" -> { openDropdown = "audio"; dropdownFocusIdx = 0; focusRow = 1 }
@@ -700,7 +805,8 @@ fun PlayerScreen(
                     val p = exoPlayerState; if (p != null && p.isPlaying) p.pause() else p?.play(); return true
                 }
                 AndroidKeyEvent.KEYCODE_BACK, AndroidKeyEvent.KEYCODE_ESCAPE -> {
-                    navController.popBackStack(); return true
+                    Log.d(TAG, "BACK-DEFENSE LAYER1-CONSUMER: navigateBack() from key event channel")
+                    navigateBack(); return true
                 }
             }
             return false
@@ -924,6 +1030,7 @@ fun PlayerScreen(
                 return true
             }
             AndroidKeyEvent.KEYCODE_BACK, AndroidKeyEvent.KEYCODE_ESCAPE -> {
+                Log.d(TAG, "BACK-DEFENSE LAYER1-CONSUMER: navigateBack() from key event channel (controls visible)")
                 if (focusRow == 1 && hasDropdown) {
                     // Close dropdown and return to top bar
                     openDropdown = null
@@ -972,10 +1079,15 @@ fun PlayerScreen(
 
         Log.d(TAG, "=== PlayerScreen LaunchedEffect START ===")
         Log.d(TAG, "url='$url', title='$title', slug='$slug', type='$type', resumePosition=$resumePosition")
-        Log.d(TAG, "url.isBlank=${url.isBlank()}, url.startsWith('moviebox://')=${url.startsWith("moviebox://")}")
-        if (url.startsWith("moviebox://")) {
-            Log.d(TAG, "Starting initial stream load for moviebox:// URL")
-            val linkData = url.removePrefix("moviebox://")
+        Log.d(TAG, "url.isBlank=${url.isBlank()}, url.startsWith('moviebox://')=${url.startsWith("moviebox://")}, url.startsWith('aoneroom-movies://')=${url.startsWith("aoneroom-movies://")}")
+        if (url.startsWith("moviebox://") || url.startsWith("aoneroom-movies://")) {
+            Log.d(TAG, "Starting initial stream load for internal URL (${url.take(15)}...)")
+            // Handle both moviebox:// and aoneroom-movies:// prefixes
+            val linkData = when {
+                url.startsWith("moviebox://") -> url.removePrefix("moviebox://")
+                url.startsWith("aoneroom-movies://") -> url.removePrefix("aoneroom-movies://")
+                else -> url
+            }
             val parts = linkData.split("|")
             subjectId = parts.getOrNull(0) ?: ""
             currentSeason = parts.getOrNull(1)?.toIntOrNull() ?: 0
@@ -1203,6 +1315,16 @@ fun PlayerScreen(
             View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
         )
         onDispose {
+            // Clear PIP auto-enter so it doesn't leak to other screens
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                try {
+                    activity?.setPictureInPictureParams(
+                        PictureInPictureParams.Builder()
+                            .setAutoEnterEnabled(false)
+                            .build()
+                    )
+                } catch (_: Exception) {}
+            }
             activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
             activity?.window?.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
             activity?.window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
@@ -1283,7 +1405,36 @@ fun PlayerScreen(
         }
     }
 
+    // ========== Layer 3: Direct Activity back handler ==========
+    // Register navigateBack directly with MainActivity.companion.directBackHandler.
+    // This is the most reliable path — it bypasses OnBackPressedDispatcher and
+    // BackHandler composables entirely, going straight from Activity.onBackPressed()
+    // to navigateBack(). Critical for TV firmware where back dispatch is broken.
+    DisposableEffect(Unit) {
+        Log.d(TAG, "BACK-DEFENSE: Registering directBackHandler with MainActivity")
+        val backHandler = { navigateBack() }
+        MainActivity.directBackHandler = backHandler
+        onDispose {
+            // Only clear if WE are still the owner (not replaced by another player)
+            if (MainActivity.directBackHandler === backHandler) {
+                Log.d(TAG, "BACK-DEFENSE: Clearing directBackHandler (we are still the owner)")
+                MainActivity.directBackHandler = null
+            } else {
+                Log.d(TAG, "BACK-DEFENSE: NOT clearing directBackHandler (another player owns it)")
+            }
+        }
+    }
+
     // ========== UI ==========
+
+    // Layer 2 safety net: BackHandler composable for OnBackPressedDispatcher path.
+    // With enableOnBackInvokedCallback=false, back goes through dispatchKeyEvent or
+    // onBackPressed(), but this catches any dispatches that reach OnBackPressedDispatcher.
+    BackHandler(enabled = true) {
+        Log.d(TAG, "BACK-DEFENSE: BackHandler composable fired")
+        navigateBack()
+    }
+
     // Intercept keys at Window.Callback level — BEFORE Compose's internal focus system
     // can consume D-pad events. setOnKeyListener runs too late (inside View.dispatchKeyEvent),
     // but Window.Callback.dispatchKeyEvent runs before the entire view hierarchy.
@@ -1300,24 +1451,28 @@ fun PlayerScreen(
             AndroidKeyEvent.KEYCODE_BACK, AndroidKeyEvent.KEYCODE_ESCAPE,
             AndroidKeyEvent.KEYCODE_MEDIA_PLAY_PAUSE
         )
-        window.callback = object : Window.Callback by originalCallback {
+        val newCallback = object : Window.Callback by originalCallback {
             override fun dispatchKeyEvent(event: android.view.KeyEvent): Boolean {
                 if (event.keyCode in handledKeys && event.action == AndroidKeyEvent.ACTION_DOWN) {
-                    Log.d(TAG, "WindowCallback: keyCode=${event.keyCode}(${keyName(event.keyCode)}) action=DOWN -> intercepted")
+                    Log.d(TAG, "BACK-DEFENSE LAYER1: WindowCallback intercepted keyCode=${event.keyCode}(${keyName(event.keyCode)})")
                     keyChannel.trySend(event.keyCode)
                     return true // consume — prevent Compose from stealing D-pad
                 }
                 return originalCallback.dispatchKeyEvent(event) // let volume, UP events etc. pass through
             }
         }
+        window.callback = newCallback
         onDispose {
-            window.callback = originalCallback
+            // Only restore if WE are still the owner (not replaced by another player)
+            if (window.callback === newCallback) {
+                window.callback = originalCallback
+            }
             keyChannel.close()
         }
     }
 
     Box(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize().background(Color.Black)
     ) {
         when {
             isLoadingStream -> Box(Modifier.fillMaxSize(), Alignment.Center) { CircularProgressIndicator(color = FocusAccent) }
@@ -1325,7 +1480,7 @@ fun PlayerScreen(
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text("Error: $streamError", color = Color.White)
                     Spacer(modifier = Modifier.height(16.dp))
-                    Button(onClick = { navController.popBackStack() }) { Text("Back") }
+                    Button(onClick = { navigateBack() }) { Text("Back") }
                 }
             }
             else -> {
@@ -1379,9 +1534,9 @@ fun PlayerScreen(
                                         // For series, just pop back to SeriesDetail (it's already on back stack)
                                         if (type == "series" && slug.isNotBlank()) {
                                             Log.d(TAG, "Back button - popping back stack for series: $slug")
-                                            navController.popBackStack()
+                                            navigateBack()
                                         } else {
-                                            navController.popBackStack()
+                                            navigateBack()
                                         }
                                     }
                                 )
@@ -1560,14 +1715,22 @@ fun PlayerScreen(
                     }
 
                     // ---- Dropdown Panel (appears below top bar, rendered last for z-index) ----
-                    // Keep this inside the outer Box, but apply alignment conditionally or wrap properly:
                     if (openDropdown != null) {
                         Log.d(TAG, "DropdownRendering: openDropdown=$openDropdown")
 
                         // Wrapping it ensures BoxScope alignment rules apply perfectly
                         Box(
                             modifier = Modifier
-                                .fillMaxSize() // Fills the parent Box to give alignment context
+                                .fillMaxSize()
+                                .clickable(
+                                    interactionSource = remember { androidx.compose.foundation.interaction.MutableInteractionSource() },
+                                    indication = null
+                                ) {
+                                    // Tap outside dropdown → close it
+                                    openDropdown = null
+                                    focusRow = 0
+                                    resetAutoHideTimer()
+                                }
                         ) {
                             Box(
                                 modifier = Modifier

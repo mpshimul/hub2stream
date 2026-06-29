@@ -1,23 +1,41 @@
 package com.shimulfp.hub2stream.data
 
-import android.app.Application
+import android.content.Context
 import android.util.Log
+import com.shimulfp.hub2stream.data.cache.CacheManager
 import com.shimulfp.hub2stream.extractor.AoneroomApiClient
 import com.shimulfp.hub2stream.extractor.models.*
 import com.shimulfp.hub2stream.extractor.models.PaginatedResult
 
 /**
  * MovieRepository using the simplified Aoneroom API
- * No request signing required - uses H5 API endpoints
+ * Checks CacheManager first for instant loading, then fetches from network if stale/empty
  */
-class MovieRepository(private val appContext: Application) {
+class MovieRepository(private val context: Context? = null) {
     companion object {
         private const val TAG = "MovieRepository"
     }
 
     private val apiClient = AoneroomApiClient()
 
-    suspend fun getHomePageRows(): List<HomePageRow> = apiClient.getHomePageRows()
+    suspend fun getHomePageRows(): List<HomePageRow> {
+        // Try to get from cache first if context is available
+        if (context != null) {
+            try {
+                val cacheManager = CacheManager(context)
+                val (cachedMovies, isStale) = cacheManager.getMovies()
+                if (!cachedMovies.isEmpty()) {
+                    Log.d(TAG, "Returning cached movies: ${cachedMovies.size} rows (stale=$isStale)")
+                    return cachedMovies
+                }
+                Log.d(TAG, "Cache is empty, fetching from network...")
+            } catch (e: Exception) {
+                Log.e(TAG, "Error getting from cache: ${e.message}")
+            }
+        }
+        // Fetch from network
+        return apiClient.getHomePageRows()
+    }
     suspend fun getAllSeriesByCategory(category: String?, page: Int = 1, perPage: Int = 50): List<Series> = apiClient.getAllSeriesByCategory(category, page, perPage)
     suspend fun getMovieDetails(slug: String): Movie? = apiClient.getMovieDetails(slug)
     suspend fun getSeriesDetails(slug: String): Series? = apiClient.getSeriesDetails(slug)

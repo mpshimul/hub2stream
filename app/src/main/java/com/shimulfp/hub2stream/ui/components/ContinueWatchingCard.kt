@@ -24,6 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import coil.compose.SubcomposeAsyncImage
 import coil.request.ImageRequest
 import com.shimulfp.hub2stream.models.ContinueWatchingItem
 import com.shimulfp.hub2stream.ui.theme.FocusAccent
@@ -56,15 +57,28 @@ fun ContinueWatchingCard(
         elevation = CardDefaults.cardElevation(if (isFocused) 16.dp else 4.dp)
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
-            AsyncImage(
+            SubcomposeAsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
                     .data(item.posterUrl)
                     .crossfade(true)
                     .build(),
                 contentDescription = item.title,
                 modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Crop
+                contentScale = ContentScale.Crop,
+                loading = {
+                    ContinueWatchingPlaceholder(
+                        title = item.title,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                },
+                error = {
+                    ContinueWatchingPlaceholder(
+                        title = item.title,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                }
             )
+
             // Progress bar overlay at the bottom
             val isWatched = item.progressPercentage >= 95
             val progressWidth = if (isWatched) 1.0f else (item.progressPercentage / 100f).coerceIn(0.1f, 1.0f)

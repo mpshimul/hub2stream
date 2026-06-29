@@ -56,7 +56,7 @@ fun LiveSportsScreen(
     val error by viewModel.error.collectAsState()
     val configuration = LocalConfiguration.current
     val isLandscape = configuration.orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE
-    val columns = if (isLandscape) 4 else 2
+    val columns = if (isLandscape) 3 else 1
     val firstItemFocusRequester = remember { FocusRequester() }
 
     Scaffold(
@@ -345,7 +345,7 @@ private fun playSportsEventWithPlaylist(
     allEvents: List<SportsEvent>,
     selected: SportsEvent
 ) {
-    val playlist = allEvents.map { mapOf("url" to it.streamUrl, "title" to it.name, "id" to it.id) }
+    val playlist = allEvents.map { mapOf("url" to it.streamUrl, "title" to it.name, "logo" to it.logo, "id" to it.id) }
     val mapper = jacksonObjectMapper()
     val channelsJson = mapper.writeValueAsString(playlist)
     val encoded = URLEncoder.encode(channelsJson, "UTF-8")

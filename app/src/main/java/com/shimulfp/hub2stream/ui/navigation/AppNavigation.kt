@@ -115,9 +115,25 @@ sealed class Screen(val route: String) {
 }
 
 @Composable
-fun AppNavigation(showExitDialog: Boolean = false, onExitDialogDismiss: () -> Unit = {}) {
+fun AppNavigation(blockBackPress: () -> Boolean = { false }) {
     val navController = rememberNavController()
     val exitConfirmFocusRequester = remember { FocusRequester() }
+    var showExitDialog by remember { mutableStateOf(false) }
+    var backPressedTime by remember { mutableStateOf(0L) }
+
+    // Exit back handler — only enabled at the root destination (no back stack entries to pop).
+    // This prevents the exit dialog from appearing when inside any screen (player, detail, etc.)
+    // where the NavHost's built-in back handling or the screen's own BackHandler should handle it.
+    BackHandler(enabled = navController.previousBackStackEntry == null) {
+        if (blockBackPress()) return@BackHandler
+        val currentTime = System.currentTimeMillis()
+        if (currentTime - backPressedTime < 2000) {
+            Process.killProcess(Process.myPid())
+        } else {
+            backPressedTime = currentTime
+            showExitDialog = true
+        }
+    }
 
     NavHost(navController = navController, startDestination = Screen.Home.route) {
         composable(Screen.Home.route) {
@@ -271,13 +287,13 @@ fun AppNavigation(showExitDialog: Boolean = false, onExitDialogDismiss: () -> Un
         }
 
         AlertDialog(
-            onDismissRequest = onExitDialogDismiss,
+            onDismissRequest = { showExitDialog = false },
             title = { Text("Exit App") },
             text = { Text("Are you sure you want to exit the app?") },
             confirmButton = {
                 TextButton(
                     onClick = {
-                        onExitDialogDismiss()
+                        showExitDialog = false
                         // Exit the app
                         Process.killProcess(Process.myPid())
                     },
@@ -293,7 +309,7 @@ fun AppNavigation(showExitDialog: Boolean = false, onExitDialogDismiss: () -> Un
             },
             dismissButton = {
                 TextButton(
-                    onClick = onExitDialogDismiss,
+                    onClick = { showExitDialog = false },
                     modifier = Modifier
                         .focusRequester(cancelFocusRequester)
                         .focusProperties {

@@ -1,21 +1,67 @@
 # Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
+# You can control the set of applied rules using the
 # proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# ============== Kotlin ==============
+-dontwarn kotlin.**
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# ============== Kotlinx Coroutines ==============
+-dontwarn kotlinx.coroutines.**
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# ============== Kotlinx Serialization ==============
+-keepattributes *Annotation*, InnerClasses
+-dontnote kotlinx.serialization.AnnotationsKt
+-keepclassmembers class kotlinx.serialization.json.** { *** Companion; }
+-keepclasseswithmembers class kotlinx.serialization.json.** { kotlinx.serialization.KSerializer serializer(...); }
+-keep,includedescriptorclasses class com.shimulfp.hub2stream.**$$serializer { *; }
+-keepclassmembers class com.shimulfp.hub2stream.** {
+    *** Companion;
+    kotlinx.serialization.KSerializer serializer(...);
+}
+-keepclasseswithmembers class com.shimulfp.hub2stream.** {
+    kotlinx.serialization.KSerializer serializer(...);
+}
+
+# ============== Jackson ==============
+-dontwarn com.fasterxml.jackson.databind.**
+-keep class com.fasterxml.jackson.** { *; }
+-keepattributes *Annotation*, EnclosingMethod
+
+# ============== Media3 / ExoPlayer ==============
+-keep class androidx.media3.** { *; }
+-dontwarn androidx.media3.**
+
+# ============== FFmpeg JNI ==============
+-keep class androidx.media3.decoder.ffmpeg.** { *; }
+-keepclassmembers class androidx.media3.decoder.ffmpeg.FfmpegLibrary { *; }
+-keepclassmembers class androidx.media3.decoder.ffmpeg.FfmpegAudioDecoder { *; }
+
+# ============== OkHttp ==============
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+
+# ============== Jsoup ==============
+-keep class org.jsoup.** { *; }
+-dontwarn org.jspecify.annotations.**
+
+# ============== Coil ==============
+-keep class coil.** { *; }
+
+# ============== Compose ==============
+-keep class androidx.compose.** { *; }
+-dontwarn androidx.compose.**
+
+# ============== Data Models (keep for serialization) ==============
+-keep class com.shimulfp.hub2stream.models.** { *; }
+-keep class com.shimulfp.hub2stream.extractor.models.** { *; }
+-keep class com.shimulfp.hub2stream.extractor.** { *; }
+-keepclassmembers class com.shimulfp.hub2stream.extractor.** {
+    <fields>;
+}
+
+# ============== Keep fragment / activity ==============
+-keep public class * extends androidx.fragment.app.Fragment
+-keep public class * extends androidx.activity.ComponentActivity
+-keep public class * extends androidx.compose.ui.graphics.vector.ImageVector
