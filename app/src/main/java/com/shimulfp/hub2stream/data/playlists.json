@@ -3,7 +3,7 @@
   "playlists": [
     {
       "name": "FIFA 26",
-      "url": "https://raw.githubusercontent.com/SHAJON-404/iptv-playlist/refs/heads/main/app/data/fifa.m3u"
+      "url": "https://raw.githubusercontent.com/mpshimul/hub2stream/refs/heads/main/app/src/main/java/com/shimulfp/hub2stream/data/FIFAWC26.m3u"
     },
     {
       "name": "AynaOTT",
