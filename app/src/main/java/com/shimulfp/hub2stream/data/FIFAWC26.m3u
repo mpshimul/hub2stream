@@ -5,6 +5,13 @@
 # https://github.com/mpshimul/hub2stream
 # FIFA Worldcup 2026 - Hub2Stream
 
+#EXTINF:-1 tvg-id="117" tvg-name="Sony Sports TEN 2" tvg-logo="https://www.freeshot.live/upload/source/FOXUSA.png" FOX ONE
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=f6564ec2aee819046328a0e153be574d:ff46a8a1031eb27ef22576a077c98ab7
+https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/enc/jfca5zun1r/out/v1/b78800b9b2304879b15843f455836829/cenc.mpd
+
 # ---- CA RDS ( ) (1 variants) ----
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS ( ) [HD]
 http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/59870.ts
