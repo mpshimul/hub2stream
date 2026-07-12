@@ -1,9 +1,8 @@
 package com.shimulfp.hub2stream.data
 
 import android.util.Log
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.fasterxml.jackson.module.kotlin.readValue
 import com.shimulfp.hub2stream.extractor.models.LiveTVSource
+import com.shimulfp.hub2stream.utils.Json
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
@@ -37,8 +36,6 @@ object RemotePlaylistConfig {
         .followRedirects(true)
         .followSslRedirects(true)
         .build()
-
-    private val mapper = jacksonObjectMapper()
 
     private var cachedPlaylists: List<PlaylistEntry>? = null
     private var cacheTimestamp = 0L
@@ -79,7 +76,7 @@ object RemotePlaylistConfig {
                     return@withTimeoutOrNull null
                 }
                 try {
-                    val config: PlaylistConfig = mapper.readValue(body)
+                    val config = Json.fromJson<PlaylistConfig>(body)
                     config.playlists
                 } catch (e: Exception) {
                     Log.e(TAG, "Failed to parse config JSON: ${e.message}")
