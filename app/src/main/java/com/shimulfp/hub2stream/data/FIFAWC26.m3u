@@ -1,214 +1,93 @@
 #EXTM3U
-# Validated on 2026-06-28 18:52:56 UTC
-# Working streams: 72 / 78
-# TV app: https://cutt.ly/hub2stream
+# Validated on 2026-07-10 19:04:42 UTC
+# Working streams: 22 / 87
+# Quality tags based on name (fallback)
 # https://github.com/mpshimul/hub2stream
+# FIFA Worldcup 2026 - Hub2Stream
 
-# ---- FIFA WC 01 South Africa vs Canada (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 01 South Africa vs Canada
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949744.ts
+# ---- CA RDS ( ) (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS ( ) [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/59870.ts
 
-# ---- FIFA WC 02 South Africa vs Canada (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 02 South Africa vs Canada
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949745.ts
+# ---- CA RDS (FR) (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS (FR)
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3232.ts
 
-# ---- FIFA WC 03 South Africa vs Canada EN espanol (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 03 South Africa vs Canada EN espanol
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949746.ts
+# ---- CA RDS (HQ) (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS (HQ)
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/59887.ts
 
-# ---- FIFA WC 04 FEED South Africa vs Canada (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 04 FEED South Africa vs Canada [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949747.ts
+# ---- CA RDS (LQ) (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/RDS_logo.svg/960px-RDS_logo.svg.png",CA RDS (LQ)
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/59888.ts
 
-# ---- FIFA WC 05 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 05
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949748.ts
+# ---- CA TSN 1 U (1 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/eRFE0jZ.png",CA TSN 1 U [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3146.ts
 
-# ---- FIFA WC 06 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 06
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949749.ts
+# ---- CA TSN 3 U (1 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/AYza8KO.png",CA TSN 3 U [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3144.ts
 
-# ---- FIFA WC 07 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 07
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949750.ts
+# ---- CA TSN 4 U (1 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/qJyAWU8.png",CA TSN 4 U [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/3143.ts
 
-# ---- FIFA WC 08 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 08
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949751.ts
+# ---- MX TUDN (1 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/oT5CAvd.png",MX TUDN
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/553262.ts
 
-# ---- FIFA WC 09 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 09
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949752.ts
+# ---- NO TV2 (2 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/8nxd2A1.png",NO TV2 [FHD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179998.ts
+#EXTINF:-1 tvg-logo="https://i.imgur.com/8nxd2A1.png",NO TV2 [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179999.ts
 
-# ---- FIFA WC 10 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 10
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949753.ts
+# ---- NO TV2 Direkte (1 variants) ----
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/TV_2_Direkte_%282022-%29.svg/960px-TV_2_Direkte_%282022-%29.svg.png",NO TV2 Direkte
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/1179997.ts
 
-# ---- FIFA WC 11 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 11
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949754.ts
+# ---- PT SPORT TV 5 (1 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/4w4vuad.png",PT SPORT TV 5 [HD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/839.ts
 
-# ---- FIFA WC 12 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 12
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949755.ts
+# ---- Soccer01 Spain vs Belgium ( TSN1 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer01 Spain vs Belgium ( TSN1 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/38039.ts
 
-# ---- FIFA WC 13 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 13
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949756.ts
+# ---- Soccer02 Spain vs Belgium ( TSN3 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer02 Spain vs Belgium ( TSN3 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21812.ts
 
-# ---- FIFA WC 16 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/500px-2026_FIFA_World_Cup_emblem.svg.png",FIFA WC 16
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949759.ts
+# ---- Soccer03 Spain vs Belgium ( TSN4 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer03 Spain vs Belgium ( TSN4 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21823.ts
 
-# ---- Bein Sports Max 1 (3 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",Bein Sports Max 1 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944357.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",Bein Sports Max 1 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944369.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",Bein Sports Max 1 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944375.ts
+# ---- Soccer04 Spain vs Belgium ( TSN5 Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer04 Spain vs Belgium ( TSN5 Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21824.ts
 
-# ---- Bein Sports Max 2 (3 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png",Bein Sports Max 2 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944358.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png",Bein Sports Max 2 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944370.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png",Bein Sports Max 2 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944376.ts
+# ---- Soccer05 Spain vs Belgium ( FOX Network Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer05 Spain vs Belgium ( FOX Network Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21825.ts
 
-# ---- Bein Sports Max 3 (3 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-SD.png",Bein Sports Max 3 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944359.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-SD.png",Bein Sports Max 3 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944371.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-SD.png",Bein Sports Max 3 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944377.ts
+# ---- Soccer06 Spain vs Belgium ( Telemundo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer06 Spain vs Belgium ( Telemundo Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21826.ts
 
-# ---- Bein Sports Max 4 (3 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-SD.png",Bein Sports Max 4 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944360.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-SD.png",Bein Sports Max 4 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944372.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-SD.png",Bein Sports Max 4 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944378.ts
+# ---- Soccer07 Spain vs Belgium ( Telemundo Deportes En Vivo Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer07 Spain vs Belgium ( Telemundo Deportes En Vivo Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21827.ts
 
-# ---- Bein Sports Max 5 (5 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",Bein Sports Max 5 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1946727.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_5.png",Bein Sports Max 5 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944361.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_5.png",Bein Sports Max 5 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944483.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_5.png",Bein Sports Max 5 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944373.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_5.png",Bein Sports Max 5 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944379.ts
+# ---- Soccer08 Spain vs Belgium ( FOX One Feed ) @ (1 variants) ----
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/mpshimul/hub2stream/main/fwc26.webp",Soccer08 Spain vs Belgium ( FOX One Feed ) @
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/21828.ts
 
-# ---- Bein Sports Max 6 (5 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",Bein Sports Max 6 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1946735.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_6.png",Bein Sports Max 6 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944362.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_6.png",Bein Sports Max 6 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944485.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_6.png",Bein Sports Max 6 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944374.ts
-#EXTINF:-1 tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/BeIn_Sports_Max_6.png",Bein Sports Max 6 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1944380.ts
+# ---- UK ITV1 (1 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/xwPekCF.png",UK ITV1
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/527497.ts
 
-# ---- beIN SPORTS MAX PPV 1 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://img.kooora.com/?i=o%2Fh%2F1%2F654%2Fbein-sports-max-1.png",beIN SPORTS MAX PPV 1
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1953605.ts
-
-# ---- beIN SPORTS MAX PPV 2 (1 variants) ----
-#EXTINF:-1 tvg-logo="https://www.egblog.news/wp-content/uploads/2024/01/value-800x500.png",beIN SPORTS MAX PPV 2
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1953606.ts
-
-# ---- beIN Sports MAX 1 (6 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-4K.png",beIN Sports MAX 1 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146126.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png",beIN Sports MAX 1 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146122.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png",beIN Sports MAX 1 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/106199.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",beIN Sports MAX 1 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/196473.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",beIN Sports MAX 1 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146118.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png",beIN Sports MAX 1
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1063488.ts
-
-# ---- beIN Sports MAX 2 (6 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-4K.png",beIN Sports MAX 2 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146127.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png",beIN Sports MAX 2 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146123.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png",beIN Sports MAX 2 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/106200.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png",beIN Sports MAX 2 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146119.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-SD.png",beIN Sports MAX 2 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/196472.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png",beIN Sports MAX 2
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1063489.ts
-
-# ---- beIN Sports MAX 3 (5 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-4K.png",beIN Sports MAX 3 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146128.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-HD.png",beIN Sports MAX 3 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146124.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-HD.png",beIN Sports MAX 3 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/106201.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX3-SD.png",beIN Sports MAX 3 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146120.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png",beIN Sports MAX 3
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1948328.ts
-
-# ---- beIN Sports MAX 4 (5 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-4K.png",beIN Sports MAX 4 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146129.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-HD.png",beIN Sports MAX 4 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146062.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-HD.png",beIN Sports MAX 4 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146125.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX4-SD.png",beIN Sports MAX 4 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/146121.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX2-HD.png",beIN Sports MAX 4
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1948329.ts
-
-# ---- beIN Sports MAX 5 (2 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png",beIN Sports MAX 5 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1946730.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",beIN Sports MAX 5 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1946728.ts
-
-# ---- beIN Sports MAX 6 (2 variants) ----
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MA-X1-HD.png",beIN Sports MAX 6 [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1946734.ts
-#EXTINF:-1 tvg-logo="http://138.199.27.237:8080/BEIN/BEIN-MAX/bein_sports-MAX1-SD.png",beIN Sports MAX 6 [SD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1946732.ts
-
-# ---- beIN Sports R (1) (1 variants) ----
-#EXTINF:-1 tvg-logo="https://i.ibb.co/5XMr9C7X/HDR-1080.png",beIN Sports R (1) [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1950411.ts
-
-# ---- beIN World FTA (1 variants) ----
-#EXTINF:-1 tvg-logo="https://pbs.twimg.com/media/HJwnLZ2WwAAvb1I.jpg",beIN World FTA [HD]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1953317.ts
-
-# ---- |2 | SOLO SPORT 2 (3 variants) ----
-#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500",|2 | SOLO SPORT 2 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957340.ts
-#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500",|2 | SOLO SPORT 2 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957341.ts
-#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500",|2 | SOLO SPORT 2 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957339.ts
-
-# ---- |2 | SOLO SPORT 3 (3 variants) ----
-#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500",|2 | SOLO SPORT 3 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957344.ts
-#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500",|2 | SOLO SPORT 3 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957343.ts
-#EXTINF:-1 tvg-logo="https://solosports.store/cdn/shop/files/logo_black_photoshop.png?v=1691152159&width=500",|2 | SOLO SPORT 3 [4K]
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1957345.ts
+# ---- beIN SPORTS 1 French (1 variants) ----
+#EXTINF:-1 tvg-logo="https://i.imgur.com/tXqMkzA.png",beIN SPORTS 1 French [FHD]
+http://s.rocketdns.info:8080/live/monstercable/Dq6jjknxCr/659439.ts
 
