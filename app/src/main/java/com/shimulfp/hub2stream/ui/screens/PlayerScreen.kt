@@ -63,8 +63,7 @@ import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.fasterxml.jackson.module.kotlin.readValue
+import com.shimulfp.hub2stream.utils.Json
 import com.shimulfp.hub2stream.data.MovieRepository
 import com.shimulfp.hub2stream.data.ContinueWatchingRepository
 import com.shimulfp.hub2stream.extractor.models.QualityInfo
@@ -150,8 +149,7 @@ fun PlayerScreen(
         if (episodesJson.isNotBlank()) {
             try {
                 val decoded = URLDecoder.decode(episodesJson, "UTF-8")
-                val mapper = jacksonObjectMapper()
-                val list: List<Map<String, String>> = mapper.readValue(decoded)
+                val list = Json.fromJson<List<Map<String, String>>>(decoded)
                 list.map { EpisodeItem(it["url"] ?: "", it["title"] ?: "") }
             } catch (e: Exception) { emptyList() }
         } else emptyList()
@@ -259,14 +257,11 @@ fun PlayerScreen(
             } else {
                 Rational(9, 16)
             }
+            val builder = PictureInPictureParams.Builder().setAspectRatio(aspectRatio)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                activity?.setPictureInPictureParams(
-                    PictureInPictureParams.Builder()
-                        .setAspectRatio(aspectRatio)
-                        .setAutoEnterEnabled(true)
-                        .build()
-                )
+                builder.setAutoEnterEnabled(true)
             }
+            activity?.setPictureInPictureParams(builder.build())
             Log.d(TAG, "PIP params set (orientation: ${configuration.orientation})")
         }
     }
@@ -298,14 +293,11 @@ fun PlayerScreen(
                         } else {
                             Rational(9, 16)
                         }
+                        val builder = PictureInPictureParams.Builder().setAspectRatio(aspectRatio)
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                            activity?.setPictureInPictureParams(
-                                PictureInPictureParams.Builder()
-                                    .setAspectRatio(aspectRatio)
-                                    .setAutoEnterEnabled(true)
-                                    .build()
-                            )
+                            builder.setAutoEnterEnabled(true)
                         }
+                        activity?.setPictureInPictureParams(builder.build())
                         Log.d(TAG, "PIP params set on pause for auto-enter")
                     } else {
                         // Pause playback if PIP is not supported or if it's a live stream
@@ -334,6 +326,31 @@ fun PlayerScreen(
         }
         lifecycleOwner.lifecycle.addObserver(observer)
         onDispose {
+            // Final progress save — use GlobalScope because rememberCoroutineScope
+            // is already being cancelled during composable disposal
+            try {
+                if (!isLive && slug.isNotBlank() && exoPlayer.duration > 0) {
+                    val pos = exoPlayer.currentPosition
+                    val dur = exoPlayer.duration
+                    if (pos >= 1000 && pos < dur - 5000) {
+                        val progressPct = if (dur > 0) ((pos * 100) / dur).toInt() else 0
+                        Log.d(TAG, "SAVE-PROGRESS: Final save on exit ep=$currentEpisode se=$currentSeason pos=${pos/1000}s pct=$progressPct%")
+                        kotlinx.coroutines.GlobalScope.launch(Dispatchers.IO) {
+                            continueWatchingRepo.addOrUpdateItem(ContinueWatchingItem(
+                                contentId = if (type == "movie") slug else "${slug}_s${currentSeason}e${currentEpisode}",
+                                slug = slug, title = title, posterUrl = poster, type = type,
+                                seasonNumber = currentSeason, episodeNumber = currentEpisode,
+                                episodeTitle = if (type == "series") title.substringAfter(" - ") else "",
+                                positionSeconds = pos / 1000, durationSeconds = dur / 1000,
+                                progressPercentage = progressPct,
+                                timestamp = System.currentTimeMillis()
+                            ))
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                Log.w(TAG, "SAVE-PROGRESS: Failed to save on exit", e)
+            }
             lifecycleOwner.lifecycle.removeObserver(observer)
             exoPlayer.release()
         }
@@ -491,15 +508,13 @@ fun PlayerScreen(
 
     /** Clear PIP auto-enter params so other screens don't accidentally trigger PIP. */
     fun clearPipAutoEnter() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             try {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                    activity?.setPictureInPictureParams(
-                        PictureInPictureParams.Builder()
-                            .setAutoEnterEnabled(false)
-                            .build()
-                    )
-                }
+                activity?.setPictureInPictureParams(
+                    PictureInPictureParams.Builder()
+                        .setAutoEnterEnabled(false)
+                        .build()
+                )
                 Log.d(TAG, "PIP auto-enter disabled")
             } catch (e: Exception) {
                 Log.w(TAG, "Failed to clear PIP params: ${e.message}")
@@ -544,6 +559,27 @@ fun PlayerScreen(
         return builder.build()
     }
 
+    // ========== Save Progress Helper ==========
+    fun saveProgressNow() {
+        if (isLive || slug.isBlank() || exoPlayer.duration <= 0) return
+        val pos = exoPlayer.currentPosition
+        val dur = exoPlayer.duration
+        if (pos < 1000 || pos >= dur - 5000) return // Don't save if < 1s watched or within 5s of end
+        val progressPct = if (dur > 0) ((pos * 100) / dur).toInt() else 0
+        Log.d(TAG, "SAVE-PROGRESS: Saving ep=$currentEpisode se=$currentSeason pos=${pos/1000}s pct=$progressPct% slug=$slug")
+        scope.launch {
+            continueWatchingRepo.addOrUpdateItem(ContinueWatchingItem(
+                contentId = if (type == "movie") slug else "${slug}_s${currentSeason}e${currentEpisode}",
+                slug = slug, title = title, posterUrl = poster, type = type,
+                seasonNumber = currentSeason, episodeNumber = currentEpisode,
+                episodeTitle = if (type == "series") title.substringAfter(" - ") else "",
+                positionSeconds = pos / 1000, durationSeconds = dur / 1000,
+                progressPercentage = progressPct,
+                timestamp = System.currentTimeMillis()
+            ))
+        }
+    }
+
     // ========== Episode Navigation ==========
     fun playEpisode(index: Int) {
         if (index < 0 || index >= episodes.size) {
@@ -563,19 +599,23 @@ fun PlayerScreen(
         dropdownFocusIdx = 0
         isControlsVisible = false
 
+        // Parse episode identifiers BEFORE launching coroutine so that
+        // currentSeason/currentEpisode are updated synchronously.
+        // This ensures the save loop's LaunchedEffect key changes immediately,
+        // preventing a brief window where the old save loop saves stale episode data.
+        val linkData = when {
+            ep.url.startsWith("moviebox://") -> ep.url.removePrefix("moviebox://")
+            ep.url.startsWith("aoneroom-movies://") -> ep.url.removePrefix("aoneroom-movies://")
+            else -> ep.url
+        }
+        val parts = linkData.split("|")
+        subjectId = parts.getOrNull(0) ?: ""
+        currentSeason = parts.getOrNull(1)?.toIntOrNull() ?: 0
+        currentEpisode = parts.getOrNull(2)?.toIntOrNull() ?: 0
+        detailPath = parts.getOrNull(3) ?: ""
+
         scope.launch {
             Log.d(TAG, "Playing episode $index: ${ep.title}")
-            // Handle both moviebox:// and aoneroom-movies:// prefixes
-            val linkData = when {
-                ep.url.startsWith("moviebox://") -> ep.url.removePrefix("moviebox://")
-                ep.url.startsWith("aoneroom-movies://") -> ep.url.removePrefix("aoneroom-movies://")
-                else -> ep.url
-            }
-            val parts = linkData.split("|")
-            subjectId = parts.getOrNull(0) ?: ""
-            currentSeason = parts.getOrNull(1)?.toIntOrNull() ?: 0
-            currentEpisode = parts.getOrNull(2)?.toIntOrNull() ?: 0
-            detailPath = parts.getOrNull(3) ?: ""
             Log.d(TAG, "  -> linkData=$linkData, subjectId=$subjectId, se=$currentSeason, ep=$currentEpisode, detailPath=$detailPath")
 
             Log.d(TAG, "  -> Calling getStreams...")
@@ -583,6 +623,7 @@ fun PlayerScreen(
             Log.d(TAG, "  -> getStreams returned ${qualities.size} qualities")
 
             if (qualities.isNotEmpty()) {
+                availableQualities = qualities
                 val best = qualities.maxByOrNull { it.resolution } ?: qualities.first()
                 currentStreamUrl = best.url
                 currentStreamId = best.id
@@ -650,15 +691,18 @@ fun PlayerScreen(
         val player = exoPlayerState ?: return
         val wasPlaying = player.isPlaying
         val currentPos = player.currentPosition
-        
+        val ep = currentEpisode
+        val se = currentSeason
+
         selectedDub = dub
-        
+
         scope.launch {
-            Log.d(TAG, "  -> Fetching streams for dub subjectId=${dub.subjectId}, se=$currentSeason, ep=$currentEpisode")
-            val linkData = "${dub.subjectId}|$currentSeason|$currentEpisode|${dub.detailPath}"
+            Log.d(TAG, "  -> Fetching streams for dub subjectId=${dub.subjectId}, se=$se, ep=$ep")
+            val linkData = "${dub.subjectId}|$se|$ep|${dub.detailPath}"
             val qualities = movieRepo.getStreams(linkData)
             
             if (qualities.isNotEmpty()) {
+                availableQualities = qualities
                 val best = qualities.maxByOrNull { it.resolution } ?: qualities.first()
                 currentStreamUrl = best.url
                 currentStreamId = best.id
@@ -699,16 +743,51 @@ fun PlayerScreen(
         val player = exoPlayerState ?: return
         val wasPlaying = player.isPlaying
         val currentPos = player.currentPosition
-        currentStreamUrl = quality.url
-        currentStreamId = quality.id
-        val mediaItem = buildMediaItem(quality.url, subtitleList)
-        player.setMediaItem(mediaItem)
-        player.prepare()
+        // Diagnostic logging for quality change bug
+        Log.d(TAG, "QUALITY-CHANGE: label=${quality.label} ep=$currentEpisode se=$currentSeason")
+        Log.d(TAG, "QUALITY-CHANGE: newUrl=${quality.url.take(120)}")
+        Log.d(TAG, "QUALITY-CHANGE: oldUrl=${currentStreamUrl.take(120)}")
+        Log.d(TAG, "QUALITY-CHANGE: availableQualities.size=${availableQualities.size} labels=${availableQualities.map { it.label }}")
+        Log.d(TAG, "QUALITY-CHANGE: currentIndex=$currentIndex episodes.size=${episodes.size}")
+
+        // Re-fetch streams for the CURRENT episode to ensure correct URL.
+        // This prevents loading wrong episode media if availableQualities was stale.
+        val currentSubjectId = subjectId
+        val currentDetailPath = detailPath
+        val ep = currentEpisode
+        val se = currentSeason
         scope.launch {
-            while (player.playbackState != Player.STATE_READY) delay(50)
-            player.seekTo(currentPos)
-            if (wasPlaying) player.play()
-            showChannelInfoTemporarily("Quality: ${quality.label}")
+            val linkData = "$currentSubjectId|$se|$ep|$currentDetailPath"
+            Log.d(TAG, "QUALITY-CHANGE: Re-fetching streams with linkData=$linkData")
+            val qualities = movieRepo.getStreams(linkData)
+            if (qualities.isNotEmpty()) {
+                // Find the requested quality from freshly fetched streams
+                val targetQuality = qualities.find { it.label == quality.label }
+                    ?: qualities.maxByOrNull { it.resolution }
+                    ?: qualities.first()
+                availableQualities = qualities
+                currentStreamUrl = targetQuality.url
+                currentStreamId = targetQuality.id
+                Log.d(TAG, "QUALITY-CHANGE: Fetched ${qualities.size} qualities, using ${targetQuality.label}")
+                Log.d(TAG, "QUALITY-CHANGE: resolvedUrl=${targetQuality.url.take(120)}")
+                val mediaItem = buildMediaItem(targetQuality.url, subtitleList)
+                player.setMediaItem(mediaItem)
+                player.prepare()
+                while (player.playbackState != Player.STATE_READY) delay(50)
+                player.seekTo(currentPos)
+                if (wasPlaying) player.play()
+                showChannelInfoTemporarily("Quality: ${targetQuality.label}")
+            } else {
+                Log.e(TAG, "QUALITY-CHANGE: Re-fetch returned 0 qualities! Falling back to original URL")
+                // Fallback to original behavior if re-fetch fails
+                val mediaItem = buildMediaItem(quality.url, subtitleList)
+                player.setMediaItem(mediaItem)
+                player.prepare()
+                while (player.playbackState != Player.STATE_READY) delay(50)
+                player.seekTo(currentPos)
+                if (wasPlaying) player.play()
+                showChannelInfoTemporarily("Quality: ${quality.label}")
+            }
         }
     }
 
@@ -811,7 +890,6 @@ fun PlayerScreen(
                     val p = exoPlayerState; if (p != null && p.isPlaying) p.pause() else p?.play(); return true
                 }
                 AndroidKeyEvent.KEYCODE_BACK, AndroidKeyEvent.KEYCODE_ESCAPE -> {
-                    Log.d(TAG, "BACK-DEFENSE LAYER1-CONSUMER: navigateBack() from key event channel")
                     navigateBack(); return true
                 }
             }
@@ -1036,7 +1114,6 @@ fun PlayerScreen(
                 return true
             }
             AndroidKeyEvent.KEYCODE_BACK, AndroidKeyEvent.KEYCODE_ESCAPE -> {
-                Log.d(TAG, "BACK-DEFENSE LAYER1-CONSUMER: navigateBack() from key event channel (controls visible)")
                 if (focusRow == 1 && hasDropdown) {
                     // Close dropdown and return to top bar
                     openDropdown = null
@@ -1256,6 +1333,7 @@ fun PlayerScreen(
 
     // Save progress
     LaunchedEffect(exoPlayer, slug, type, currentSeason, currentEpisode, title, poster) {
+        Log.d(TAG, "SAVE-PROGRESS: Loop started for se=$currentSeason ep=$currentEpisode slug=$slug")
         var lastSaved = 0L
         while (true) {
             delay(5000)
@@ -1265,6 +1343,7 @@ fun PlayerScreen(
                     lastSaved = pos
                     // Calculate progress percentage (0-100)
                     val progressPct = if (dur > 0) ((pos * 100) / dur).toInt() else 0
+                    Log.d(TAG, "SAVE-PROGRESS: Periodic save ep=$currentEpisode se=$currentSeason pos=${pos/1000}s pct=$progressPct%")
 
                     continueWatchingRepo.addOrUpdateItem(ContinueWatchingItem(
                         contentId = if (type == "movie") slug else "${slug}_s${currentSeason}e${currentEpisode}",
@@ -1322,15 +1401,13 @@ fun PlayerScreen(
         )
         onDispose {
             // Clear PIP auto-enter so it doesn't leak to other screens
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 try {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                        activity?.setPictureInPictureParams(
-                            PictureInPictureParams.Builder()
-                                .setAutoEnterEnabled(false)
-                                .build()
-                        )
-                    }
+                    activity?.setPictureInPictureParams(
+                        PictureInPictureParams.Builder()
+                            .setAutoEnterEnabled(false)
+                            .build()
+                    )
                 } catch (_: Exception) {}
             }
             activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
@@ -1413,34 +1490,30 @@ fun PlayerScreen(
         }
     }
 
-    // ========== Layer 3: Direct Activity back handler ==========
-    // Register navigateBack directly with MainActivity.companion.directBackHandler.
-    // This is the most reliable path — it bypasses OnBackPressedDispatcher and
-    // BackHandler composables entirely, going straight from Activity.onBackPressed()
-    // to navigateBack(). Critical for TV firmware where back dispatch is broken.
+    // ========== UI ==========
+
+    // Safety net for Android 14+ (API 34) with enableOnBackInvokedCallback=true:
+    // On API 34+, system back goes through OnBackInvokedCallback → OnBackPressedDispatcher,
+    // NOT through Window.Callback.dispatchKeyEvent(KEYCODE_BACK). So the key proxy below
+    // won't catch it. This BackHandler ensures back always navigates away from the player.
+    BackHandler(enabled = true) {
+        navigateBack()
+    }
+
+    // Layer 3: Register directBackHandler so MainActivity.onBackPressed() can call us
     DisposableEffect(Unit) {
-        Log.d(TAG, "BACK-DEFENSE: Registering directBackHandler with MainActivity")
+        Log.d("BACK-DEFENSE", "PlayerScreen: Setting directBackHandler")
         val backHandler = { navigateBack() }
         MainActivity.directBackHandler = backHandler
         onDispose {
-            // Only clear if WE are still the owner (not replaced by another player)
+            Log.d("BACK-DEFENSE", "PlayerScreen: Disposing directBackHandler — checking ownership")
             if (MainActivity.directBackHandler === backHandler) {
-                Log.d(TAG, "BACK-DEFENSE: Clearing directBackHandler (we are still the owner)")
+                Log.d("BACK-DEFENSE", "PlayerScreen: Clearing directBackHandler (we own it)")
                 MainActivity.directBackHandler = null
             } else {
-                Log.d(TAG, "BACK-DEFENSE: NOT clearing directBackHandler (another player owns it)")
+                Log.d("BACK-DEFENSE", "PlayerScreen: NOT clearing directBackHandler (another owner)")
             }
         }
-    }
-
-    // ========== UI ==========
-
-    // Layer 2 safety net: BackHandler composable for OnBackPressedDispatcher path.
-    // With enableOnBackInvokedCallback=false, back goes through dispatchKeyEvent or
-    // onBackPressed(), but this catches any dispatches that reach OnBackPressedDispatcher.
-    BackHandler(enabled = true) {
-        Log.d(TAG, "BACK-DEFENSE: BackHandler composable fired")
-        navigateBack()
     }
 
     // Intercept keys at Window.Callback level — BEFORE Compose's internal focus system
@@ -1462,7 +1535,7 @@ fun PlayerScreen(
         val newCallback = object : Window.Callback by originalCallback {
             override fun dispatchKeyEvent(event: android.view.KeyEvent): Boolean {
                 if (event.keyCode in handledKeys && event.action == AndroidKeyEvent.ACTION_DOWN) {
-                    Log.d(TAG, "BACK-DEFENSE LAYER1: WindowCallback intercepted keyCode=${event.keyCode}(${keyName(event.keyCode)})")
+                    Log.d(TAG, "WindowCallback: keyCode=${event.keyCode}(${keyName(event.keyCode)}) action=DOWN -> intercepted")
                     keyChannel.trySend(event.keyCode)
                     return true // consume — prevent Compose from stealing D-pad
                 }
@@ -1471,9 +1544,12 @@ fun PlayerScreen(
         }
         window.callback = newCallback
         onDispose {
-            // Only restore if WE are still the owner (not replaced by another player)
+            Log.d("BACK-DEFENSE", "PlayerScreen: Restoring window.callback — checking ownership")
             if (window.callback === newCallback) {
+                Log.d("BACK-DEFENSE", "PlayerScreen: Restoring original window.callback")
                 window.callback = originalCallback
+            } else {
+                Log.d("BACK-DEFENSE", "PlayerScreen: NOT restoring window.callback (another owner)")
             }
             keyChannel.close()
         }

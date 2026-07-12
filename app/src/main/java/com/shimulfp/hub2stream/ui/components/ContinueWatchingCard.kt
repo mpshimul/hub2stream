@@ -47,7 +47,7 @@ fun ContinueWatchingCard(
     Box(
         modifier = modifier
             .width(120.dp)
-            .height(225.dp)
+            .height(200.dp)
     ) {
         Column(
             modifier = Modifier
@@ -61,7 +61,7 @@ fun ContinueWatchingCard(
         ) {
             // Poster image with progress bar overlay
             Card(
-                modifier = Modifier.fillMaxWidth().height(180.dp),
+                modifier = Modifier.fillMaxWidth().height(157.dp),
                 elevation = CardDefaults.cardElevation(if (isFocused) 16.dp else 4.dp)
             ) {
                 Box(modifier = Modifier.fillMaxSize()) {

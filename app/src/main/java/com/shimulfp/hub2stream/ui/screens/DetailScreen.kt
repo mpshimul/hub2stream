@@ -40,9 +40,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.shimulfp.hub2stream.extractor.models.Episode
 import com.shimulfp.hub2stream.extractor.models.Series
+import com.shimulfp.hub2stream.utils.Json
 import com.shimulfp.hub2stream.ui.navigation.Screen
 import com.shimulfp.hub2stream.ui.theme.DarkBackground
 import com.shimulfp.hub2stream.ui.theme.DarkSurface
@@ -346,8 +346,7 @@ fun SeriesDetailScreen(
                             val episodesList = limitedEpisodes.mapIndexed { idx, ep ->
                                 mapOf("url" to ep.filePath, "title" to "${series.title} - ${ep.title}")
                             }
-                            val mapper = jacksonObjectMapper()
-                            val episodesJson = mapper.writeValueAsString(episodesList)
+                            val episodesJson = Json.toJson(episodesList)
                             val currentIndex = limitedEpisodes.indexOf(targetEpisode)
                             hasAutoPlayed = true
                             navController.navigate(
@@ -395,9 +394,9 @@ fun SeriesDetailScreen(
                 val seriesProgressItems = continueWatchingItems
                     .filter { it.slug == slug && it.type == "series" }
 
-                // Find the highest episode number (considering season and episode)
+                // Find the latest watched episode (highest season, then highest episode within that season)
                 val latestWatchedEpisode = seriesProgressItems
-                    .maxByOrNull { compareValues(it.seasonNumber, it.episodeNumber) }
+                    .maxByOrNull { (it.seasonNumber * 10000) + it.episodeNumber }
 
                 // Determine play episode:
                 // Priority 1: If a specific season/episode was passed (e.g., from continue watching click), use that
@@ -427,8 +426,7 @@ fun SeriesDetailScreen(
                         val episodesList = limitedEpisodes.mapIndexed { idx, ep ->
                             mapOf("url" to ep.filePath, "title" to "${series.title} - ${ep.title}")
                         }
-                        val mapper = jacksonObjectMapper()
-                        val episodesJson = mapper.writeValueAsString(episodesList)
+                        val episodesJson = Json.toJson(episodesList)
                         val currentIndex = limitedEpisodes.indexOf(playEpisodeObj)
                         navController.navigate(
                             Screen.Player.pass(
@@ -468,8 +466,7 @@ fun SeriesDetailScreen(
                         val episodesList = limitedEpisodes.mapIndexed { idx, ep ->
                             mapOf("url" to ep.filePath, "title" to "${series.title} - ${ep.title}")
                         }
-                        val mapper = jacksonObjectMapper()
-                        val episodesJson = mapper.writeValueAsString(episodesList)
+                        val episodesJson = Json.toJson(episodesList)
                         val currentIndex = limitedEpisodes.indexOf(clickedEpisode)
                         navController.navigate(
                             Screen.Player.pass(

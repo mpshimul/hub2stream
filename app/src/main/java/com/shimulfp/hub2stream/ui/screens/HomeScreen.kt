@@ -70,6 +70,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
+import android.content.Context
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -80,7 +81,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import com.shimulfp.hub2stream.utils.DataUriHelper
+import com.shimulfp.hub2stream.utils.Json
 
 import com.shimulfp.hub2stream.extractor.models.LiveChannel
 import com.shimulfp.hub2stream.extractor.models.MediaItemPreview
@@ -246,7 +248,7 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = viewMode
                                 SportsEventCardForCarousel(
                                     event = event,
                                     orientation = sportsCardOrientation,
-                                    onClick = { playSportsEventWithPlaylist(navController, uiState.liveEvents, event) }
+                                    onClick = { playSportsEventWithPlaylist(navController, context, uiState.liveEvents, event) }
                                 )
                             }
                         }
@@ -303,7 +305,7 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = viewMode
                                     match = match,
                                     orientation = sportsCardOrientation,
                                     timerTrigger = timerTrigger,  // Pass timer for real-time updates
-                                    onClick = { playUpcomingMatch(navController, match, uiState.upcomingMatches) }
+                                    onClick = { playUpcomingMatch(navController, context, match, uiState.upcomingMatches) }
                                 )
                             }
                         }
@@ -319,12 +321,12 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = viewMode
                     CategoryRow(
                         title = "Live TV",
                         items = uiState.liveChannels,
-                        onItemClick = { channel -> playChannelWithPlaylist(navController, uiState.liveChannels, channel) },
+                        onItemClick = { channel -> playChannelWithPlaylist(navController, context, uiState.liveChannels, channel) },
                         onMoreClick = { navController.navigate(Screen.LiveTV.route) },
                         posterContent = { channel, requestFocus ->
                             ChannelCard(
                                 channel = channel,
-                                onClick = { playChannelWithPlaylist(navController, uiState.liveChannels, channel) },
+                                onClick = { playChannelWithPlaylist(navController, context, uiState.liveChannels, channel) },
                                 modifier = Modifier.width(90.dp).height(90.dp),
                                 requestFocus = requestFocus
                             )
@@ -814,13 +816,13 @@ fun SportsEventCardForCarousel(
     }
 }
 
-private fun playChannelWithPlaylist(navController: NavController, allChannels: List<LiveChannel>, selected: LiveChannel) {
-    val playlist = allChannels.map { mapOf("url" to it.streamUrl, "title" to it.name, "logo" to it.logo, "sourceId" to it.sourceId) }
-    val json = jacksonObjectMapper().writeValueAsString(playlist)
+private fun playChannelWithPlaylist(navController: NavController, context: Context, allChannels: List<LiveChannel>, selected: LiveChannel) {
+    val playlist = allChannels.map { mapOf("url" to it.streamUrl, "title" to it.name, "logo" to DataUriHelper.resolveToString(context, it.logo), "sourceId" to it.sourceId) }
+    val json = Json.toJson(playlist)
     navController.navigate(Screen.LivePlayer.pass(url = selected.streamUrl, title = selected.name, channelsJson = URLEncoder.encode(json, "UTF-8"), startIndex = allChannels.indexOf(selected)))
 }
 
-private fun playSportsEventWithPlaylist(navController: NavController, allEvents: List<SportsEvent>, selected: SportsEvent) {
+private fun playSportsEventWithPlaylist(navController: NavController, context: Context, allEvents: List<SportsEvent>, selected: SportsEvent) {
     if (selected.streamUrl.isBlank()) {
         // Selected event doesn't have a stream URL (likely upcoming)
         return
@@ -834,19 +836,19 @@ private fun playSportsEventWithPlaylist(navController: NavController, allEvents:
                 "url" to channel.url,
                 "title" to channel.name,
                 "id" to channel.id,
-                "logo" to channel.logo,
+                "logo" to DataUriHelper.resolveToString(context, channel.logo),
                 "cookies" to channel.cookies  // Include cookies for authenticated streams
             )
         }
     } else {
         // Fallback: single channel
-        listOf(mapOf("url" to selected.streamUrl, "title" to selected.name, "id" to selected.id, "logo" to selected.logo, "cookies" to selected.cookies))
+        listOf(mapOf("url" to selected.streamUrl, "title" to selected.name, "id" to selected.id, "logo" to DataUriHelper.resolveToString(context, selected.logo), "cookies" to selected.cookies))
     }
 
     // Find the index (default to first channel)
     val startIndex = 0
 
-    val json = jacksonObjectMapper().writeValueAsString(channels)
+    val json = Json.toJson(channels)
     navController.navigate(Screen.LivePlayer.pass(url = selected.streamUrl, title = selected.name, channelsJson = URLEncoder.encode(json, "UTF-8"), startIndex = startIndex))
 }
 
@@ -855,6 +857,7 @@ private fun playSportsEventWithPlaylist(navController: NavController, allEvents:
  */
 private fun playUpcomingMatch(
     navController: NavController,
+    context: Context,
     selected: UpcomingMatch,
     allMatches: List<UpcomingMatch>
 ) {
@@ -901,17 +904,16 @@ private fun playUpcomingMatch(
                 "url" to channel.url,
                 "title" to channel.name,
                 "id" to channel.id,
-                "logo" to channel.logo,
+                "logo" to DataUriHelper.resolveToString(context, channel.logo),
                 "cookies" to channel.cookies  // Include cookies for authenticated streams
             )
         }
     } else {
         // Fallback: single channel from streamUrl
-        listOf(mapOf("url" to selected.streamUrl, "title" to selected.name, "id" to selected.id, "logo" to selected.logo, "cookies" to ""))
+        listOf(mapOf("url" to selected.streamUrl, "title" to selected.name, "id" to selected.id, "logo" to DataUriHelper.resolveToString(context, selected.logo), "cookies" to ""))
     }
 
-    val mapper = jacksonObjectMapper()
-    val channelsJson = mapper.writeValueAsString(channels)
+    val channelsJson = Json.toJson(channels)
     val encoded = URLEncoder.encode(channelsJson, "UTF-8")
 
     // Default to first channel

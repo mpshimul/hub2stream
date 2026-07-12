@@ -76,7 +76,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                     }.mapValues { (_, groupItems) ->
                         if (groupItems.first().type == "series") {
                             // For series, keep only the latest episode (highest season/episode number)
-                            groupItems.maxByOrNull { compareValues(it.seasonNumber, it.episodeNumber) }
+                            groupItems.maxWithOrNull(compareBy({ it.seasonNumber }, { it.episodeNumber }))
                                 ?: groupItems.firstOrNull()
                         } else {
                             // For movies, keep the item

@@ -2,6 +2,7 @@ package com.shimulfp.hub2stream.data
 
 import com.shimulfp.hub2stream.extractor.FIFA26M3UParser
 import com.shimulfp.hub2stream.extractor.models.MatchChannel
+import com.shimulfp.hub2stream.utils.Json
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -141,8 +142,7 @@ object FIFAChannelValidationService {
                 )
             }
             return try {
-                val mapper = com.fasterxml.jackson.module.kotlin.jacksonObjectMapper()
-                mapper.writeValueAsString(channelsList)
+                Json.toJson(channelsList)
             } catch (e: Exception) {
                 android.util.Log.e("FIFAChannelValidation", "Error converting channels to JSON", e)
                 "[]"

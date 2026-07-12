@@ -115,8 +115,16 @@ sealed class Screen(val route: String) {
 }
 
 @Composable
-fun AppNavigation(blockBackPress: () -> Boolean = { false }) {
+fun AppNavigation(
+    blockBackPress: () -> Boolean = { false },
+    onNavControllerReady: (NavHostController) -> Unit = {}
+) {
     val navController = rememberNavController()
+
+    // Expose NavController to MainActivity for back-press fallback
+    LaunchedEffect(navController) {
+        onNavControllerReady(navController)
+    }
     val exitConfirmFocusRequester = remember { FocusRequester() }
     var showExitDialog by remember { mutableStateOf(false) }
     var backPressedTime by remember { mutableStateOf(0L) }
@@ -124,6 +132,7 @@ fun AppNavigation(blockBackPress: () -> Boolean = { false }) {
     // Exit back handler — only enabled at the root destination (no back stack entries to pop).
     // This prevents the exit dialog from appearing when inside any screen (player, detail, etc.)
     // where the NavHost's built-in back handling or the screen's own BackHandler should handle it.
+    // canGoBack() requires Navigation 2.8+; 2.7.x uses previousBackStackEntry != null
     BackHandler(enabled = navController.previousBackStackEntry == null) {
         if (blockBackPress()) return@BackHandler
         val currentTime = System.currentTimeMillis()

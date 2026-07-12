@@ -85,17 +85,14 @@ import androidx.compose.material.icons.filled.Check
 import androidx.media3.common.TrackSelectionOverride
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import coil.request.ImageRequest
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.module.kotlin.readValue
 import com.shimulfp.hub2stream.data.LiveTVRepository
+import com.shimulfp.hub2stream.utils.Json
 import com.shimulfp.hub2stream.ui.theme.FocusAccent
 import com.shimulfp.hub2stream.utils.LovetierTokenManager
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeoutOrNull
 import java.net.URLDecoder
-import java.util.Base64
 
 private const val TAG = "LivePlayerScreen"
 
@@ -134,7 +131,7 @@ fun buildMediaItemForChannel(channel: LiveChannelItem): MediaItem {
             if (parts.size == 2) {
                 val keyIdHex = parts[0]
                 // Convert hex to Base64url (W3C ClearKey spec, RFC 4648 §5)
-                val kidB64 = Base64.getUrlEncoder().withoutPadding().encodeToString(hexToBytes(keyIdHex))
+                val kidB64 = android.util.Base64.encodeToString(hexToBytes(keyIdHex), android.util.Base64.NO_WRAP or android.util.Base64.URL_SAFE)
                 Log.d(TAG, "ClearKey DRM configured for '${channel.title}': kid=${keyIdHex.take(8)}...")
                 // Only set the UUID to signal this item needs ClearKey DRM.
                 // The DefaultDrmSessionManager (with forceSessionsForAudioAndVideoTracks=true)
@@ -255,8 +252,7 @@ fun LivePlayerScreen(
         if (channelsJson.isNotBlank()) {
             try {
                 val decoded = URLDecoder.decode(channelsJson, "UTF-8")
-                val mapper = jacksonObjectMapper()
-                val list: List<Map<String, String>> = mapper.readValue(decoded, object : TypeReference<List<Map<String, String>>>() {})
+                val list = Json.fromJson<List<Map<String, String>>>(decoded)
                 list.map {
                     val rawLogo = it["logo"] ?: it["tvg-logo"] ?: it["tvgLogo"] ?: it["logo_url"] ?: it["logoUrl"] ?: it["Logo"] ?: it["image"] ?: ""
                     val resolvedLogo = resolveLogoUrl(rawLogo)
@@ -434,7 +430,7 @@ fun LivePlayerScreen(
 
     /** Clear PIP auto-enter params so other screens don't accidentally trigger PIP. */
     fun clearPipAutoEnter() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             try {
                 activity?.setPictureInPictureParams(
                     PictureInPictureParams.Builder()
@@ -758,7 +754,6 @@ fun LivePlayerScreen(
                     return true
                 }
                 AndroidKeyEvent.KEYCODE_BACK, AndroidKeyEvent.KEYCODE_ESCAPE -> {
-                    Log.d(TAG, "BACK-DEFENSE LAYER1-CONSUMER: navigateBack() from key event channel")
                     navigateBack()
                     return true
                 }
@@ -833,7 +828,6 @@ fun LivePlayerScreen(
                     focusRow = 0
                     return true
                 }
-                Log.d(TAG, "BACK-DEFENSE LAYER1-CONSUMER: hiding controls (controls visible, no dropdown)")
                 isControlsVisible = false
                 return true
             }
@@ -932,8 +926,8 @@ fun LivePlayerScreen(
                 val keysJson = clearKeyChannels.mapNotNull { ch ->
                     val parts = ch.licenseKey.split(":")
                     if (parts.size == 2) {
-                        val kidB64 = Base64.getUrlEncoder().withoutPadding().encodeToString(hexToBytes(parts[0]))
-                        val keyB64 = Base64.getUrlEncoder().withoutPadding().encodeToString(hexToBytes(parts[1]))
+                        val kidB64 = android.util.Base64.encodeToString(hexToBytes(parts[0]), android.util.Base64.NO_WRAP or android.util.Base64.URL_SAFE)
+                        val keyB64 = android.util.Base64.encodeToString(hexToBytes(parts[1]), android.util.Base64.NO_WRAP or android.util.Base64.URL_SAFE)
                         """{"kty":"oct","kid":"$kidB64","k":"$keyB64"}"""
                     } else null
                 }.joinToString(",")
@@ -943,7 +937,7 @@ fun LivePlayerScreen(
 
                 // First KID — injected into DASH manifest so MpdParser creates DrmInitData
                 val firstKidHex = clearKeyChannels.first().licenseKey.split(":").first()
-                firstKidB64 = Base64.getUrlEncoder().withoutPadding().encodeToString(hexToBytes(firstKidHex))
+                firstKidB64 = android.util.Base64.encodeToString(hexToBytes(firstKidHex), android.util.Base64.NO_WRAP or android.util.Base64.URL_SAFE)
                 Log.d(TAG, "Manifest injection KID (base64url): $firstKidB64")
 
                 val mediaDrm = FrameworkMediaDrm.newInstance(C.CLEARKEY_UUID)
@@ -1074,8 +1068,7 @@ fun LivePlayerScreen(
             .build()
             .apply {
                 if (mediaItems.isNotEmpty()) {
-                    val safeStartIndex = startIndex.coerceIn(0, mediaItems.size - 1)
-                    setMediaItems(mediaItems, safeStartIndex, C.TIME_UNSET)
+                    setMediaItems(mediaItems, startIndex, C.TIME_UNSET)
                 }
                 repeatMode = Player.REPEAT_MODE_ONE
                 prepare()
@@ -1109,12 +1102,11 @@ fun LivePlayerScreen(
             } else {
                 Rational(9, 16)
             }
-            activity?.setPictureInPictureParams(
-                PictureInPictureParams.Builder()
-                    .setAspectRatio(aspectRatio)
-                    .setAutoEnterEnabled(true)
-                    .build()
-            )
+            val builder = PictureInPictureParams.Builder().setAspectRatio(aspectRatio)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                builder.setAutoEnterEnabled(true)
+            }
+            activity?.setPictureInPictureParams(builder.build())
             Log.d(TAG, "PIP params set (orientation: ${configuration.orientation})")
         }
     }
@@ -1235,18 +1227,18 @@ fun LivePlayerScreen(
                         playerViewState?.keepScreenOn = false
                         // Try to enter PIP mode if supported and playing
                         if (supportsPip && !isInPipMode) {
-                            activity?.setPictureInPictureParams(
-                                PictureInPictureParams.Builder()
-                                    .setAspectRatio(
-                                        if (context.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                                            Rational(16, 9)
-                                        } else {
-                                            Rational(9, 16)
-                                        }
-                                    )
-                                    .setAutoEnterEnabled(true)
-                                    .build()
-                            )
+                            val builder = PictureInPictureParams.Builder()
+                                .setAspectRatio(
+                                    if (context.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                                        Rational(16, 9)
+                                    } else {
+                                        Rational(9, 16)
+                                    }
+                                )
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                                builder.setAutoEnterEnabled(true)
+                            }
+                            activity?.setPictureInPictureParams(builder.build())
                         } else {
                             // Pause playback if PIP is not supported
                             exoPlayer.pause()
@@ -1273,31 +1265,25 @@ fun LivePlayerScreen(
         }
     }
 
-    // ========== Layer 3: Direct Activity back handler ==========
-    // Register navigateBack directly with MainActivity.companion.directBackHandler.
-    // This is the most reliable path — it bypasses OnBackPressedDispatcher and
-    // BackHandler composables entirely, going straight from Activity.onBackPressed()
-    // to navigateBack(). Critical for TV firmware where back dispatch is broken.
+    // Stop playback when navigating away from screen
+    BackHandler(enabled = true) {
+        navigateBack()
+    }
+
+    // Layer 3: Register directBackHandler so MainActivity.onBackPressed() can call us
     DisposableEffect(Unit) {
-        Log.d(TAG, "BACK-DEFENSE: Registering directBackHandler with MainActivity")
+        Log.d("BACK-DEFENSE", "LivePlayerScreen: Setting directBackHandler")
         val backHandler = { navigateBack() }
         MainActivity.directBackHandler = backHandler
         onDispose {
-            // Only clear if WE are still the owner (not replaced by another player)
+            Log.d("BACK-DEFENSE", "LivePlayerScreen: Disposing directBackHandler — checking ownership")
             if (MainActivity.directBackHandler === backHandler) {
-                Log.d(TAG, "BACK-DEFENSE: Clearing directBackHandler (we are still the owner)")
+                Log.d("BACK-DEFENSE", "LivePlayerScreen: Clearing directBackHandler (we own it)")
                 MainActivity.directBackHandler = null
             } else {
-                Log.d(TAG, "BACK-DEFENSE: NOT clearing directBackHandler (another player owns it)")
+                Log.d("BACK-DEFENSE", "LivePlayerScreen: NOT clearing directBackHandler (another owner)")
             }
         }
-    }
-
-    // Stop playback when navigating away from screen
-    // Layer 2 safety net: BackHandler composable for OnBackPressedDispatcher path.
-    BackHandler(enabled = true) {
-        Log.d(TAG, "BACK-DEFENSE: BackHandler composable fired")
-        navigateBack()
     }
 
     DisposableEffect(exoPlayer) {
@@ -1642,7 +1628,7 @@ fun LivePlayerScreen(
                 )
         onDispose {
             // Clear PIP auto-enter so it doesn't leak to other screens
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 try {
                     activity?.setPictureInPictureParams(
                         PictureInPictureParams.Builder()
@@ -1723,7 +1709,6 @@ fun LivePlayerScreen(
         val newCallback = object : Window.Callback by originalCallback {
             override fun dispatchKeyEvent(event: android.view.KeyEvent): Boolean {
                 if (event.keyCode in handledKeys && event.action == AndroidKeyEvent.ACTION_DOWN) {
-                    Log.d(TAG, "BACK-DEFENSE LAYER1: WindowCallback intercepted keyCode=${event.keyCode}")
                     keyChannel.trySend(event.keyCode)
                     return true
                 }
@@ -1732,9 +1717,12 @@ fun LivePlayerScreen(
         }
         window.callback = newCallback
         onDispose {
-            // Only restore if WE are still the owner (not replaced by another player)
+            Log.d("BACK-DEFENSE", "LivePlayerScreen: Restoring window.callback — checking ownership")
             if (window.callback === newCallback) {
+                Log.d("BACK-DEFENSE", "LivePlayerScreen: Restoring original window.callback")
                 window.callback = originalCallback
+            } else {
+                Log.d("BACK-DEFENSE", "LivePlayerScreen: NOT restoring window.callback (another owner)")
             }
             keyChannel.close()
         }
@@ -1798,15 +1786,15 @@ fun LivePlayerScreen(
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     androidx.compose.material3.CircularProgressIndicator(
-                        color = Color.Yellow.copy(alpha = 0.7f),
-                        modifier = Modifier.size(30.dp),
+                        color = Color.Yellow,
+                        modifier = Modifier.size(32.dp),
                         strokeWidth = 3.dp
                     )
-                    /** Text(
+                    /* Text(
                         text = "Buffering...",
                         color = Color.White,
                         fontSize = 14.sp
-                    ) **/
+                    ) */
                 }
             }
         }
