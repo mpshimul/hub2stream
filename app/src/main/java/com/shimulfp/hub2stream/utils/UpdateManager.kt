@@ -17,6 +17,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.File
 import java.io.FileOutputStream
+import com.shimulfp.hub2stream.utils.Json
 import java.util.concurrent.TimeUnit
 
 data class UpdateInfo(
@@ -61,8 +62,7 @@ class UpdateManager(private val context: Context) {
             val response = client.newCall(request).execute()
             if (!response.isSuccessful) return@withContext null
             val json = response.body?.string() ?: return@withContext null
-            val mapper = com.fasterxml.jackson.module.kotlin.jacksonObjectMapper()
-            val update = mapper.readValue(json, UpdateInfo::class.java)
+            val update = Json.fromJson<UpdateInfo>(json)
             if (update.versionCode > getCurrentVersionCode()) update else null
         } catch (e: Exception) {
             Log.e(TAG, "Update check error", e)

@@ -2,6 +2,9 @@ package com.shimulfp.hub2stream
 
 import android.app.Application
 import android.util.Log
+import coil.ImageLoader
+import coil.ImageLoaderFactory
+import coil.decode.SvgDecoder
 import com.shimulfp.hub2stream.data.UpcomingMatchesRepository
 import com.shimulfp.hub2stream.data.cache.CacheManager
 import kotlinx.coroutines.CoroutineScope
@@ -13,7 +16,7 @@ import kotlinx.coroutines.launch
  * Application class for Hub2Stream
  * All extractors are now internal - no external JAR loading
  */
-class Hub2StreamApplication : Application() {
+class Hub2StreamApplication : Application(), ImageLoaderFactory {
 
     companion object {
         private const val TAG = "Hub2StreamApplication"
@@ -23,6 +26,12 @@ class Hub2StreamApplication : Application() {
 
     // Application-level coroutine scope
     private val applicationScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+
+    override fun newImageLoader(): ImageLoader {
+        return ImageLoader.Builder(this)
+            .components { add(SvgDecoder.Factory()) }
+            .build()
+    }
 
     override fun onCreate() {
         super.onCreate()

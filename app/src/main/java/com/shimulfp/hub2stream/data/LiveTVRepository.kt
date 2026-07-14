@@ -1,7 +1,10 @@
 package com.shimulfp.hub2stream.data
 
 import android.util.Log
+import com.shimulfp.hub2stream.Hub2StreamApplication
+import com.shimulfp.hub2stream.utils.DataUriHelper
 import com.shimulfp.hub2stream.extractor.LiveTVExtractor
+import com.shimulfp.hub2stream.extractor.LocalIPTVExtractor
 import com.shimulfp.hub2stream.extractor.RoarZoneExtractor
 import com.shimulfp.hub2stream.extractor.models.LiveChannel
 import com.shimulfp.hub2stream.extractor.models.LiveTVSource
@@ -28,9 +31,9 @@ data class SourceChannels(
  *
  * Two-phase loading:
  *   Phase 1 (fast): Fetch all sources, NO validation. Homescreen uses this immediately.
- *   Phase 2 (background): Validate remote playlist channels. Updates cached results.
+ *   Phase 2 (background): Validate ALL source channels. Updates cached results.
  *
- * Built-in sources: RoarZone, RedForce, TexasTV, Fallback.
+ * Built-in sources: RoarZone, RedForce, TexasTV, 172TV, BTV, LocalIPTV, Fallback.
  * Remote sources: Loaded from a JSON config file (GitHub), each M3U playlist becomes a source.
  */
 object LiveTVRepository {
@@ -40,11 +43,15 @@ object LiveTVRepository {
         LiveTVSource("roarzone", "RoarZone"),
         LiveTVSource("redforce", "RedForce"),
         LiveTVSource("texastv", "TexasTV"),
+        LiveTVSource("172tv", "172TV"),
+        LiveTVSource("btv", "BTV"),
+        LiveTVSource("localiptv", "LocalIPTV"),
         LiveTVSource("fallback", "Fallback")
     )
 
     private val roarZoneExtractor = RoarZoneExtractor()
     private val liveTvExtractor = LiveTVExtractor()
+    private val localIptvExtractor = LocalIPTVExtractor()
 
     // Cached remote playlist URLs (sourceId -> m3u URL) for refresh
     @Volatile
@@ -90,6 +97,19 @@ object LiveTVRepository {
         get() = BUILTIN_SOURCES + remoteSources
 
     // ========== Phase 1: Fast Load (No Validation) ==========
+
+    /**
+     * Resolve any data:image/... URIs in channel logos to local file:// URIs.
+     * Must be called on IO thread.
+     */
+    private fun resolveLogos(channels: List<LiveChannel>): List<LiveChannel> {
+        val ctx = Hub2StreamApplication.instance.applicationContext
+        return channels.map { ch ->
+            if (ch.logo.startsWith("data:")) {
+                ch.copy(logo = DataUriHelper.resolveToString(ctx, ch.logo))
+            } else ch
+        }
+    }
 
     /**
      * Load all source definitions and fetch channels WITHOUT validation.
@@ -150,7 +170,7 @@ object LiveTVRepository {
     // ========== Phase 2: Background Validation ==========
 
     /**
-     * Validate remote playlist channels in the background.
+     * Validate ALL source channels in the background.
      * Call this AFTER the homescreen has loaded.
      * Updates the validated results cache — LiveTVScreen will pick these up.
      * Safe to call multiple times — concurrent calls are deduplicated via semaphore.
@@ -178,9 +198,10 @@ object LiveTVRepository {
 
             // Validate remote playlist channels in parallel across sources
             val validated = sources.map { sc ->
-                if (sc.source.id.startsWith("playlist_") && sc.channels.isNotEmpty()) {
+                if (sc.channels.isNotEmpty()) {
                     val sourceName = nameMap[sc.source.id] ?: sc.source.id
                     async {
+                        Log.d(TAG, "Validating '$sourceName' (${sc.channels.size} channels)...")
                         val validChannels = validateChannels(sc.channels, sourceName)
                         sc.copy(channels = validChannels)
                     }
@@ -249,8 +270,8 @@ object LiveTVRepository {
         )
         val channels = fetchFromSource(sourceId, forceRefresh = true)
 
-        // Validate if remote playlist
-        val validatedChannels = if (sourceId.startsWith("playlist_")) {
+        // Validate all sources (not just remote playlists)
+        val validatedChannels = if (channels.isNotEmpty()) {
             validateChannels(channels, source.name)
         } else {
             channels
@@ -275,8 +296,11 @@ object LiveTVRepository {
             sourceId == "roarzone" -> withTimeoutOrNull(15000L) {
                 roarZoneExtractor.refreshChannelStreamUrl(channelId, channelName)
             }
-            sourceId == "redforce" || sourceId == "texastv" -> withTimeoutOrNull(15000L) {
+            sourceId == "redforce" || sourceId == "texastv" || sourceId == "172tv" -> withTimeoutOrNull(15000L) {
                 liveTvExtractor.refreshChannelStreamUrl(channelId, channelName)
+            }
+            sourceId == "localiptv" -> withTimeoutOrNull(15000L) {
+                localIptvExtractor.refreshChannelStreamUrl(channelId, channelName)
             }
             sourceId.startsWith("playlist_") -> {
                 val m3uUrl = remotePlaylistUrls[sourceId] ?: return null
@@ -432,7 +456,7 @@ object LiveTVRepository {
     // ========== Internal Helpers ==========
 
     private suspend fun fetchFromSource(sourceId: String, forceRefresh: Boolean = false): List<LiveChannel> {
-        return when (sourceId) {
+        val raw = when (sourceId) {
             "roarzone" -> {
                 try {
                     withTimeoutOrNull(60000L) {
@@ -472,6 +496,45 @@ object LiveTVRepository {
                     emptyList()
                 }
             }
+            "172tv" -> {
+                try {
+                    withTimeoutOrNull(15000L) {
+                        Log.d(TAG, "Fetching from 172TV...")
+                        val channels = liveTvExtractor.fetchFrom172Source()
+                        Log.d(TAG, "172TV returned ${channels.size} channels")
+                        channels.map { it.copy(sourceId = "172tv") }
+                    } ?: emptyList()
+                } catch (e: Exception) {
+                    Log.e(TAG, "172TV error: ${e.message}")
+                    emptyList()
+                }
+            }
+            "btv" -> {
+                try {
+                    withTimeoutOrNull(15000L) {
+                        Log.d(TAG, "Fetching from BTV...")
+                        val channels = liveTvExtractor.fetchFromBtvSource()
+                        Log.d(TAG, "BTV returned ${channels.size} channels")
+                        channels.map { it.copy(sourceId = "btv") }
+                    } ?: emptyList()
+                } catch (e: Exception) {
+                    Log.e(TAG, "BTV error: ${e.message}")
+                    emptyList()
+                }
+            }
+            "localiptv" -> {
+                try {
+                    withTimeoutOrNull(30000L) {
+                        Log.d(TAG, "Fetching from LocalIPTV...")
+                        val channels = localIptvExtractor.fetchChannels()
+                        Log.d(TAG, "LocalIPTV returned ${channels.size} channels")
+                        channels.map { it.copy(sourceId = "localiptv") }
+                    } ?: emptyList()
+                } catch (e: Exception) {
+                    Log.e(TAG, "LocalIPTV error: ${e.message}")
+                    emptyList()
+                }
+            }
             "fallback" -> {
                 try {
                     withTimeoutOrNull(15000L) {
@@ -506,6 +569,7 @@ object LiveTVRepository {
                 }
             }
         }
+        return resolveLogos(raw)
     }
 
     private fun updateCacheEntry(sourceId: String, newResult: SourceChannels) {

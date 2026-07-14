@@ -1,5 +1,6 @@
 package com.shimulfp.hub2stream.ui.screens
 
+import android.content.Context
 import android.content.res.Configuration
 import android.util.Log
 import androidx.compose.foundation.focusable
@@ -18,10 +19,12 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import com.shimulfp.hub2stream.utils.DataUriHelper
+import com.shimulfp.hub2stream.utils.Json
 import com.shimulfp.hub2stream.viewmodels.FifaWorldCupViewModel
 import com.shimulfp.hub2stream.extractor.models.UpcomingMatch
 import com.shimulfp.hub2stream.extractor.models.MatchStatus
@@ -76,10 +79,10 @@ fun FifaWorldCupCategoryScreen(
         }
     }
 
-    // Limit displayed matches to avoid performance issues (show first 104 filtered matches)
+    // Limit displayed matches to avoid performance issues (show first 50 filtered matches)
     val displayedMatches by remember(filteredMatches) {
         derivedStateOf {
-            filteredMatches.take(104)
+            filteredMatches.take(50)
         }
     }
 
@@ -105,6 +108,7 @@ fun FifaWorldCupCategoryScreen(
     val configuration = LocalConfiguration.current
     val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
     val columns = if (isLandscape) 2 else 1
+    val context = LocalContext.current
 
     val gridState = rememberLazyGridState()
 
@@ -153,7 +157,7 @@ fun FifaWorldCupCategoryScreen(
                         state = gridState,
                         columns = GridCells.Fixed(columns),
                         modifier = Modifier.fillMaxSize(),
-                        contentPadding = PaddingValues(16.dp, 16.dp, 16.dp, if (filteredMatches.size > 104) 80.dp else 16.dp),
+                        contentPadding = PaddingValues(16.dp, 16.dp, 16.dp, if (filteredMatches.size > 50) 80.dp else 16.dp),
                         horizontalArrangement = Arrangement.spacedBy(12.dp),
                         verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
@@ -163,11 +167,11 @@ fun FifaWorldCupCategoryScreen(
                                 orientation = if (isLandscape) CardOrientation.Landscape else CardOrientation.Portrait,
                                 timerTrigger = timerTrigger,  // Pass timer trigger for real-time updates
                                 onClick = {
-                                    playUpcomingMatchWithChannels(navController, allMatches, match)
+                                    playUpcomingMatchWithChannels(navController, context, allMatches, match)
                                 }
                             )
                         }
-                        if (filteredMatches.size > 104) {
+                        if (filteredMatches.size > 50) {
                             item {
                                 Box(
                                     modifier = Modifier
@@ -176,7 +180,7 @@ fun FifaWorldCupCategoryScreen(
                                     contentAlignment = Alignment.Center
                                 ) {
                                     Text(
-                                        text = "Showing first 104 of ${filteredMatches.size} matches",
+                                        text = "Showing first 50 of ${filteredMatches.size} matches",
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant
                                     )
@@ -254,6 +258,7 @@ private fun FilterChipsRow(
  */
 private fun playUpcomingMatchWithChannels(
     navController: NavController,
+    context: Context,
     allMatches: List<UpcomingMatch>,
     selected: UpcomingMatch
 ) {
@@ -295,7 +300,7 @@ private fun playUpcomingMatchWithChannels(
                 "url" to channel.url,
                 "title" to channel.name,
                 "id" to channel.id,
-                "logo" to channel.logo,
+                "logo" to DataUriHelper.resolveToString(context, channel.logo),
                 "cookies" to channel.cookies
             )
         }
@@ -306,13 +311,12 @@ private fun playUpcomingMatchWithChannels(
             "url" to selected.streamUrl,
             "title" to selected.name,
             "id" to selected.id,
-            "logo" to selected.logo,
+            "logo" to DataUriHelper.resolveToString(context, selected.logo),
             "cookies" to ""
         ))
     }
 
-    val mapper = jacksonObjectMapper()
-    val channelsJson = mapper.writeValueAsString(playlist)
+    val channelsJson = Json.toJson(playlist)
     Log.d("FifaWorldCupScreen", "Channels JSON length: ${channelsJson.length}")
 
     val encoded = URLEncoder.encode(channelsJson, "UTF-8")

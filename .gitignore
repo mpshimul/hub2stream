@@ -1,4 +1,7 @@
 *.iml
+*.7z
+*.bat
+*.sh
 .gradle
 /local.properties
 /.idea/caches
@@ -43,4 +46,4 @@ local.properties
 /extensions/roarzone/build/intermediates/
 /extensions/roarzone/build/kotlin/
 /extensions/roarzone/build/tmp/
-
+/app/release/

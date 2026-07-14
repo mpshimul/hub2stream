@@ -13,8 +13,8 @@ android {
         applicationId = "com.shimulfp.hub2stream"
         minSdk = 23
         targetSdk = 34
-        versionCode = 107
-        versionName = "1.0.7"
+        versionCode = 108
+        versionName = "1.0.8"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -28,6 +28,7 @@ android {
     }
 
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -60,6 +61,7 @@ dependencies {
 
     implementation("io.coil-kt:coil-compose:2.5.0")
     implementation("io.coil-kt:coil-gif:2.5.0")
+    implementation("io.coil-kt:coil-svg:2.5.0")
 
     implementation("androidx.media3:media3-exoplayer:1.4.0")
     implementation("androidx.media3:media3-ui:1.4.0")
@@ -72,7 +74,9 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.16.0")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
+
+    implementation("com.google.code.gson:gson:2.10.1")
 
     // Continue Watching
     implementation("androidx.datastore:datastore-preferences:1.0.0")

@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.activity.ComponentActivity
@@ -18,6 +19,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavController
 import com.shimulfp.hub2stream.ui.navigation.AppNavigation
 import com.shimulfp.hub2stream.ui.theme.Hub2StreamTheme
 import com.shimulfp.hub2stream.utils.UpdateInfo
@@ -29,12 +31,13 @@ import java.io.File
 class MainActivity : ComponentActivity() {
 
     companion object {
-        /**
-         * Direct back-press handler set by player screens.
-         * Bypasses OnBackPressedDispatcher entirely — this is the most reliable
-         * path on TV firmware where BackHandler/onBackInvokedCallback are broken.
-         */
+        private const val TAG = "BACK-DEFENSE"
+
+        /** Set by player screens via DisposableEffect. Called by onBackPressed() / dispatchKeyEvent. */
         var directBackHandler: (() -> Unit)? = null
+
+        /** Set by AppNavigation. Used as fallback when directBackHandler is null. */
+        var globalNavController: NavController? = null
     }
 
     private lateinit var updateManager: UpdateManager
@@ -70,10 +73,42 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @Suppress("DEPRECATION")
+    override fun onBackPressed() {
+        Log.d(TAG, "onBackPressed() called — directBackHandler=${directBackHandler != null}")
+
+        // Layer 4: Direct handler set by player screens
+        val handler = directBackHandler
+        if (handler != null) {
+            Log.d(TAG, "onBackPressed() → calling directBackHandler")
+            handler()
+            return
+        }
+
+        // Fallback: if we're in a player screen but handler is null (race condition / slow device),
+        // pop via NavController directly
+        val nav = globalNavController
+        if (nav != null) {
+            val route = nav.currentDestination?.route ?: ""
+            if (route.startsWith("player") || route.startsWith("liveplayer")) {
+                Log.w(TAG, "onBackPressed() → directBackHandler is null but in player screen ($route), popping via NavController")
+                nav.popBackStack()
+                return
+            }
+        }
+
+        // Not in a player screen — let system handle (exit dialog in AppNavigation)
+        Log.d(TAG, "onBackPressed() → no handler, calling super")
+        super.onBackPressed()
+    }
+
     @Composable
     private fun AppNavigationWrapper() {
         AppNavigation(
-            blockBackPress = { criticalUpdateDialog?.isShowing == true }
+            blockBackPress = { criticalUpdateDialog?.isShowing == true },
+            onNavControllerReady = { navController ->
+                globalNavController = navController
+            }
         )
     }
 
@@ -235,25 +270,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-
-    /**
-     * Layer 4 defense: Direct Activity-level back override.
-     * This is the ABSOLUTE last line of defense before finish() is called.
-     * Called when firmware doesn't go through dispatchKeyEvent or OnBackPressedDispatcher.
-     */
-    @Suppress("DEPRECATION")
-    override fun onBackPressed() {
-        android.util.Log.d("MainActivity", "onBackPressed() called — directBackHandler=${directBackHandler != null}")
-        val handler = directBackHandler
-        if (handler != null) {
-            android.util.Log.d("MainActivity", "onBackPressed() → calling directBackHandler (player screen)")
-            handler()
-            return
-        }
-        // Not on a player screen — let normal dispatch handle it (exit dialog, etc.)
-        android.util.Log.d("MainActivity", "onBackPressed() → no directBackHandler, calling super (normal back dispatch)")
-        super.onBackPressed()
     }
 
     override fun onResume() {

@@ -6,10 +6,8 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.fasterxml.jackson.module.kotlin.readValue
 import com.shimulfp.hub2stream.extractor.models.HomePageRow
+import com.shimulfp.hub2stream.utils.Json
 import com.shimulfp.hub2stream.extractor.models.LiveChannel
 import com.shimulfp.hub2stream.extractor.models.SportsEvent
 import com.shimulfp.hub2stream.extractor.models.UpcomingMatch
@@ -26,7 +24,6 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(na
 class CacheManager(context: Context) {
 
     private val dataStore = context.dataStore
-    private val objectMapper = jacksonObjectMapper()
 
     // Cache keys
     private val MOVIES_KEY = stringPreferencesKey("cached_movies")
@@ -52,7 +49,7 @@ class CacheManager(context: Context) {
      */
     suspend fun saveMovies(movies: List<HomePageRow>) {
         dataStore.edit { preferences ->
-            preferences[MOVIES_KEY] = objectMapper.writeValueAsString(movies)
+            preferences[MOVIES_KEY] = Json.toJson(movies)
             preferences[MOVIES_TIMESTAMP_KEY] = System.currentTimeMillis().toString()
         }
         android.util.Log.d("CacheManager", "Movies cached: ${movies.size} rows")
@@ -68,7 +65,7 @@ class CacheManager(context: Context) {
             timestampKey = MOVIES_TIMESTAMP_KEY,
             cacheDuration = MOVIES_CACHE_DURATION
         ) { json ->
-            objectMapper.readValue(json)
+            Json.fromJson<List<HomePageRow>>(json)
         }
     }
 
@@ -77,7 +74,7 @@ class CacheManager(context: Context) {
      */
     suspend fun saveLiveTv(channels: List<LiveChannel>) {
         dataStore.edit { preferences ->
-            preferences[LIVE_TV_KEY] = objectMapper.writeValueAsString(channels)
+            preferences[LIVE_TV_KEY] = Json.toJson(channels)
             preferences[LIVE_TV_TIMESTAMP_KEY] = System.currentTimeMillis().toString()
         }
         android.util.Log.d("CacheManager", "Live TV cached: ${channels.size} channels")
@@ -92,7 +89,7 @@ class CacheManager(context: Context) {
             timestampKey = LIVE_TV_TIMESTAMP_KEY,
             cacheDuration = LIVE_TV_CACHE_DURATION
         ) { json ->
-            objectMapper.readValue(json)
+            Json.fromJson<List<LiveChannel>>(json)
         }
     }
 
@@ -101,7 +98,7 @@ class CacheManager(context: Context) {
      */
     suspend fun saveSports(events: List<SportsEvent>) {
         dataStore.edit { preferences ->
-            preferences[SPORTS_KEY] = objectMapper.writeValueAsString(events)
+            preferences[SPORTS_KEY] = Json.toJson(events)
             preferences[SPORTS_TIMESTAMP_KEY] = System.currentTimeMillis().toString()
         }
         android.util.Log.d("CacheManager", "Sports cached: ${events.size} events")
@@ -116,7 +113,7 @@ class CacheManager(context: Context) {
             timestampKey = SPORTS_TIMESTAMP_KEY,
             cacheDuration = SPORTS_CACHE_DURATION
         ) { json ->
-            objectMapper.readValue(json)
+            Json.fromJson<List<SportsEvent>>(json)
         }
     }
 
@@ -125,7 +122,7 @@ class CacheManager(context: Context) {
      */
     suspend fun saveUpcomingMatches(matches: List<UpcomingMatch>) {
         dataStore.edit { preferences ->
-            preferences[UPCOMING_MATCHES_KEY] = objectMapper.writeValueAsString(matches)
+            preferences[UPCOMING_MATCHES_KEY] = Json.toJson(matches)
             preferences[UPCOMING_MATCHES_TIMESTAMP_KEY] = System.currentTimeMillis().toString()
         }
         android.util.Log.d("CacheManager", "Upcoming matches cached: ${matches.size} matches")
@@ -140,7 +137,7 @@ class CacheManager(context: Context) {
             timestampKey = UPCOMING_MATCHES_TIMESTAMP_KEY,
             cacheDuration = UPCOMING_MATCHES_CACHE_DURATION
         ) { json ->
-            objectMapper.readValue(json)
+            Json.fromJson<List<UpcomingMatch>>(json)
         }
     }
 

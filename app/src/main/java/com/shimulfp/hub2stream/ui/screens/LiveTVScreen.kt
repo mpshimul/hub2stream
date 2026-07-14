@@ -1,10 +1,12 @@
 package com.shimulfp.hub2stream.ui.screens
 
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,13 +20,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -53,26 +54,28 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.input.key.onPreviewKeyEvent
+import androidx.compose.ui.input.key.type
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalContext
+import android.view.KeyEvent as AndroidKeyEvent
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
-import coil.request.ImageRequest
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.shimulfp.hub2stream.extractor.models.LiveChannel
+import com.shimulfp.hub2stream.utils.Json
 import com.shimulfp.hub2stream.extractor.models.LiveTVSource
 import com.shimulfp.hub2stream.ui.navigation.Screen
 import com.shimulfp.hub2stream.ui.theme.FocusAccent
-import com.shimulfp.hub2stream.utils.isTv
 import com.shimulfp.hub2stream.viewmodels.LiveTVViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -89,8 +92,7 @@ fun LiveTVScreen(
     val isLandscape = configuration.orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE
     val columns = if (isLandscape) 8 else 4
     val scope = rememberCoroutineScope()
-    val context = LocalContext.current
-    val isTv = remember { context.isTv() }
+    val gridFocusRequester = remember { FocusRequester() }
 
     Scaffold(
         topBar = {
@@ -102,17 +104,6 @@ fun LiveTVScreen(
                     }
                 },
                 actions = {
-                    // Validation progress indicator
-                    if (uiState.isValidating) {
-                        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            CircularProgressIndicator(
-                                modifier = Modifier.size(18.dp),
-                                strokeWidth = 2.dp,
-                                color = FocusAccent
-                            )
-                            Text(uiState.validationProgress, color = Color.White.copy(alpha = 0.7f), fontSize = 12.sp)
-                        }
-                    }
                     IconButton(onClick = { viewModel.refreshCurrentSource() }) {
                         Icon(Icons.Filled.Refresh, null)
                     }
@@ -124,12 +115,14 @@ fun LiveTVScreen(
         }
     ) { padding ->
         Column(modifier = Modifier.padding(padding)) {
-            // Source tabs — horizontally scrollable for both phone and TV
+            // Source tabs
             SourceTabRow(
                 sources = uiState.sourceResults,
                 selectedIndex = uiState.selectedSourceIndex,
                 onSourceSelected = { viewModel.selectSource(it) },
-                isTv = isTv,
+                onDownPressed = {
+                    try { gridFocusRequester.requestFocus() } catch (_: Exception) {}
+                },
                 modifier = Modifier.fillMaxWidth()
             )
 
@@ -152,12 +145,11 @@ fun LiveTVScreen(
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
                             Text("No channels available", color = Color.Gray, fontSize = 16.sp)
                             Spacer(Modifier.height(8.dp))
-                            Text(currentSource?.error ?: "All channels failed validation", color = Color.Gray.copy(alpha = 0.6f), fontSize = 13.sp)
+                            Text(currentSource?.error ?: "", color = Color.Gray.copy(alpha = 0.6f), fontSize = 13.sp)
                         }
                     }
                 }
                 else -> {
-                    val firstItemFocusRequester = remember { FocusRequester() }
                     LazyVerticalGrid(
                         columns = GridCells.Fixed(columns),
                         modifier = Modifier.fillMaxSize(),
@@ -175,7 +167,8 @@ fun LiveTVScreen(
                                         playChannelWithPlaylist(navController, currentChannels, channel, playUrl)
                                     }
                                 },
-                                requestFocus = index == 0
+                                requestFocus = index == 0,
+                                focusRequester = if (index == 0) gridFocusRequester else null
                             )
                         }
                     }
@@ -191,37 +184,67 @@ private fun SourceTabRow(
     sources: List<com.shimulfp.hub2stream.data.SourceChannels>,
     selectedIndex: Int,
     onSourceSelected: (Int) -> Unit,
-    isTv: Boolean,
+    onDownPressed: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     if (sources.isEmpty()) return
 
-    val listState = rememberLazyListState()
-
-    // Auto-scroll to the selected source tab when it changes
-    LaunchedEffect(selectedIndex) {
-        if (selectedIndex in sources.indices) {
-            listState.animateScrollToItem(selectedIndex)
-        }
+    val chipFocusRequesters = remember(sources.size) {
+        List(sources.size) { FocusRequester() }
     }
 
-    LazyRow(
-        state = listState,
+    // Track which chip has focus so we can cycle left/right
+    var focusedChipIndex by remember { mutableIntStateOf(-1) }
+    val scrollState = rememberScrollState()
+
+    Row(
         modifier = modifier
             .fillMaxWidth()
-            .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.9f)),
-        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+            .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.9f))
+            .horizontalScroll(scrollState)
+            .padding(horizontal = 16.dp, vertical = 8.dp)
+            .onPreviewKeyEvent { event ->
+                // Only handle ACTION_DOWN
+                if (event.type != androidx.compose.ui.input.key.KeyEventType.KeyDown) return@onPreviewKeyEvent false
+                val keyCode = event.nativeKeyEvent.keyCode
+
+                when (keyCode) {
+                    AndroidKeyEvent.KEYCODE_DPAD_RIGHT -> {
+                        val next = if (focusedChipIndex < 0) selectedIndex else focusedChipIndex + 1
+                        if (next in sources.indices) {
+                            focusedChipIndex = next
+                            chipFocusRequesters[next].requestFocus()
+                            onSourceSelected(next)
+                        }
+                        true
+                    }
+                    AndroidKeyEvent.KEYCODE_DPAD_LEFT -> {
+                        val prev = if (focusedChipIndex < 0) selectedIndex else focusedChipIndex - 1
+                        if (prev in sources.indices) {
+                            focusedChipIndex = prev
+                            chipFocusRequesters[prev].requestFocus()
+                            onSourceSelected(prev)
+                        }
+                        true
+                    }
+                    AndroidKeyEvent.KEYCODE_DPAD_DOWN -> {
+                        onDownPressed()
+                        false
+                    }
+                    else -> false
+                }
+            },
         horizontalArrangement = Arrangement.spacedBy(10.dp)
     ) {
-        itemsIndexed(sources, key = { index, _ -> index }) { index, sourceResult ->
+        sources.forEachIndexed { index, sourceResult ->
             SourceChip(
                 source = sourceResult.source,
                 channelCount = sourceResult.channels.size,
                 isLoading = sourceResult.isLoading,
                 isSelected = index == selectedIndex,
                 onClick = { onSourceSelected(index) },
-                isTv = isTv,
-                onFocusGained = { if (isTv) onSourceSelected(index) }
+                focusRequester = chipFocusRequesters[index],
+                onFocusGained = { focusedChipIndex = index }
             )
         }
     }
@@ -235,10 +258,9 @@ private fun SourceChip(
     isLoading: Boolean,
     isSelected: Boolean,
     onClick: () -> Unit,
-    isTv: Boolean,
+    focusRequester: FocusRequester,
     onFocusGained: () -> Unit = {}
 ) {
-    val focusRequester = remember { FocusRequester() }
     var isFocused by remember { mutableIntStateOf(0) }
 
     val borderWidth by animateDpAsState(
@@ -261,12 +283,9 @@ private fun SourceChip(
         modifier = Modifier
             .focusRequester(focusRequester)
             .onFocusChanged { state ->
-                val wasFocused = isFocused == 1
+                val wasFocused = isFocused
                 isFocused = if (state.isFocused) 1 else 0
-                // Auto-select on TV when focus enters the chip (not when leaving)
-                if (isFocused == 1 && !wasFocused) {
-                    onFocusGained()
-                }
+                if (isFocused == 1 && wasFocused == 0) onFocusGained()
             }
             .clip(RoundedCornerShape(20.dp))
             .background(bgColor)
@@ -323,14 +342,16 @@ fun ChannelCard(
     channel: LiveChannel,
     onClick: () -> Unit,
     modifier: Modifier = Modifier.fillMaxWidth(),
-    requestFocus: Boolean = false
+    requestFocus: Boolean = false,
+    focusRequester: FocusRequester? = null
 ) {
     var isFocused by remember { mutableIntStateOf(0) }
-    val focusRequester = remember { FocusRequester() }
+    val internalFocusRequester = remember { FocusRequester() }
+    val activeRequester = focusRequester ?: internalFocusRequester
 
     androidx.compose.material3.Card(
         modifier = modifier
-            .focusRequester(focusRequester)
+            .focusRequester(activeRequester)
             .onFocusChanged { focusState ->
                 isFocused = if (focusState.isFocused) 1 else 0
             }
@@ -350,10 +371,7 @@ fun ChannelCard(
                 .aspectRatio(1f)
         ) {
             AsyncImage(
-                model = ImageRequest.Builder(LocalContext.current)
-                    .data(channel.logo)
-                    .crossfade(true)
-                    .build(),
+                model = channel.logo,
                 contentDescription = channel.name,
                 modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.Fit
@@ -374,7 +392,7 @@ fun ChannelCard(
         LaunchedEffect(Unit) {
             try {
                 delay(50)
-                focusRequester.requestFocus()
+                activeRequester.requestFocus()
             } catch (_: Exception) {}
         }
     }
@@ -387,6 +405,7 @@ private fun playChannelWithPlaylist(
     freshUrl: String
 ) {
     val currentIndex = allChannels.indexOfFirst { it.id == selected.id && it.sourceId == selected.sourceId }
+    // Logos already resolved by LiveTVRepository.resolveLogos() at load time
     val playlist = allChannels.map { ch ->
         val url = if (ch.id == selected.id && ch.sourceId == selected.sourceId) freshUrl else ch.streamUrl
         mapOf(
@@ -395,8 +414,7 @@ private fun playChannelWithPlaylist(
             "licenseType" to ch.licenseType, "licenseKey" to ch.licenseKey
         )
     }
-    val mapper = jacksonObjectMapper()
-    val channelsJson = mapper.writeValueAsString(playlist)
+    val channelsJson = Json.toJson(playlist)
     val encoded = URLEncoder.encode(channelsJson, "UTF-8")
     navController.navigate(
         Screen.LivePlayer.pass(

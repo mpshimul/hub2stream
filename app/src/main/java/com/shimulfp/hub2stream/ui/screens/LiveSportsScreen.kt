@@ -26,6 +26,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
+import android.content.Context
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -36,8 +37,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.shimulfp.hub2stream.extractor.models.SportsEvent
+import com.shimulfp.hub2stream.utils.DataUriHelper
+import com.shimulfp.hub2stream.utils.Json
 import com.shimulfp.hub2stream.ui.navigation.Screen
 import com.shimulfp.hub2stream.ui.theme.FocusAccent
 import com.shimulfp.hub2stream.utils.isTv
@@ -57,6 +59,7 @@ fun LiveSportsScreen(
     val configuration = LocalConfiguration.current
     val isLandscape = configuration.orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE
     val columns = if (isLandscape) 3 else 1
+    val context = LocalContext.current
     val firstItemFocusRequester = remember { FocusRequester() }
 
     Scaffold(
@@ -97,7 +100,7 @@ fun LiveSportsScreen(
                     items(events) { event ->
                         SportsEventCard(
                             event = event,
-                            onClick = { playSportsEventWithPlaylist(navController, events, event) },
+                            onClick = { playSportsEventWithPlaylist(navController, context, events, event) },
                             requestFocus = events.indexOf(event) == 0
                         )
                     }
@@ -342,12 +345,12 @@ fun SportsEventLargeCard(
 
 private fun playSportsEventWithPlaylist(
     navController: NavController,
+    context: Context,
     allEvents: List<SportsEvent>,
     selected: SportsEvent
 ) {
-    val playlist = allEvents.map { mapOf("url" to it.streamUrl, "title" to it.name, "logo" to it.logo, "id" to it.id) }
-    val mapper = jacksonObjectMapper()
-    val channelsJson = mapper.writeValueAsString(playlist)
+    val playlist = allEvents.map { mapOf("url" to it.streamUrl, "title" to it.name, "logo" to DataUriHelper.resolveToString(context, it.logo), "id" to it.id) }
+    val channelsJson = Json.toJson(playlist)
     val encoded = URLEncoder.encode(channelsJson, "UTF-8")
     navController.navigate(
         Screen.LivePlayer.pass(

@@ -1,9 +1,9 @@
 package com.shimulfp.hub2stream.utils
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.shimulfp.hub2stream.extractor.models.MatchChannel
 import com.shimulfp.hub2stream.extractor.models.SportsEvent
 import com.shimulfp.hub2stream.extractor.models.UpcomingMatch
+import com.shimulfp.hub2stream.utils.Json
 import java.net.URLEncoder
 
 /**
@@ -24,8 +24,7 @@ fun convertChannelsToPlayerJson(channels: List<MatchChannel>): String {
         )
     }
 
-    val mapper = jacksonObjectMapper()
-    return mapper.writeValueAsString(channelList)
+    return Json.toJson(channelList)
 }
 
 /**
