@@ -5,168 +5,13 @@
     "hasMore": false,
     "list": [
       {
-        "id": "4444875311016202376",
-        "team1": {
-          "id": "2053112058719227784",
-          "name": "France",
-          "score": "0",
-          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/a23426aba153d39afca6d98f5285956e.png",
-          "voteCount": "9770",
-          "type": "football",
-          "abbreviation": "FRA",
-          "regularScore": "",
-          "nameI18n": {},
-          "nameTag": ""
-        },
-        "team2": {
-          "id": "5437149420104073424",
-          "name": "England",
-          "score": "0",
-          "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/98a8c2b9e4a5af94fe2e1e35e6aa0b5a.png",
-          "voteCount": "6520",
-          "type": "football",
-          "abbreviation": "ENG",
-          "regularScore": "",
-          "nameI18n": {},
-          "nameTag": ""
-        },
-        "status": "MatchNotStart",
-        "playType": "PlayTypeVideo",
-        "playPath": "https://live-pull.aisports.mobi/moviebox/device01/playlist.m3u8?sign=4e629820514e5be829a8763a08cc6924&t=1784408188",
-        "startTime": "1784408400000",
-        "endTime": "0",
-        "type": "football",
-        "timeDesc": "",
-        "playSource": [
-          {
-            "title": "Channel 1",
-            "path": "https://play.88player.top/m3u8.html?url=https://www.rtmpcdn.com/live/migu1.m3u8",
-            "id": "0",
-            "cover": null,
-            "duration": "0",
-            "createTime": "0",
-            "stat": null
-          },
-          {
-            "title": "Channel 2",
-            "path": "http://play.sportsteam368.com/play/elta/?id=elta9&id2=",
-            "id": "0",
-            "cover": null,
-            "duration": "0",
-            "createTime": "0",
-            "stat": null
-          },
-          {
-            "title": "Channel 3",
-            "path": "https://play.88player.top/m3u8.html?url=https://spqncdnct.inter.71edge.com/tslive/l1/c75_ssports_20260605_cmydoqin_720p_chst1_ts_t4/Yota2ZHuL6utkyFmQ0MLs6Uz2dVHPj1PwTMlw_vasB3uUmjrsSd0-qbHsM0eKfj62ePwfhe0N4U6S7Q86cZZQkTMCGr0W6Wm8WvwDE_NceSn3sCXGprMD30s-Bye7BRBgTD8kjVDSzyrW8WcQD4TXaUgF7poIxd1nYP87ojIFcFjfD-exBUHd5BCOrlN0HY_Oen8iHUQ0Jxn4dRydfvfEnM4a_MXPObxX3TBHogB6vng4LTKEG89FJc6tSBWzC866h0l_3UC2Kaa7LhPTenSbQ/10162553491b87fc67bc977490cfe00fd/c75_ssports_20260605_cmydoqin_720p_chst1_ts_t4.m3u8?key=0726813db4fa6267de819672edeeb84cc&dis_t=1780828472&uuid=b7090261-19ea1a603cb-45f&qdpv=3&qd_bid=4&qd_sft=0&mss=1&pv=0.1&cpt=0&uid=mseww5klgzj&random=1780828472",
-            "id": "0",
-            "cover": null,
-            "duration": "0",
-            "createTime": "0",
-            "stat": null
-          }
-        ],
-        "statusLive": "Living",
-        "league": "FIFA World Cup",
-        "liveDeviceId": "",
-        "teamMatchInfo1": {
-          "score": "0",
-          "crtRunsScored": "",
-          "crtWicketsLost": "",
-          "crtOvers": "",
-          "crtOversExtraBalls": ""
-        },
-        "teamMatchInfo2": {
-          "score": "0",
-          "crtRunsScored": "",
-          "crtWicketsLost": "",
-          "crtOvers": "",
-          "crtOversExtraBalls": ""
-        },
-        "matchResult": "",
-        "matchRound": "Third place",
-        "replay": [],
-        "highlights": [
-          {
-            "title": "[Pre-match] Sun Jihai once thought France would definitely win the title, Liu Yue favors Spain to win",
-            "path": "https://lacdn.aoneroom.com/highlight/2026/07/18/51404f9ea66239f63b17fcade37e30b8.mp4?Expires=1785617788&Signature=xoipax9uwq5Cw6Zk5VEJGQJbHNxmVdZjtM~2cD529MUG5h0d132lsOJz55m3yOCQTdGK4Cbody1THOtC7IgYSOntiAIMBX5hiAzSwtelpH7ZLufAJjXN5sFQc1PmWvy8jft4MyLdNg8js2L7KIfzNUxmc~vJrrxmsEyM9Olb7fiJVTdcIiEWFzIwcyGF0xgJ6QmTKty5pgMEAM1xk7sKZvYsTUZVcpjdjUM6V39kTJ-VmbVXy5FhSqLkJjcEwo77Gogrw7ZaGwW7DHBUziraczi5ikMxwHlzPBqtac2izlFZVpqs6A1brgLeecy3Jyp3OuVhRS3O8bB16i2Wt0df8g__&Key-Pair-Id=KMHN1LQ1HEUPL",
-            "id": "2743572110399390616",
-            "cover": {
-              "url": "https://pbcdn.aoneroom.com/image/2026/07/18/d3ce3c50280a136d0bac3904da48acf6.jpg",
-              "id": "4153198793766453624"
-            },
-            "duration": "179",
-            "createTime": "1784408090000",
-            "stat": null
-          },
-          {
-            "title": "[Pre-match] Sun Jihai & Liu Yue: Tuchel's substitutions spark controversy, but results shouldn't be used to retroactively judge",
-            "path": "https://lacdn.aoneroom.com/highlight/2026/07/18/d3c6542bc9a2f2cf02e1362ae3829abe.mp4?Expires=1785617788&Signature=mnwiEPN8hXHpID0e~Y0wLVEbbjZAf7f~nwiNvgI7Wt5TneWysgTKywDzDn0dxccR7xTGsSjknFLw4o7yXynEv0Cd1N~dfjFJ8~zEFcnfCWD1trPubtyuDZynRm93~Cc4y1rD1xghiW3f~GLbtqI0J5alaqxzBnHXGvPAB5PM4DX3C8kj3J5JkhEgStMccPV8lUY0pJtPqUtXZNHn4Nlrs3y4HL0JSPewyLFbGzUAUZp0Ac6OYM2Ze~d7E03JpTgrvKIPzLBxlyXFaM1ZtiZBJeumMrpu3bYDjhhiujzgLy9tQtd6kZmcgmNKK8calsUcBPLvXau5wcrf-iCRP7~Njg__&Key-Pair-Id=KMHN1LQ1HEUPL",
-            "id": "2804370705368898800",
-            "cover": {
-              "url": "https://pbcdn.aoneroom.com/image/2026/07/18/400fef2cdd58659ecf672575b98704b1.jpg",
-              "id": "8803165409026423312"
-            },
-            "duration": "208",
-            "createTime": "1784408109000",
-            "stat": null
-          },
-          {
-            "title": "Chasing third place! Zhang Lu: France's main players fatigued, big rotation; substitutes motivated",
-            "path": "https://lacdn.aoneroom.com/highlight/2026/07/18/57709de6b061c85c24cd30b835302e6e.mp4?Expires=1785617788&Signature=Pz0lgPtvqYc0yAFD6vEt2c9hLA6Vjs-kK~2idhFKOHgnIsvG~GdhGWe7X9DHz90qCnReNeqigAU6lOoQ55JghWyKMfXUQSvNu5meeRwRbZgy2JgXflNwwbj8AlXhed6cJSRfwSe~ZgrXOL4ZK1Hku~pFnr9D2O4CvE9LQMVJoqxG6yFPXv7y1QiwsjugWa5RZOfm3xqQgG7nvY2Fxci0hLDJM9lqT2~hOTCJdS8eoBkwmmxXLzTKvSkI4gCaeh7fecrlm8iyT-aq6IlNlESWu0Ygf-yj7RK3bYfCd0Py8~~QpG8ludG9vGYu8JSy3tBYiJkO4DmA1J3bGSMtEaZ5nA__&Key-Pair-Id=KMHN1LQ1HEUPL",
-            "id": "3365068858976621216",
-            "cover": {
-              "url": "https://pbcdn.aoneroom.com/image/2026/07/18/17a646492504ada1939ccd38032b965b.jpg",
-              "id": "2365269741700269760"
-            },
-            "duration": "29",
-            "createTime": "1784408096000",
-            "stat": null
-          },
-          {
-            "title": "Tuchel: England played at the top level and will win the World Cup one day",
-            "path": "https://lacdn.aoneroom.com/highlight/2026/07/18/29c87fff6650a3a43f050fc1efc324b5.mp4?Expires=1785617788&Signature=udhh-7dBBSl18AGio54MRlMrPtmw~WDcUcN3VRF6jQZJYNwFSw4pcYQdtVwJg125d-fPc72hVsbxXusA0XVvWgrJBM392gJgrCKta-WjUIh-yfZVlss1HTenr-5AoAtlPAeSUbxpTlXr6K6MORuk24bGIFT-CaOaOap8kA-uGoGU6R1rFEnUTWmjXom7KA7Dc02T2cp~cl6btFJCP2Kb3lpCB0UKN3hid718V6Ip4T8vaoqYHwcBLHM-b4Bycap8L76~d~hqBPIOex~OqUxl--fhdDrovG5LycfmFRNiwYPgvruqnRNAOZWkSNCHjAEH7H9TIWn1KwRMRsPwnagRRg__&Key-Pair-Id=KMHN1LQ1HEUPL",
-            "id": "5011134522780537504",
-            "cover": {
-              "url": "https://pbcdn.aoneroom.com/image/2026/07/18/940a9cc3789faa134c32fcda866a3541.jpg",
-              "id": "3311025663448181824"
-            },
-            "duration": "147",
-            "createTime": "1784408101000",
-            "stat": null
-          },
-          {
-            "title": "The match is drawing to a close! Sun Jihai: Cape Verde's performance is impressive",
-            "path": "https://lacdn.aoneroom.com/highlight/2026/07/18/362aee57d08416db979664a1914fc25f.mp4?Expires=1785617788&Signature=y7yzUVl7DJUDWz7dK5LlAwlVZcIB8rzibw-TVK7sxtjF5hEVw5tQaRin0yIeSNScZe530aLKZYnIxCro7KAzIsg~aTsWx5~F5Vi2HvaFq-z2cKRKRlzBODyo~4vi79omdgUYklxpw1oJckmpanK2BLH3ujLFgEQPuWe9aZqaeDDrbTknvqRaqIDRV5PBmdHapRg9qjskF8A14UbtvdZ03l-EkZMyRK9GYSnJSYAIj9QpIiC0jQst4YMGMflLt8qEO6QDgEnhDe6B3TBQnGudUGzr3Zg97GTwsNf49eQlj37eyN7qWwkhFTYUftUzbHDB3bCydbovIANMWxvkmQXKjg__&Key-Pair-Id=KMHN1LQ1HEUPL",
-            "id": "5409667080796921072",
-            "cover": {
-              "url": "https://pbcdn.aoneroom.com/image/2026/07/18/ce0ffd46cfebe196ee830fe773b6743e.jpg",
-              "id": "4279263574327017920"
-            },
-            "duration": "28",
-            "createTime": "1784406288000",
-            "stat": {
-              "bizType": "_UnSBizType",
-              "entityId": "0",
-              "viewCount": "61"
-            }
-          }
-        ],
-        "extCountryCode": "",
-        "leagueId": "4186762757372631736",
-        "isCollect": false,
-        "arrangedTime": "1784408400000",
-        "season": "2026",
-        "oddsList": []
-      },
-      {
         "id": "1418456361423229064",
         "team1": {
           "id": "8400654258521231240",
           "name": "Spain",
           "score": "0",
           "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/5d866b6178489325752c1d5eab23074a.png",
-          "voteCount": "11393",
+          "voteCount": "11719",
           "type": "football",
           "abbreviation": "ESP",
           "regularScore": "",
@@ -178,7 +23,7 @@
           "name": "Argentina",
           "score": "0",
           "avatar": "https://pbcdn.aoneroom.com/image/2026/04/22/e8a24806fbe59bd12b17d6bded78c323.png",
-          "voteCount": "14593",
+          "voteCount": "14948",
           "type": "football",
           "abbreviation": "ARG",
           "regularScore": "",
@@ -187,7 +32,7 @@
         },
         "status": "MatchNotStart",
         "playType": "PlayTypeVideo",
-        "playPath": "https://live-pull.aisports.mobi/moviebox/device01/playlist.m3u8?sign=4e629820514e5be829a8763a08cc6924&t=1784408188",
+        "playPath": "https://live-pull.aisports.mobi/moviebox/device01/playlist.m3u8?sign=56c2d6bc367db47af8b10d7122a53460&t=1784415307",
         "startTime": "1784487600000",
         "endTime": "0",
         "type": "football",
