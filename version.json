@@ -1,8 +1,8 @@
 {
-  "versionCode": 109,
-  "versionName": "1.0.9",
+  "versionCode": 110,
+  "versionName": "1.1.0",
   "downloadUrl": "https://github.com/mpshimul/hub2stream/releases/latest/download/app-release.apk",
   "browserUrl": "https://github.com/mpshimul/hub2stream/releases/latest/download/app-release.apk",
-  "changelog": "আপডেট বাটনে ক্লিক করলে যদি অ্যাপ ক্র্যাশ করে। তাহলে এই লিংকটি সরাসরি ব্রাউজারে ওপেন করে অ্যাপটি আপডেট করে নিন: cutt.ly/hub2stream",
-  "critical": false
+  "changelog": "• Fixed duplicate categories appearing on the home screen.\n• Fixed \"See All\" pagination not loading more content in home page sections.\n• Fixed player restarting from the beginning instead of resuming position after network errors or buffering issues.",
+  "critical": true
 }
