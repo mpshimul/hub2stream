@@ -1,8 +1,8 @@
 {
-  "versionCode": 110,
-  "versionName": "1.1.0",
+  "versionCode": 111,
+  "versionName": "1.1.1",
   "downloadUrl": "https://github.com/mpshimul/hub2stream/releases/latest/download/app-release.apk",
   "browserUrl": "https://github.com/mpshimul/hub2stream/releases/latest/download/app-release.apk",
-  "changelog": "• Fixed duplicate categories appearing on the home screen.\n• Fixed \"See All\" pagination not loading more content in home page sections.\n• Fixed player restarting from the beginning instead of resuming position after network errors or buffering issues.",
-  "critical": true
+  "changelog": "• Added single-item remove from Continue Watching — tap the bin icon on any card to remove it, with confirmation dialog showing the item name. Works on both TV (D-pad) and touch devices.\n• Fixed D-pad focus on Continue Watching cards — pressing UP now correctly focuses the per-card delete button instead of jumping to the header.",
+  "critical": false
 }
