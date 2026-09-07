@@ -1,8 +1,8 @@
 {
-  "versionCode": 111,
-  "versionName": "1.1.1",
+  "versionCode": 112,
+  "versionName": "1.1.2",
   "downloadUrl": "https://github.com/mpshimul/hub2stream/releases/latest/download/app-release.apk",
   "browserUrl": "https://github.com/mpshimul/hub2stream/releases/latest/download/app-release.apk",
-  "changelog": "• Added single-item remove from Continue Watching — tap the bin icon on any card to remove it, with confirmation dialog showing the item name. Works on both TV (D-pad) and touch devices.\n• Fixed D-pad focus on Continue Watching cards — pressing UP now correctly focuses the per-card delete button instead of jumping to the header.",
+  "changelog": "• Fixed movie playback issue — movies were playing short app update video instead of actual content due to server database corruption.\n• Fixed subtitle loading — subtitles now properly fetch by extracting resourceId from video streams.\n• Improved subtitle language names — now displays \"English\", \"Hindi\", \"Spanish\" instead of \"en\", \"hi\", \"es\".\n• Fixed H5 fallback referer — works correctly with new numeric ID format.\n• Enhanced subtitle debugging — added detailed logging for better troubleshooting.",
   "critical": false
 }
