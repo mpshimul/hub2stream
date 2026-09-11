@@ -1,8 +1,8 @@
 {
-  "versionCode": 112,
-  "versionName": "1.1.2",
+  "versionCode": 113,
+  "versionName": "1.1.3",
   "downloadUrl": "https://github.com/mpshimul/hub2stream/releases/latest/download/app-release.apk",
   "browserUrl": "https://github.com/mpshimul/hub2stream/releases/latest/download/app-release.apk",
-  "changelog": "• Fixed movie playback issue — movies were playing short app update video instead of actual content due to server database corruption.\n• Fixed subtitle loading — subtitles now properly fetch by extracting resourceId from video streams.\n• Improved subtitle language names — now displays \"English\", \"Hindi\", \"Spanish\" instead of \"en\", \"hi\", \"es\".\n• Fixed H5 fallback referer — works correctly with new numeric ID format.\n• Enhanced subtitle debugging — added detailed logging for better troubleshooting.",
+  "changelog": "• Fixed series streaming — episodes were playing short app update video instead of actual content.\n• Added CloudFront policy parsing — extracts real DASH manifest URLs from signCookie when direct URL contains bad hash.\n• Expanded bad hash filtering — now filters 3 known bad hashes and notice/deprecation URLs.\n• Fixed bad hash check logic — now only checks the final URL being used, not both direct and DASH URLs.\n• Improved API endpoint compatibility — removed host parameter from play-info queries to match working implementations.",
   "critical": false
 }
