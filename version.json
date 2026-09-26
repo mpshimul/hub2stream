@@ -1,6 +1,6 @@
 {
-  "versionCode": 113,
-  "versionName": "1.1.3",
+  "versionCode": 114,
+  "versionName": "1.1.4",
   "downloadUrl": "https://github.com/mpshimul/hub2stream/releases/latest/download/app-release.apk",
   "browserUrl": "https://github.com/mpshimul/hub2stream/releases/latest/download/app-release.apk",
   "changelog": "• Fixed series streaming — episodes were playing short app update video instead of actual content.\n• Added CloudFront policy parsing — extracts real DASH manifest URLs from signCookie when direct URL contains bad hash.\n• Expanded bad hash filtering — now filters 3 known bad hashes and notice/deprecation URLs.\n• Fixed bad hash check logic — now only checks the final URL being used, not both direct and DASH URLs.\n• Improved API endpoint compatibility — removed host parameter from play-info queries to match working implementations.",
